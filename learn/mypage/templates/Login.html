@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the Login Page!</h1>
+
+
+{% for message in messages %}
+<p class="color-white">
+
+    {{ message }}
+
+</p>
+
+
+{% endfor %}
+<div class="center-container">
+    <form action="login" method="POST" class="login-form">
+        {% csrf_token %}
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <br>
+        <button type="submit">Login</button><br>
+        <br>
+
+
+
+        Don't have an account? <a href="{% url 'registration' %}">Register </a>
+
+    </form>
+</div>
+
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<h1>{{ unit.unit_name }} Quiz</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {% for question in questions %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>{{ forloop.counter }}. {{ question.question_text }}</h5>
+
+                <div>
+                    <input type="radio"
+                           name="question_{{ question.id }}"
+                           value="{{ question.option1 }}">
+                    {{ question.option1 }}
+                </div>
+
+                <div>
+                    <input type="radio"
+                           name="question_{{ question.id }}"
+                           value="{{ question.option2 }}">
+                    {{ question.option2 }}
+                </div>
+
+                <div>
+                    <input type="radio"
+                           name="question_{{ question.id }}"
+                           value="{{ question.option3 }}">
+                    {{ question.option3 }}
+                </div>
+
+                <div>
+                    <input type="radio"
+                           name="question_{{ question.id }}"
+                           value="{{ question.option4 }}">
+                    {{ question.option4 }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+        Submit Quiz
+    </button>
+</form>

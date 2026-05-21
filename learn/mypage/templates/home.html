@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the Home Page!</h1>
+ 
+ 
+    {% for message in messages %}
+    <p class="color-white">
+
+        {{ message }}
+
+    </p>
+    
+
+    {% endfor %}
+<p>This unique text will appear inside the base layout.</p>
+{% endblock %}

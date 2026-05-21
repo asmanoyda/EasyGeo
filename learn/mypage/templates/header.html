@@ -1,0 +1,71 @@
+<header>
+    <nav class="navbar navbar-expand-sm shadow-sm" style="background-color: #1E3A8A;">
+        <div class="container">
+
+            <!-- Navbar Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <!-- Center Menu -->
+                <ul class="navbar-nav mx-auto align-items-center">
+
+                    <!-- Home -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-white" href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+
+                    {% if user_data.name %}
+
+                    <!-- Courses -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-white" href="{% url 'courses' %}">
+                            Courses
+                        </a>
+                    </li>
+
+                    {% else %}
+
+                    <!-- Login -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-white" href="{% url 'login' %}">
+                            Login
+                        </a>
+                    </li>
+
+                    <!-- Register -->
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-white" href="{% url 'registration' %}">
+                            Register
+                        </a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+
+                <!-- Right Side Profile -->
+                {% if user_data.name %}
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-white" href="{% url 'profile' %}">
+                            <i class="fa fa-user me-1"></i> {{ user_data.name }}
+                        </a>
+                    </li>
+                </ul>
+                   <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold text-warning" href="{% url 'logout' %}">
+                            Logout
+                        </a>
+                    </li>
+                {% endif %}
+
+            </div>
+        </div>
+    </nav>
+</header>

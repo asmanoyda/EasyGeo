@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the Home Page!</h1>
+
+
+{% for message in messages %}
+<p class="color-white">
+
+
+    {{ message }}
+
+</p>
+
+
+{% endfor %}
+<p><i>This is your profile page,</i></p>
+
+<div class="center-container">
+    <form action="login" method="POST" class="login-form">
+        {% csrf_token %}
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ user_data.name }}" disabled>
+
+        </div>
+        <br>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value={{ user_data.username }} disabled>
+
+        </div>
+        <br>
+        <div>
+            <label for="Email">Email:</label>
+            <input type="Email" id="Email" name="Email" value={{ user_data.email }} disabled>
+        </div>
+
+        <br>
+        <div>
+            <label for="Mobile_no">Mobile_no:</label>
+            <input type="Mobile_no" id="Mobile_no" name="Mobile_no" value={{ user_data.mobile_no }} disabled>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+
+            <a href="{% url 'update_profile' %}" class="a-tag-btn" style="color:green;">Update Profile</a>
+
+
+            <a href="{% url 'delete_profile' %}" class="a-tag-btn" style="color:red;">Delete Profile</a>
+
+        </div>
+
+
+        <br>
+
+ 
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

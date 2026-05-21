@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+
+<h1>Welcome to the Home Page!</h1>
+
+
+{% for message in messages %}
+<p class="color-white">
+
+    {{ message }}
+
+</p>
+
+
+{% endfor %}
+<div class="page-bg">
+    <div class="center-container">
+        <form method="POST" action="update_profile" class="login-form">
+            {% csrf_token %}
+
+            <h2>My Account</h2>
+
+            <p><u>USER INFORMATION</u></p>
+            <div>
+                <label>Name:</label>
+                <input type="name" name="name" value="{{ user.name }}" required><br><br>
+            </div>
+
+            <div>
+                <label>Username:</label>
+                <input type="username" name="username" value="{{ user.username }}" required><br><br>
+            </div>
+
+            <div>
+                <label>Email:</label>
+                <input type="email" name="email" value="{{ user.email }}" required><br><br>
+            </div>
+
+            <br>
+
+            <p><u>CONTACT INFORMATION</u></p>
+
+            <div>
+                <label>Mobile Number:</label>
+                <input type="text" name="mobile_no" value="{{ user.mobile_no }}" required><br><br>
+            </div>
+            <br>
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
