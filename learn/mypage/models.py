@@ -1,4 +1,16 @@
 from django.db import models
+
+class Country(models.Model):
+    name = models.CharField(max_length=100)
+    flag = models.URLField()   
+    capital = models.CharField(max_length=100)
+    currency = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
+
 class User(models.Model):
     name = models.CharField(max_length=233)
     username = models.CharField(max_length=100, unique=True)

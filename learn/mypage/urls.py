@@ -3,6 +3,8 @@ from mypage import views
 
 urlpatterns =[
       path("", views.home, name='home'),
+      path("country/", views.country_details, name="country"),
+
 
       path("login", views.login_page, name='login'),
       path("registration", views.register, name='registration'),

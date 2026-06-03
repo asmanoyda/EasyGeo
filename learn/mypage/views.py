@@ -212,3 +212,24 @@ def unit_quiz(request, unit_id):
         'unit': unit,
         'questions': questions
     })
+
+from django.shortcuts import render
+from .models import User, Country
+
+def country_details(request):
+    user = None
+
+    user_id = request.session.get('user_id')
+
+    if user_id:
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            pass
+
+    countries = Country.objects.all()
+
+    return render(request, "country.html", {
+        'user_data': user,
+        'countries': countries
+    })
