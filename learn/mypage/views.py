@@ -1,3 +1,5 @@
+from django.shortcuts import render
+from .models import User, Country
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.template import loader
@@ -10,6 +12,22 @@ from django.contrib import messages
 from mypage.models import User, Course, Section, Unit, Question, Entrollment
 
 
+# utils/decorators.py
+from django.shortcuts import redirect
+from functools import wraps
+
+
+def custom_login_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+
+        if request.session.get('user_id'):
+            return view_func(request, *args, **kwargs)
+
+        return redirect('login')
+    return wrapper
+
+
 def home(request):
 
     try:
@@ -20,6 +38,7 @@ def home(request):
 
 
 def login_page(request):
+
     if request.method == 'GET':
         return render(request, 'Login.html')
     if request.method == "POST":
@@ -30,7 +49,7 @@ def login_page(request):
         except Exception as e:
             messages.error(request, 'username does not exits!')
             return redirect('login')
-        if check_password(password, myuser.password):
+        if password == myuser.password:
             request.session["user_id"] = myuser.id
             messages.success(request, 'your account logged in sucesfully')
             return redirect('home')
@@ -69,6 +88,7 @@ def register(request):
 
         messages.success(request, "your account created succesfully")
         return redirect("login")
+
 
 def all_course(request):
     user = None
@@ -109,46 +129,40 @@ def course_list(request):
     return redirect('login')
 
 
+@custom_login_required
 def logout_page(request):
 
     request.session.flush()
     messages.success(request, "your account logged out succesfully")
-
     return redirect("login")
 
 
+@custom_login_required
 def section_list(request, course_id):
-    if request.session.get('user_id'):
-        user = User.objects.get(id=request.session['user_id'])
 
-        sections = Section.objects.filter(course_id=course_id)
-
-        context = {
-            'sections': sections,
-            'user_data': user,
-            'course_id': course_id,
-        }
-
-        return render(request, 'section_list.html', context)
-
-    else:
-        return redirect('login')
+    user = User.objects.get(id=request.session['user_id'])
+    sections = Section.objects.filter(course_id=course_id)
+    context = {
+        'sections': sections,
+        'user_data': user,
+        'course_id': course_id,
+    }
+    return render(request, 'section_list.html', context)
 
 
+@custom_login_required
 def unit_list(request, section_id):
-    if request.session.get('user_id'):
-        user = User.objects.get(id=request.session['user_id'])
-        units = Unit.objects.filter(section_id=section_id)
-        context = {
-            'units': units,
-            'user_data': user,
-            'section_id': section_id
-        }
-        return render(request, 'unit_list.html', context)
-    else:
-        return redirect('login')
 
+    user = User.objects.get(id=request.session['user_id'])
+    units = Unit.objects.filter(section_id=section_id)
+    context = {
+        'units': units,
+        'user_data': user,
+        'section_id': section_id
+    }
+    return render(request, 'unit_list.html', context)
 
+@custom_login_required
 def profile_page(request):
 
     user_id = request.session.get("user_id")
@@ -164,7 +178,7 @@ def profile_page(request):
         {"user_data": user_data}
     )
 
-
+@custom_login_required
 def delete_profile(request):
     user_id = request.session.get("user_id")
     user = User.objects.get(id=user_id)
@@ -182,7 +196,7 @@ def delete_profile(request):
     else:
         return render(request, "delete_profile.html", {'user_data': user})
 
-
+@custom_login_required
 def update_profile(request):
     user_id = request.session.get("user_id")
 
@@ -207,7 +221,7 @@ def update_profile(request):
         "user": user
     })
 
-
+@custom_login_required
 def unit_quiz(request, unit_id):
     unit = get_object_or_404(Unit, id=unit_id)
     questions = Question.objects.filter(unit=unit)
@@ -217,8 +231,6 @@ def unit_quiz(request, unit_id):
         'questions': questions
     })
 
-from django.shortcuts import render
-from .models import User, Country
 
 def country_details(request):
     user = None
@@ -238,7 +250,7 @@ def country_details(request):
         'countries': countries
     })
 
-
+@custom_login_required
 def update_picture(request):
 
     user_id = request.session.get("user_id")
@@ -259,7 +271,7 @@ def update_picture(request):
 
     return redirect("profile")
 
-
+@custom_login_required
 def delete_picture(request):
 
     user_id = request.session.get("user_id")
