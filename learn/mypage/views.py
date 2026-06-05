@@ -4,6 +4,7 @@ from django.template import loader
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.contrib.auth.hashers import check_password
 import datetime
 from django.contrib import messages
 from mypage.models import User, Course, Section, Unit, Question, Entrollment
@@ -29,7 +30,7 @@ def login_page(request):
         except Exception as e:
             messages.error(request, 'username does not exits!')
             return redirect('login')
-        if password == myuser.password:
+        if check_password(password, myuser.password):
             request.session["user_id"] = myuser.id
             messages.success(request, 'your account logged in sucesfully')
             return redirect('home')
@@ -68,6 +69,24 @@ def register(request):
 
         messages.success(request, "your account created succesfully")
         return redirect("login")
+
+def all_course(request):
+    user = None
+
+    user_id = request.session.get('user_id')
+
+    if user_id:
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            pass
+
+    courses = Course.objects.all()
+
+    return render(request, "all_courses.html", {
+        'user_data': user,
+        'courses': courses
+    })
 
 
 def course_list(request):
@@ -131,16 +150,19 @@ def unit_list(request, section_id):
 
 
 def profile_page(request):
+
     user_id = request.session.get("user_id")
 
     if not user_id:
-        return redirect('login')
+        return redirect("login")
 
-    user = User.objects.get(id=user_id)
+    user_data = User.objects.get(id=user_id)
 
-    return render(request, "profile_page.html", {
-        'user_data': user
-    })
+    return render(
+        request,
+        "profile_page.html",
+        {"user_data": user_data}
+    )
 
 
 def delete_profile(request):
@@ -186,24 +208,6 @@ def update_profile(request):
     })
 
 
-def delete_profile(request):
-    user_id = request.session.get("user_id")
-    user = User.objects.get(id=user_id)
-
-    if not user_id:
-        return redirect('login')
-    if request.method == "POST":
-        user = User.objects.get(id=user_id)
-        request.session.flush()
-
-        user.delete()
-        messages.success(
-            request, "Your profile has been deleted successfully.")
-        return redirect('login')
-    else:
-        return render(request, "delete_profile.html", {'user_data': user})
-
-
 def unit_quiz(request, unit_id):
     unit = get_object_or_404(Unit, id=unit_id)
     questions = Question.objects.filter(unit=unit)
@@ -233,3 +237,46 @@ def country_details(request):
         'user_data': user,
         'countries': countries
     })
+
+
+def update_picture(request):
+
+    user_id = request.session.get("user_id")
+
+    if not user_id:
+        return redirect("login")
+
+    try:
+        user = User.objects.get(id=user_id)
+
+        if request.method == "POST":
+            if 'profile_picture' in request.FILES:
+                user.profile_picture = request.FILES['profile_picture']
+                user.save()
+
+    except User.DoesNotExist:
+        return redirect("login")
+
+    return redirect("profile")
+
+
+def delete_picture(request):
+
+    user_id = request.session.get("user_id")
+
+    if not user_id:
+        return redirect("login")
+
+    try:
+        user = User.objects.get(id=user_id)
+
+        if request.method == "POST":
+            if user.profile_picture:
+                user.profile_picture.delete()
+                user.profile_picture = None
+                user.save()
+
+    except User.DoesNotExist:
+        return redirect("login")
+
+    return redirect("profile")
