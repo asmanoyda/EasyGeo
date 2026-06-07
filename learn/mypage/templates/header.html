@@ -3,8 +3,7 @@
         <div class="container">
 
             <!-- Navbar Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -20,28 +19,27 @@
                             Home
                         </a>
                     </li>
-                    </li>
-                          <li class="nav-item mx-2">
+                    <li class="nav-item mx-2">
                         <a class="nav-link fw-semibold text-white" href="{% url 'courses' %}">
                             All Courses
                         </a>
                     </li>
-                       <li class="nav-item mx-2">
+                    <li class="nav-item mx-2">
                         <a class="nav-link fw-semibold text-white" href="{% url 'country' %}">
                             Country details
                         </a>
-                    </li>    
+                    </li>
 
-                    {% if user_data.name %}
+                    {% if user_data %}
 
                     <!-- Courses -->
+                     
                     <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'courses' %}">
-                            Courses
+                        <a class="nav-link fw-semibold text-white" href="{% url 'my_courses' %}">
+                            My Courses
                         </a>
                     </li>
-                 
-                
+
 
                     {% else %}
 
@@ -71,11 +69,11 @@
                         </a>
                     </li>
                 </ul>
-                   <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-warning" href="{% url 'logout' %}">
-                            Logout
-                        </a>
-                    </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-warning" href="{% url 'logout' %}">
+                        Logout
+                    </a>
+                </li>
                 {% endif %}
 
             </div>

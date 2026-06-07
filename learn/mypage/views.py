@@ -90,7 +90,8 @@ def register(request):
         return redirect("login")
 
 
-def all_course(request):
+def all_courses(request):
+    courses = Course.objects.all()
     user = None
 
     user_id = request.session.get('user_id')
@@ -101,14 +102,12 @@ def all_course(request):
         except User.DoesNotExist:
             pass
 
-    courses = Course.objects.all()
-
     return render(request, "all_courses.html", {
-        'user_data': user,
-        'courses': courses
+        'courses': courses,
+        'user_data': user
     })
 
-
+@custom_login_required
 def course_list(request):
     if request.session.get('user_id'):
         user = get_object_or_404(User, id=request.session['user_id'])

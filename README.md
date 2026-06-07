@@ -16,7 +16,7 @@ python
 to do
 decouple application code 
 profile dropdown
-all courses page
+
 progress bar
 requirement.txt
 fixtures django
