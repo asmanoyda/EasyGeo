@@ -7,30 +7,63 @@ All Courses
 
 {% block content %}
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">All Courses</h1>
+<h1 class="text-center mb-4">All Courses</h1>
+
+{% for message in messages %}
+<p class="text-white bg-success p-2">
+    {{ message }}
+</p>
+{% endfor %}
+
+<div class="container mt-3" data-bs-spy="scroll" data-bs-target="#course-nav" data-bs-smooth-scroll="true" tabindex="0"
+    style="height:100vh; overflow-y:auto; background-color:white;">
+
+    {% if courses %}
 
     <div class="row">
 
         {% for course in courses %}
-        <div class="col-md-4 mb-4">
 
-            <h3>{{ course.course_name }}</h3>
+        <div id="course{{ course.id }}" class="col-md-4 mb-2">
 
-            {% if course.image %}
-            <img src="{{ course.image.url }}" width="300">
-            {% endif %}
+            <!-- Course Button -->
+            <button type="button" class="btn btn-primary w-100" data-bs-toggle="collapse"
+                data-bs-target="#collapse{{ course.id }}" aria-expanded="false" aria-controls="collapse{{ course.id }}">
 
-            <a href="{% url 'section' course.id %}" class="btn btn-primary">
-                Go to Section
-            </a>
+                <h3 class="mb-0">
+                    {{ course.course_name }}
+                </h3>
+
+            </button>
+
+            <!-- Collapsible Content -->
+            <div id="collapse{{ course.id }}" class="collapse mt-3 border p-3 rounded">
+
+                {% if course.image %}
+                <img src="{{ course.image.url }}" class="img-fluid rounded" alt="{{ course.course_name }}"
+                    style="width:100%; height:300px; object-fit:cover;">
+
+                <br><br>
+                {% endif %}
+
+                <a href="{% url 'section' course.id %}" class="btn btn-primary">
+
+                    Go to Details Page
+
+                </a>
+
+            </div>
 
         </div>
-        {% empty %}
-        <p>No courses available.</p>
+
         {% endfor %}
 
     </div>
+
+    {% else %}
+    <p>Sorry, no records found.</p>
+    {% endif %}
+
 </div>
 
 {% endblock %}

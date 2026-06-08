@@ -6,46 +6,110 @@ Section Page
 
 {% block content %}
 
-<h1 class="text-center mb-4">Sections</h1>
-
-<div class="container mt-3">
-
-    {% if sections %}
-
+<div class="container-fluid mt-4">
     <div class="row">
 
-        {% for section in sections %}
+        <!-- Sidebar -->
+        <div class="col-md-3 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    Sections
+                </div>
 
-        <!-- 2 cards side by side on all screen sizes except very small -->
-        <div class="col-12 mb-4">
+                <div class="card-body">
 
-            <button type="button" class="btn btn-primary w-100" data-bs-toggle="collapse"
-                data-bs-target="#section{{ section.id }}">
+                    <!-- Optional progress -->
+                    <div class="progress mb-3" style="height:25px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                            style="width: {{ progress|default:0 }}%;">
 
-                {{ section.section_name }}
+                            {{ progress|default:0 }}%
+                        </div>
+                    </div>
 
-            </button>
+                    <!-- Section navigation -->
+                    <div class="list-group">
 
-            <div id="section{{ section.id }}" class="collapse border p-3 mt-2 rounded">
+                        {% for section in sections %}
 
-                <a href="{% url 'unit' section.id %}" class="btn btn-success">
-                    Go to Unit Page
-                </a>
+                        <button class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+                            data-bs-target="#section{{ section.id }}" aria-expanded="false">
+
+                            {{ forloop.counter }}.
+                            {{ section.section_name }}
+
+                        </button>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Content Area -->
+        <div class="col-md-9">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+
+                    <h2>{{ sections.0.course.course_name }}</h2>
+
+                    <h5>Course Description</h5>
+                    <p>{{ sections.0.course.description|linebreaks }}</p>
+
+                </div>
+            </div>
+
+            {% if sections %}
+
+            {% for section in sections %}
+
+            <div id="section{{ section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
+
+                <div class="card shadow-sm mb-4">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title mb-3">
+                            {{ section.section_name }}
+                        </h2>
+
+                        {% if section.description %}
+                        <h5>Description</h5>
+                        <p>{{ section.description|linebreaks }}</p>
+                        {% endif %}
+
+                        <div class="mt-4">
+
+                            <a href="{% url 'unit' section.id %}" class="btn btn-success">
+
+                                Go to Units
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
+            {% endfor %}
+
+            {% else %}
+
+            <div class="alert alert-warning">
+                Sorry, no records found.
+            </div>
+
+            {% endif %}
+
         </div>
 
-        {% endfor %}
-
     </div>
-
-    {% else %}
-
-    <p>Sorry, no records found.</p>
-
-    {% endif %}
-
 </div>
 
 {% endblock %}

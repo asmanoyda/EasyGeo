@@ -1,14 +1,20 @@
 from django.db import models
+from django.utils.text import slugify
+
+
+def upload_image(instance, filename):
+    course = slugify(instance.course_name)
+    return f'courses/{course}/{filename}'
+
 
 class Country(models.Model):
     name = models.CharField(max_length=100)
-    flag = models.URLField()   
+    flag = models.URLField()
     capital = models.CharField(max_length=100)
     currency = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
-
 
 
 class User(models.Model):
@@ -28,10 +34,16 @@ class User(models.Model):
 
 class Course(models.Model):
     course_name = models.CharField(max_length=245)
-    image = models.CharField(max_length=100, blank=True, null=True)  
+    image = models.ImageField(
+        upload_to=upload_image,
+        blank=True,
+        null=True
+    )
+    description = models.TextField(default="")
 
     def __str__(self):
         return self.course_name
+
 
 class Section(models.Model):
     section_name = models.CharField(max_length=245)
@@ -43,7 +55,8 @@ class Section(models.Model):
 
     def __str__(self):
         return self.section_name
-    
+
+
 class Unit(models.Model):
     unit_name = models.CharField(max_length=245)
     quiz = models.CharField(max_length=245, blank=True, null=True)
@@ -58,6 +71,7 @@ class Unit(models.Model):
     def __str__(self):
         return self.unit_name
 
+
 class Question(models.Model):
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
     question_text = models.CharField(max_length=500)
@@ -70,6 +84,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+
 class Entrollment(models.Model):
     course = models.ForeignKey(
         Course,
@@ -81,9 +96,6 @@ class Entrollment(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
-    
+
     def __str__(self):
         return str(self.course) + " ==>  "+str(self.user)
-
-
-

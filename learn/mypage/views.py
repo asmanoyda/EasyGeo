@@ -291,3 +291,5 @@ def delete_picture(request):
         return redirect("login")
 
     return redirect("profile")
+
+
