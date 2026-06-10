@@ -14,7 +14,9 @@ python
 
 
 to do
-decouple application code 
+decouple application code (appps)
+search functions
+
 profile dropdown
 
 progress bar
