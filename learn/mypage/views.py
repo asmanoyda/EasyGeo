@@ -91,16 +91,23 @@ def register(request):
 
 
 def all_courses(request):
-    courses = Course.objects.all()
     user = None
 
     user_id = request.session.get('user_id')
-
     if user_id:
         try:
             user = User.objects.get(id=user_id)
         except User.DoesNotExist:
             pass
+
+    query = request.GET.get('q', '')
+
+    if query:
+        courses = Course.objects.filter(
+            course_name__istartswith=query
+        ).order_by('course_name')
+    else:
+        courses = Course.objects.all().order_by('course_name')
 
     return render(request, "all_courses.html", {
         'courses': courses,
@@ -109,6 +116,7 @@ def all_courses(request):
 
 @custom_login_required
 def course_list(request):
+    # entrollment course list
     if request.session.get('user_id'):
         user = get_object_or_404(User, id=request.session['user_id'])
 
@@ -122,7 +130,6 @@ def course_list(request):
             'courses': courses,
             'user_data': user
         }
-
         return render(request, 'course_list.html', context)
 
     return redirect('login')
@@ -291,5 +298,6 @@ def delete_picture(request):
         return redirect("login")
 
     return redirect("profile")
+
 
 

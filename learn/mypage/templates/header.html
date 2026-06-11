@@ -7,76 +7,100 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+
             <!-- Navbar Content -->
-            <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Center Menu -->
+            <ul class="navbar-nav me-auto align-items-center">
 
-                <!-- Center Menu -->
-                <ul class="navbar-nav mx-auto align-items-center">
-
-                    <!-- Home -->
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'home' %}">
-                            Home
-                        </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'courses' %}">
-                            All Courses
-                        </a>
-                    </li>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'country' %}">
-                            Country details
-                        </a>
-                    </li>
-
-                    {% if user_data %}
-
-                    <!-- Courses -->
-                     
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'my_courses' %}">
-                            My Courses
-                        </a>
-                    </li>
-
-
-                    {% else %}
-
-                    <!-- Login -->
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'login' %}">
-                            Login
-                        </a>
-                    </li>
-
-                    <!-- Register -->
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'registration' %}">
-                            Register
-                        </a>
-                    </li>
-
-                    {% endif %}
-                </ul>
-
-                <!-- Right Side Profile -->
-                {% if user_data.name %}
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item mx-2">
-                        <a class="nav-link fw-semibold text-white" href="{% url 'profile' %}">
-                            <i class="fa fa-user me-1"></i> {{ user_data.name }}
-                        </a>
-                    </li>
-                </ul>
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-warning" href="{% url 'logout' %}">
-                        Logout
+                    <a class="nav-link fw-semibold text-white" href="{% url 'home' %}">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'courses' %}">
+                        All Courses
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'country' %}">
+                        Country Details
+                    </a>
+                </li>
+
+                {% if user_data %}
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'my_courses' %}">
+                        My Courses
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'login' %}">
+                        Login
+                    </a>
+                </li>
+
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'registration' %}">
+                        Register
                     </a>
                 </li>
                 {% endif %}
 
-            </div>
+            </ul>
+            <form method="GET" class="d-flex mx-3" style="width:250px;">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Search...">
+                    <button class="btn btn-light" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <!-- Right Side Profile -->
+            <!-- Right Side Profile -->
+            {% if user_data %}
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" id="profileDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ user_data.name }} <i class="bi bi-person"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'profile' %}">
+                                <i class="bi bi-person"></i> Profile Page
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="{% url 'my_courses' %}">
+                                <i class="bi bi-book"></i> My Courses
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item text-danger" href="{% url 'logout' %}">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+            {% endif %}
+
+        </div>
         </div>
     </nav>
 </header>
