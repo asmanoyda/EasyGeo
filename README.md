@@ -13,10 +13,18 @@ python
 
 
 
-to do
-decouple application code 
+## to do
+
+decouple application code (appps)
+
+search functions
+
+document for local setup
+
 profile dropdown
 
 progress bar
+
 requirement.txt
+
 fixtures django
