@@ -114,6 +114,7 @@ def all_courses(request):
         'user_data': user
     })
 
+
 @custom_login_required
 def course_list(request):
     # entrollment course list
@@ -148,10 +149,18 @@ def section_list(request, course_id):
 
     user = User.objects.get(id=request.session['user_id'])
     sections = Section.objects.filter(course_id=course_id)
+    course = Course.objects.get(id=course_id)
+
+    is_enrolled = Entrollment.objects.filter(course_id=course_id,user=user)
+    flag = False
+    if is_enrolled:
+        flag=True
+
     context = {
         'sections': sections,
         'user_data': user,
-        'course_id': course_id,
+        'course':course,
+        "is_enrolled":flag
     }
     return render(request, 'section_list.html', context)
 
@@ -168,6 +177,7 @@ def unit_list(request, section_id):
     }
     return render(request, 'unit_list.html', context)
 
+
 @custom_login_required
 def profile_page(request):
 
@@ -183,6 +193,7 @@ def profile_page(request):
         "profile_page.html",
         {"user_data": user_data}
     )
+
 
 @custom_login_required
 def delete_profile(request):
@@ -201,6 +212,7 @@ def delete_profile(request):
         return redirect('login')
     else:
         return render(request, "delete_profile.html", {'user_data': user})
+
 
 @custom_login_required
 def update_profile(request):
@@ -226,6 +238,7 @@ def update_profile(request):
     return render(request, "update_profile.html", {
         "user": user
     })
+
 
 @custom_login_required
 def unit_quiz(request, unit_id):
@@ -256,6 +269,7 @@ def country_details(request):
         'countries': countries
     })
 
+
 @custom_login_required
 def update_picture(request):
 
@@ -276,6 +290,7 @@ def update_picture(request):
         return redirect("login")
 
     return redirect("profile")
+
 
 @custom_login_required
 def delete_picture(request):
@@ -301,3 +316,12 @@ def delete_picture(request):
 
 
 
+@custom_login_required
+def create_entrollment(request, course_id):
+    
+    abc = Entrollment.objects.create(
+        user_id=request.session.get("user_id"),
+        course_id=course_id
+    )
+    
+    return redirect("my_courses") 

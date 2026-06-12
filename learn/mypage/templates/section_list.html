@@ -7,10 +7,31 @@ Section Page
 {% block content %}
 
 <div class="container-fluid mt-4">
-    <div class="row">
+    <div class="row mt-4">
 
         <!-- Sidebar -->
         <div class="col-md-3 mb-3">
+
+            <!-- Course Image -->
+            {% if course.image %}
+            <div class="card shadow-sm mb-3">
+                <img src="{{ course.image.url }}" alt="{{ course.course_name }}"
+                    class="card-img-top" style="height:200px; object-fit:cover;">
+                <div class="card-body text-center">
+                    {% if is_enrolled %}
+                    <button class="btn btn-success w-100" disabled>
+                        countiue
+                    </button>
+                    {% else %}
+                    <a href="{% url 'create_entrollment' course.id %}" class="btn btn-primary w-100">
+                        Enroll Now
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Sections Card -->
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white">
                     Sections
@@ -18,93 +39,68 @@ Section Page
 
                 <div class="card-body">
 
-                    <!-- Optional progress -->
+                    <!-- Progress Bar -->
                     <div class="progress mb-3" style="height:25px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated"
                             style="width: {{ progress|default:0 }}%;">
-
                             {{ progress|default:0 }}%
                         </div>
                     </div>
 
-                    <!-- Section navigation -->
+                    <!-- Section List -->
                     <div class="list-group">
-
                         {% for section in sections %}
-
                         <button class="list-group-item list-group-item-action" data-bs-toggle="collapse"
-                            data-bs-target="#section{{ section.id }}" aria-expanded="false">
-
-                            {{ forloop.counter }}.
-                            {{ section.section_name }}
-
+                            data-bs-target="#section{{ section.id }}"
+                            aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+                            {{ forloop.counter }}. {{ section.section_name }}
                         </button>
-
                         {% endfor %}
-
                     </div>
 
                 </div>
             </div>
+
         </div>
 
-
-        <!-- Content Area -->
+        <!-- Main Content -->
         <div class="col-md-9">
+
             <div class="card shadow-sm mb-4">
                 <div class="card-body">
-
-                    <h2>{{ sections.0.course.course_name }}</h2>
+                    <h2>{{ course.course_name }}</h2>
 
                     <h5>Course Description</h5>
-                    <p>{{ sections.0.course.description|linebreaks }}</p>
-
+                    <p>{{ course.description|linebreaks }}</p>
                 </div>
             </div>
-
+            
+            <!-- Sections Content -->
             {% if sections %}
-
             {% for section in sections %}
-
             <div id="section{{ section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
-
                 <div class="card shadow-sm mb-4">
-
                     <div class="card-body">
 
                         <h2 class="card-title mb-3">
                             {{ section.section_name }}
                         </h2>
 
-                        {% if section.description %}
-                        <h5>Description</h5>
-                        <p>{{ section.description|linebreaks }}</p>
-                        {% endif %}
-
+                        
                         <div class="mt-4">
-
                             <a href="{% url 'unit' section.id %}" class="btn btn-success">
-
                                 Go to Units
-
                             </a>
-
                         </div>
 
                     </div>
-
                 </div>
-
             </div>
-
             {% endfor %}
-
             {% else %}
-
             <div class="alert alert-warning">
                 Sorry, no records found.
             </div>
-
             {% endif %}
 
         </div>
