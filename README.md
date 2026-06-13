@@ -14,10 +14,9 @@ python manage.py loaddata mysite > seeders.json
 
 
 
-
 ## to do
 
-decouple application code (appps)
+decouple application code (appps) WIP
 
 search functions
 
