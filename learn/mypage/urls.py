@@ -1,6 +1,8 @@
 from django.urls import path
 from mypage import views
 
+app_name = 'mypage' 
+
 urlpatterns = [
     path("", views.home, name='home'),
     path("country/", views.country_details, name="country"),
