@@ -1,0 +1,806 @@
+[
+    {
+        "model": "mypage.country",
+        "pk": 1,
+        "fields": {
+            "name": "India",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+            "capital": "New Delhi",
+            "currency": "Rupees"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 2,
+        "fields": {
+            "name": "Japan",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
+            "capital": "Tokyo",
+            "currency": "Japanese Yen"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 3,
+        "fields": {
+            "name": "Australia",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg",
+            "capital": "Canberra",
+            "currency": "Australian Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 4,
+        "fields": {
+            "name": "USA",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+            "capital": "Washington, D.C.",
+            "currency": "US Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 5,
+        "fields": {
+            "name": "Germany",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+            "capital": "Berlin",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 6,
+        "fields": {
+            "name": "Canada",
+            "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+            "capital": "Ottawa",
+            "currency": "Canadian Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 7,
+        "fields": {
+            "name": "Russia",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg",
+            "capital": "Moscow",
+            "currency": "Russian Ruble"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 8,
+        "fields": {
+            "name": "Brazil",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
+            "capital": "Brasília",
+            "currency": "Brazilian Real"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 9,
+        "fields": {
+            "name": "China",
+            "flag": "https://flagcdn.com/cn.svg",
+            "capital": "Beijing",
+            "currency": "Chinese Yuan"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 10,
+        "fields": {
+            "name": "South Korea",
+            "flag": "https://flagcdn.com/kr.svg",
+            "capital": "Seoul",
+            "currency": "South Korean Won"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 11,
+        "fields": {
+            "name": "Italy",
+            "flag": "https://flagcdn.com/it.svg",
+            "capital": "Rome",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 12,
+        "fields": {
+            "name": "Switzerland",
+            "flag": "https://flagcdn.com/ch.svg",
+            "capital": "Bern",
+            "currency": "Swiss Franc"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 13,
+        "fields": {
+            "name": "Singapore",
+            "flag": "https://flagcdn.com/sg.svg",
+            "capital": "Singapore",
+            "currency": "Singapore Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 14,
+        "fields": {
+            "name": "New Zealand",
+            "flag": "https://flagcdn.com/nz.svg",
+            "capital": "Wellington",
+            "currency": "New Zealand Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 15,
+        "fields": {
+            "name": "Spain",
+            "flag": "https://flagcdn.com/es.svg",
+            "capital": "Madrid",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 16,
+        "fields": {
+            "name": "Norway",
+            "flag": "https://flagcdn.com/no.svg",
+            "capital": "Oslo",
+            "currency": "Norwegian Krone"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 17,
+        "fields": {
+            "name": "Turkey",
+            "flag": "https://flagcdn.com/tr.svg",
+            "capital": "Ankara",
+            "currency": "Turkish Lira"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 18,
+        "fields": {
+            "name": "Malaysia",
+            "flag": "https://flagcdn.com/my.svg",
+            "capital": "Kuala Lumpur",
+            "currency": "Malaysian Ringgit"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 19,
+        "fields": {
+            "name": "Thailand",
+            "flag": "https://flagcdn.com/th.svg",
+            "capital": "Bangkok",
+            "currency": "Thai Baht"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 20,
+        "fields": {
+            "name": "Sweden",
+            "flag": "https://flagcdn.com/se.svg",
+            "capital": "Stockholm",
+            "currency": "Swedish Krona"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 21,
+        "fields": {
+            "name": "South Africa",
+            "flag": "https://flagcdn.com/za.svg",
+            "capital": "Pretoria",
+            "currency": "South African Rand"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 22,
+        "fields": {
+            "name": "Argentina",
+            "flag": "https://flagcdn.com/ar.svg",
+            "capital": "Buenos Aires",
+            "currency": "Argentine Peso"
+        }
+    },
+    {
+        "model": "mypage.user",
+        "pk": 1,
+        "fields": {
+            "name": "aarvi",
+            "username": "aarvii",
+            "mobile_no": "123456789",
+            "email": "aarvi@gmail.com",
+            "password": "aarvi",
+            "profile_picture": ""
+        }
+    },
+    {
+        "model": "mypage.user",
+        "pk": 2,
+        "fields": {
+            "name": "nova",
+            "username": "nova",
+            "mobile_no": "123456788",
+            "email": "nova@gmail.com",
+            "password": "nova",
+            "profile_picture": "profile_pictures/20250319_145146.jpg"
+        }
+    },
+    {
+        "model": "mypage.user",
+        "pk": 3,
+        "fields": {
+            "name": "jonas",
+            "username": "jonas",
+            "mobile_no": "1234567892",
+            "email": "jonas@gmail.com",
+            "password": "jonas",
+            "profile_picture": ""
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 3,
+        "fields": {
+            "course_name": "Indian Geography",
+            "image": "courses/indian-geography/INDIA.jpg",
+            "description": "India is the seventh-largest country globally, covering 3.28 million sq km. Located in South Asia, its mainland stretches from 8° 4' N to 37° 6' N latitude and 68° 7' E to 97° 25' E longitude. It features immense diversity, from the great Himalayan range to vast coastal plains.\r\nKey Geographic Regions:\r\nThe Northern Mountains: The Himalayan ranges span over 2,400 km in the north, acting as a natural barrier and containing India's highest peak, Kangchenjunga (8,586 meters).\r\nThe Northern Plains: Formed by major river systems like the Ganges (Ganga), Yamuna, and Brahmaputra, this highly fertile region stretches south of the Himalayas and supports a dense population.T\r\nhe Peninsular Plateau: A vast, ancient plateau in central and southern India, rich in minerals, flanked by the Western Ghats and Eastern Ghats mountain ranges.\r\nThe Great Indian Desert (Thar): Located in the northwestern part of the country, primarily within the state of Rajasthan.\r\nCoastal Plains: Flanks the western and eastern edges of the peninsula, stretching along the Arabian Sea and the Bay of Bengal.\r\nThe Islands: India administers two major archipelagoes: the Lakshadweep in the Arabian Sea and the Andaman and Nicobar Islands in the Bay of Bengal."
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 6,
+        "fields": {
+            "course_name": "USA Geography",
+            "image": "courses/usa-geography/usa.jpg",
+            "description": "The United States spans across North America, covering diverse landscapes including plains, mountains, and deserts. It is the third-largest country globally by landmass and features 50 states, five major territories, and the federal capital district (Washington, D.C.).\r\nMajor Geographic Regions:\r\nThe East: Features the Atlantic Coastal Plain and the ancient, eroded Appalachian Mountains.\r\nThe Midwest: Dominated by the fertile Interior Plains and the Great Lakes.The South: Contains the Gulf Coastal Plain, the Mississippi River, and humid subtropical forests.\r\nThe West & Southwest: Defined by the towering Rocky Mountains, the Mojave and Sonoran deserts, and the coastal Pacific mountain ranges.\r\n\r\nExtreme Points:\r\nHighest Peak: Denali (Mount McKinley) in Alaska, at 20,320 feet (6,198 m).\r\nLowest Point: Badwater Basin in Death Valley, California, at -282 feet (-86 m)"
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 7,
+        "fields": {
+            "course_name": "China Geography",
+            "image": "courses/china-geography/China.webp",
+            "description": "China is the third-largest country in the world by total area, spanning approximately 9.6 million square kilometers. Its terrain is defined by a west-to-east downward staircase, dominated by high mountains and plateaus in the west—including the Tibetan Plateau—and shifting into fertile, densely populated plains and river basins in the east.\r\nKey Geographic Regions:\r\nThe Tibetan Plateau: Often called the \"Roof of the World,\" this high-altitude region in the southwest is the source of Asia's major rivers.\r\nThe Arid West and North: Dominated by vast, inhospitable deserts like the Taklamakan (the world's largest shifting sand desert) in the Tarim Basin, and the rocky, sweeping plains of the Gobi Desert along the Mongolian border.\r\nThe North China Plain: The historical cradle of Chinese civilization. It is a massive, highly cultivated agricultural expanse fed by the loess-rich Yellow River.\r\nSouthern China: A region characterized by rugged, rolling hills, terraced mountains, and subtropical river valleys, with dense biodiversity in provinces like Yunnan."
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 8,
+        "fields": {
+            "course_name": "Russia Geography",
+            "image": "courses/russia-geography/russia.jpeg",
+            "description": "Russia is the largest country in the world by land area, spanning 17.13 million square kilometers across Eastern Europe and Northern Asia. Accounting for roughly one-eighth of Earth's inhabited land, the transcontinental nation stretches across 11 time zones, shares land borders with 14 countries, and contains almost every major geographical biome.\r\nCore Geographic Zones:\r\nRussia's massive expanse is shaped by three defining biomes and major geological divisions, split roughly by the Yenisey River:\r\nEuropean Russia: West of the Ural Mountains, this is the historic heartland. It features the flat and highly fertile East European Plain, housing roughly 77% of the country's population.\r\nSiberia & The Far East: East of the Urals, Siberia is dominated by three main areas: the West Siberian Plain (vast swamps and flood plains), the Central Siberian Plateau, and the mountainous Pacific coast.\r\nMajor Biomes: The north consists of treeless tundra with frozen permafrost. South of this lies the taiga, the world's largest contiguous forest, which gives way to the flat, grassy steppes near the southern borders."
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 9,
+        "fields": {
+            "course_name": "Australia Geography",
+            "image": "courses/australia-geography/australia.jpg",
+            "description": "Australia is the world's smallest continent and sixth-largest country by area, covering 7.7 million square kilometers entirely within the Southern Hemisphere. Positioned between the Indian and Pacific Oceans, it is an ancient, dry, and flat landmass characterized by a vast, sparsely populated interior and densely populated coastal regions.\r\n📍 Key Facts at a Glance\r\nLocation: Bordered by the Coral Sea and Tasman Sea to the east, the Indian Ocean to the west, and the Southern Ocean to the south.\r\nCapital City: Canberra (located in the Australian Capital Territory between Sydney and Melbourne).\r\nHighest Point: Mount Kosciuszko (2,228 meters) in the Great Dividing Range.\r\nLongest River System: Murray-Darling River (2,530 km)"
+        }
+    },
+    {
+        "model": "mypage.course",
+        "pk": 10,
+        "fields": {
+            "course_name": "Japan Geography",
+            "image": "courses/japan-geography/japan.jpg",
+            "description": "Japan is a highly mountainous, geologically active archipelago off the east coast of Asia. It comprises over 14,000 islands, with four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—making up the vast majority of the landmass. Because ~73% of the country is rugged terrain, the vast majority of the population lives in highly dense urban coastal plains.\r\nKey Geographic Features:\r\nThe Four Main Islands:\r\nHonshu:\r\nThe largest, most populous island, and the cultural/economic heart of Japan, home to Tokyo, Osaka, and Kyoto.\r\nHokkaido: \r\nThe northernmost island, known for cooler climates, heavy winter snow, and vast natural landscapes.\r\nKyushu & Shikoku: \r\nThe southern and smaller main islands, featuring warmer climates and mountainous interiors.\r\nTopography: \r\nThe country is dominated by the Japanese Alps and steep, forested highlands. Consequently, over 70% of Japan's population is densely concentrated on just 5% of its total land.\r\nThe \"Ring of Fire\": J\r\napan sits at the volatile convergence of four tectonic plates (Pacific, Philippine, Eurasian, and North American). This positioning subjects the country to frequent earthquakes and tsunamis, while also creating the volcanic activity responsible for Japan's abundant natural hot springs (onsen)"
+        }
+    },
+    {
+        "model": "mypage.section",
+        "pk": 5,
+        "fields": {
+            "section_name": "Physical Geography",
+            "course": 3
+        }
+    },
+    {
+        "model": "mypage.section",
+        "pk": 6,
+        "fields": {
+            "section_name": "Human Geography",
+            "course": 3
+        }
+    },
+    {
+        "model": "mypage.section",
+        "pk": 7,
+        "fields": {
+            "section_name": "Environmental Geography",
+            "course": 3
+        }
+    },
+    {
+        "model": "mypage.section",
+        "pk": 8,
+        "fields": {
+            "section_name": "Economic Geography",
+            "course": 3
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 21,
+        "fields": {
+            "unit_name": "The Earth and Universe",
+            "quiz": null,
+            "video": "https://youtu.be/vxQAIpAqcsI?si=IheGuz7d68Qf2U9r",
+            "description": "Origin and Evolution of the EarthInterior of the Earth (Crust, Mantle, Core)Distribution of Oceans and Continents (Continental Drift and Plate Tectonics)",
+            "section": 5
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 22,
+        "fields": {
+            "unit_name": "Geomorphology (Lithosphere)",
+            "quiz": null,
+            "video": "https://youtu.be/JNHQrleTTuA?si=7R60yOKJnxTH4dC3",
+            "description": "Minerals and RocksGeomorphic Processes (Weathering and Mass Wasting)Landforms and their Evolution (Fluvial, Glacial, and Arid landforms)",
+            "section": 5
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 23,
+        "fields": {
+            "unit_name": "Climatology (Atmosphere)",
+            "quiz": null,
+            "video": "https://youtu.be/KXf39bQH6iE?si=Td2oi5HJ8l3ZVwQr",
+            "description": "Composition and Structure of the AtmosphereSolar Radiation, Heat Balance, and TemperatureAtmospheric Circulation and Weather SystemsWater in the Atmosphere (Humidity and Precipitation)World Climate and Climate Change",
+            "section": 5
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 24,
+        "fields": {
+            "unit_name": "Introduction to Environmental Geography",
+            "quiz": null,
+            "video": null,
+            "description": "Environmental Geography is the branch of geography that studies the relationship between humans and the natural environment. It examines how physical features such as landforms, climate, water, soil, and ecosystems interact with human activities.",
+            "section": 7
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 25,
+        "fields": {
+            "unit_name": "Ecosystems and Biodiversity",
+            "quiz": null,
+            "video": null,
+            "description": "Ecosystems and Biodiversity are important concepts in Environmental Geography that explain how living organisms interact with each other and with their surroundings. An ecosystem includes plants, animals, microorganisms, soil, water, air, and all environmental factors working together as a system. Biodiversity refers to the variety of life forms found on Earth, including different species, genes, and ecosystems. Healthy ecosystems and rich biodiversity are essential for maintaining ecological balance, providing resources, supporting food chains, and sustaining life.",
+            "section": 7
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 26,
+        "fields": {
+            "unit_name": "Atmosphere and Climate Systems",
+            "quiz": null,
+            "video": null,
+            "description": "Atmosphere and Climate Systems study the Earth's atmosphere and the processes that influence weather and climate patterns. The atmosphere is a layer of gases surrounding the Earth that supports life by providing oxygen, regulating temperature, and protecting the planet from harmful solar radiation. Climate systems are formed through interactions among the atmosphere, oceans, land surfaces, and living organisms. Factors such as temperature, air pressure, winds, humidity, and rainfall play important roles in determining climatic conditions across different regions.",
+            "section": 7
+        }
+    },
+    {
+        "model": "mypage.unit",
+        "pk": 27,
+        "fields": {
+            "unit_name": "Introduction to Human Geography",
+            "quiz": null,
+            "video": null,
+            "description": "Human Geography is the branch of geography that studies human activities and their relationship with places and environments. It focuses on how people live, work, organize societies, and interact with the world around them. Human Geography examines population distribution, culture, migration, settlements, economic activities, and the impact of humans on the environment. The subject helps us understand differences between societies and how human behavior shapes geographical spaces.",
+            "section": 6
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 13,
+        "fields": {
+            "unit": 21,
+            "question_text": "Which theory explains the origin of the universe through a massive expansion from a single, infinitely dense point roughly 13.8 billion years ago?",
+            "option1": "Steady State Theory",
+            "option2": "Big Bang Theory",
+            "option3": "Nebular Hypothesis",
+            "option4": "Planetesimal Hypothesis",
+            "correct_answer": "Big Bang Theory"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 14,
+        "fields": {
+            "unit": 21,
+            "question_text": "What is the correct order of the internal layers of the Earth, moving from the outermost surface to the absolute center?",
+            "option1": "Crust, Core, Mantle",
+            "option2": "Core, Mantle, Crust",
+            "option3": "Crust, Mantle, Core",
+            "option4": "Mantle, Crust, Core",
+            "correct_answer": "Crust, Mantle, Core"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 15,
+        "fields": {
+            "unit": 21,
+            "question_text": "Which of the following seismic waves can travel through both solid and liquid layers inside the Earth?",
+            "option1": "Primary waves (P-waves)",
+            "option2": "Secondary waves (S-waves)",
+            "option3": "Love waves",
+            "option4": "Rayleigh waves",
+            "correct_answer": "Primary waves (P-waves)"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 16,
+        "fields": {
+            "unit": 21,
+            "question_text": "The boundary that separates the Earth's crust from the underlying mantle is known as what?",
+            "option1": "Gutenberg Discontinuity",
+            "option2": "Lehmann Discontinuity",
+            "option3": "Mohorovičić (Moho) Discontinuity",
+            "option4": "Conrad Discontinuity",
+            "correct_answer": "Mohorovičić (Moho) Discontinuity"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 17,
+        "fields": {
+            "unit": 21,
+            "question_text": "Which layer of the Earth's atmosphere contains the ozone layer and is characterized by temperature increasing with altitude?",
+            "option1": "Troposphere",
+            "option2": "Stratosphere",
+            "option3": "Thermosphere",
+            "option4": "Mesosphere",
+            "correct_answer": "Stratosphere"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 18,
+        "fields": {
+            "unit": 22,
+            "question_text": "Which layer of the Earth is broken into the rigid segments known as tectonic plates?",
+            "option1": "Asthenosphere",
+            "option2": "Lithosphere",
+            "option3": "Outer Core",
+            "option4": "Mesosphere",
+            "correct_answer": "Lithosphere"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 19,
+        "fields": {
+            "unit": 22,
+            "question_text": "What is the most abundant chemical element by weight in the Earth's crust?",
+            "option1": "Silicon",
+            "option2": "Iron",
+            "option3": "Aluminum",
+            "option4": "Oxygen",
+            "correct_answer": "Oxygen"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 20,
+        "fields": {
+            "unit": 22,
+            "question_text": "At which type of plate boundary is new oceanic crust continuously created?",
+            "option1": "Convergent boundary",
+            "option2": "Divergent boundary",
+            "option3": "Transform boundary",
+            "option4": "Subduction boundary",
+            "correct_answer": "Divergent boundary"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 21,
+        "fields": {
+            "unit": 22,
+            "question_text": "What type of rock forms directly from the cooling and solidification of molten magma or lava?",
+            "option1": "Sedimentary rock",
+            "option2": "Metamorphic rock",
+            "option3": "Igneous rock",
+            "option4": "Clastic rock",
+            "correct_answer": "Igneous rock"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 22,
+        "fields": {
+            "unit": 22,
+            "question_text": "Which process involves the wearing away and transport of landforms by natural agents like water, wind, and ice?",
+            "option1": "Weathering",
+            "option2": "Erosion",
+            "option3": "Deposition",
+            "option4": "Orogenesis",
+            "correct_answer": "Erosion"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 23,
+        "fields": {
+            "unit": 24,
+            "question_text": "What is Environmental Geography mainly concerned with?",
+            "option1": "Study of planets",
+            "option2": "Relationship between humans and the environment",
+            "option3": "Study of language",
+            "option4": "Study of trade",
+            "correct_answer": "Relationship between humans and the environment"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 24,
+        "fields": {
+            "unit": 24,
+            "question_text": "Which of the following is a natural resource?",
+            "option1": "Computer",
+            "option2": "Plastic",
+            "option3": "Water",
+            "option4": "Road",
+            "correct_answer": "Water"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 25,
+        "fields": {
+            "unit": 24,
+            "question_text": "Which issue is commonly studied in Environmental Geography?",
+            "option1": "Poetry",
+            "option2": "Climate Change",
+            "option3": "Grammar",
+            "option4": "Music",
+            "correct_answer": "Climate Change"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 26,
+        "fields": {
+            "unit": 24,
+            "question_text": "What is the main goal of sustainable development?",
+            "option1": "Increase pollution",
+            "option2": "Use resources without concern",
+            "option3": "Meet present needs without harming future generations",
+            "option4": "Stop all industrial activities",
+            "correct_answer": "Meet present needs without harming future generations"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 27,
+        "fields": {
+            "unit": 24,
+            "question_text": "Which of the following is an example of human impact on the environment?",
+            "option1": "Rainfall",
+            "option2": "Earthquake",
+            "option3": "Deforestation",
+            "option4": "Mountain formation",
+            "correct_answer": "Deforestation"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 28,
+        "fields": {
+            "unit": 25,
+            "question_text": "What is an ecosystem?",
+            "option1": "A collection of buildings",
+            "option2": "A system of living organisms interacting with their environment",
+            "option3": "A type of weather condition",
+            "option4": "A geographical boundary",
+            "correct_answer": "A system of living organisms interacting with their environment"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 29,
+        "fields": {
+            "unit": 25,
+            "question_text": "Which of the following is a biotic component?",
+            "option1": "Water",
+            "option2": "Plants",
+            "option3": "Air",
+            "option4": "Soil",
+            "correct_answer": "Plants"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 30,
+        "fields": {
+            "unit": 25,
+            "question_text": "Which of the following is an abiotic component?",
+            "option1": "Animals",
+            "option2": "Fungi",
+            "option3": "Bacteria",
+            "option4": "Sunlight",
+            "correct_answer": "Sunlight"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 31,
+        "fields": {
+            "unit": 25,
+            "question_text": "Biodiversity refers to:",
+            "option1": "Different weather conditions",
+            "option2": "Variety of living organisms",
+            "option3": "Different types of rocks",
+            "option4": "Water resources only",
+            "correct_answer": "Variety of living organisms"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 32,
+        "fields": {
+            "unit": 25,
+            "question_text": "Which process helps transfer energy through an ecosystem?",
+            "option1": "Food chain",
+            "option2": "Water cycle",
+            "option3": "Erosion",
+            "option4": "Weathering",
+            "correct_answer": "Food chain"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 33,
+        "fields": {
+            "unit": 26,
+            "question_text": "What is the atmosphere?",
+            "option1": "Layer of rocks around Earth",
+            "option2": "Layer of gases surrounding Earth",
+            "option3": "Water surrounding Earth",
+            "option4": "Underground layer",
+            "correct_answer": "Layer of gases surrounding Earth"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 34,
+        "fields": {
+            "unit": 26,
+            "question_text": "Which gas is most abundant in the Earth's atmosphere?",
+            "option1": "Oxygen",
+            "option2": "Nitrogen",
+            "option3": "Hydrogen",
+            "option4": "Carbon dioxide",
+            "correct_answer": "Nitrogen"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 35,
+        "fields": {
+            "unit": 26,
+            "question_text": "What is the main difference between weather and climate?",
+            "option1": "Weather is long-term and climate is short-term",
+            "option2": "Weather is short-term and climate is long-term",
+            "option3": "Both are the same",
+            "option4": "Climate changes daily",
+            "correct_answer": "Weather is short-term and climate is long-term"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 36,
+        "fields": {
+            "unit": 26,
+            "question_text": "Which layer of the atmosphere contains most weather phenomena?",
+            "option1": "Troposphere",
+            "option2": "Stratosphere",
+            "option3": "Mesosphere",
+            "option4": "Thermosphere",
+            "correct_answer": "Troposphere"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 37,
+        "fields": {
+            "unit": 26,
+            "question_text": "Which factor influences climate patterns?",
+            "option1": "Latitude",
+            "option2": "Altitude",
+            "option3": "Ocean currents",
+            "option4": "All of the above",
+            "correct_answer": "All of the above"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 38,
+        "fields": {
+            "unit": 27,
+            "question_text": "Which of the following is studied in Human Geography?",
+            "option1": "Population distribution",
+            "option2": "Culture",
+            "option3": "Migration",
+            "option4": "All of the above",
+            "correct_answer": "All of the above"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 39,
+        "fields": {
+            "unit": 27,
+            "question_text": "Human Geography studies the relationship between:",
+            "option1": "Humans and the environment",
+            "option2": "Plants and soil only",
+            "option3": "Oceans and planets",
+            "option4": "Rocks and minerals only",
+            "correct_answer": "Humans and the environment"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 40,
+        "fields": {
+            "unit": 27,
+            "question_text": "Which of the following is an example of a human activity?",
+            "option1": "Rainfall",
+            "option2": "Earthquake",
+            "option3": "Farming",
+            "option4": "Volcanic eruption",
+            "correct_answer": "Farming"
+        }
+    },
+    {
+        "model": "mypage.question",
+        "pk": 41,
+        "fields": {
+            "unit": 27,
+            "question_text": "Which factor can influence where people settle?",
+            "option1": "Climate",
+            "option2": "Water availability",
+            "option3": "Employment opportunities",
+            "option4": "All of the above",
+            "correct_answer": "All of the above"
+        }
+    },
+    {
+        "model": "mypage.entrollment",
+        "pk": 11,
+        "fields": {
+            "course": 3,
+            "user": 3
+        }
+    }
+]
