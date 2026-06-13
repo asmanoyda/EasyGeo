@@ -24,7 +24,7 @@ def custom_login_required(view_func):
         if request.session.get('user_id'):
             return view_func(request, *args, **kwargs)
 
-        return redirect('login')
+        return redirect('users:login')
     return wrapper
 
 
@@ -39,14 +39,14 @@ def login_page(request):
             myuser = User.objects.get(username=username)
         except Exception as e:
             messages.error(request, 'username does not exits!')
-            return redirect('login')
+            return redirect('users:login')
         if password == myuser.password:
             request.session["user_id"] = myuser.id
             messages.success(request, 'your account logged in sucesfully')
-            return redirect('home')
+            return redirect('mypage:home')
         else:
             messages.error(request, 'password is in correct!')
-            return redirect('login')
+            return redirect('users:login')
 
 
 def register(request):
@@ -86,7 +86,7 @@ def logout_page(request):
 
     request.session.flush()
     messages.success(request, "your account logged out succesfully")
-    return redirect("login")
+    return redirect("users:login")
 
 
 @custom_login_required
@@ -95,7 +95,7 @@ def update_picture(request):
     user_id = request.session.get("user_id")
 
     if not user_id:
-        return redirect("login")
+        return redirect("users:login")
 
     try:
         user = User.objects.get(id=user_id)
@@ -106,9 +106,9 @@ def update_picture(request):
                 user.save()
 
     except User.DoesNotExist:
-        return redirect("login")
+        return redirect("users:login")
 
-    return redirect("profile")
+    return redirect("users:profile")
 
 
 @custom_login_required
@@ -117,7 +117,7 @@ def delete_picture(request):
     user_id = request.session.get("user_id")
 
     if not user_id:
-        return redirect("login")
+        return redirect("users:login")
 
     try:
         user = User.objects.get(id=user_id)
@@ -129,9 +129,9 @@ def delete_picture(request):
                 user.save()
 
     except User.DoesNotExist:
-        return redirect("login")
+        return redirect("users:login")
 
-    return redirect("profile")
+    return redirect("users:profile")
 
 
 @custom_login_required
@@ -140,7 +140,7 @@ def profile_page(request):
     user_id = request.session.get("user_id")
 
     if not user_id:
-        return redirect("login")
+        return redirect("users:login")
 
     user_data = User.objects.get(id=user_id)
 
@@ -165,7 +165,7 @@ def delete_profile(request):
         user.delete()
         messages.success(
             request, "Your profile has been deleted successfully.")
-        return redirect('login')
+        return redirect('users:login')
     else:
         return render(request, "delete_profile.html", {'user_data': user})
 
@@ -175,7 +175,7 @@ def update_profile(request):
     user_id = request.session.get("user_id")
 
     if not request.session.get('user_id'):
-        return redirect('login')
+        return redirect('users:login')
 
     user = User.objects.get(id=user_id)
 
@@ -190,7 +190,7 @@ def update_profile(request):
         user.mobile_no = request.POST.get("mobile_no")
         user.save()
         messages.success(request, "Profile updated successfully")
-        return redirect("profile")
+        return redirect("users:profile")
     return render(request, "update_profile.html", {
         "user": user
     })

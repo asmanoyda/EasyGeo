@@ -33,10 +33,10 @@ def all_courses(request):
 
     if query:
         courses = Course.objects.filter(
-            course_name__istartswith=query
+            course_name__istartswith=query,available=True
         ).order_by('course_name')
     else:
-        courses = Course.objects.all().order_by('course_name')
+        courses = Course.objects.filter(available=True).order_by('course_name')
 
     return render(request, "all_courses.html", {
         'courses': courses,

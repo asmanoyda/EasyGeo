@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class User(models.Model):
@@ -11,6 +12,8 @@ class User(models.Model):
         upload_to='profile_pictures/',
         blank=True,
         null=True)
+    created = models.DateTimeField(default=timezone.now) 
+    
 
     def __str__(self):
         return self.username

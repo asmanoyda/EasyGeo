@@ -39,7 +39,7 @@ Home Page
 
             <!-- Upload / Update -->
 
-            <form method="POST" action="{% url 'update_picture' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'users:update_picture' %}" enctype="multipart/form-data">
 
                 {% csrf_token %}
 
@@ -55,7 +55,7 @@ Home Page
 
             <!-- Delete -->
 
-            <form method="POST" action="{% url 'delete_picture' %}">
+            <form method="POST" action="{% url 'users:delete_picture' %}">
 
                 {% csrf_token %}
 
@@ -99,11 +99,11 @@ Home Page
 
         <div>
 
-            <a href="{% url 'update_profile' %}" class="a-tag-btn" style="color:green;">
+            <a href="{% url 'users:update_profile' %}" class="a-tag-btn" style="color:green;">
                 Update Profile
             </a>
 
-            <a href="{% url 'delete_profile' %}" class="a-tag-btn" style="color:red;">
+            <a href="{% url 'users:delete_profile' %}" class="a-tag-btn" style="color:red;">
                 Delete Profile
             </a>
 

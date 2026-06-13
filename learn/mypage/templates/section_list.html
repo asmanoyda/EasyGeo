@@ -23,7 +23,7 @@ Section Page
                         countiue
                     </button>
                     {% else %}
-                    <a href="{% url 'create_entrollment' course.id %}" class="btn btn-primary w-100">
+                    <a href="{% url 'mypage:create_entrollment' course.id %}" class="btn btn-primary w-100">
                         Enroll Now
                     </a>
                     {% endif %}
@@ -88,7 +88,7 @@ Section Page
 
                         
                         <div class="mt-4">
-                            <a href="{% url 'unit' section.id %}" class="btn btn-success">
+                            <a href="{% url 'courses:unit' section.id %}" class="btn btn-success">
                                 Go to Units
                             </a>
                         </div>

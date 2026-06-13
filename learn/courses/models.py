@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 from django.utils.text import slugify
+from django.utils import timezone
 
 
 def upload_image(instance, filename):
@@ -17,6 +18,8 @@ class Course(models.Model):
         null=True
     )
     description = models.TextField(default="")
+    created = models.DateTimeField(default=timezone.now)
+    available = models.BooleanField(default=True)
 
     def __str__(self):
         return self.course_name

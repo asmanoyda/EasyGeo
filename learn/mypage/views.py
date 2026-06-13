@@ -53,4 +53,4 @@ def create_entrollment(request, course_id):
         course_id=course_id
     )
 
-    return redirect("my_courses")
+    return redirect("courses:my_courses")
