@@ -1,0 +1,39 @@
+[
+        {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "name": "aarvi",
+            "username": "aarvii",
+            "mobile_no": "123456789",
+            "email": "aarvi@gmail.com",
+            "password": "aarvi",
+            "profile_picture": ""
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "name": "nova",
+            "username": "nova",
+            "mobile_no": "123456788",
+            "email": "nova@gmail.com",
+            "password": "nova",
+            "profile_picture": "profile_pictures/20250319_145146.jpg"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "name": "jonas",
+            "username": "jonas",
+            "mobile_no": "1234567892",
+            "email": "jonas@gmail.com",
+            "password": "jonas",
+            "profile_picture": ""
+        }
+    }
+
+]

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User, Country
+from users.models import User
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.template import loader

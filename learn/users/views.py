@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render
-from .models import User, Country
+from users.models import User
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.template import loader
@@ -12,7 +12,7 @@ import datetime
 from functools import wraps
 
 from django.contrib import messages
-from mypage.models import Users
+from mypage.models import Country
 
 # Create your views here.
 

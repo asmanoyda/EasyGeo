@@ -1,0 +1,232 @@
+[
+    {
+        "model": "mypage.country",
+        "pk": 1,
+        "fields": {
+            "name": "India",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg",
+            "capital": "New Delhi",
+            "currency": "Rupees"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 2,
+        "fields": {
+            "name": "Japan",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/9/9e/Flag_of_Japan.svg",
+            "capital": "Tokyo",
+            "currency": "Japanese Yen"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 3,
+        "fields": {
+            "name": "Australia",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/b/b9/Flag_of_Australia.svg",
+            "capital": "Canberra",
+            "currency": "Australian Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 4,
+        "fields": {
+            "name": "USA",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg",
+            "capital": "Washington, D.C.",
+            "currency": "US Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 5,
+        "fields": {
+            "name": "Germany",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg",
+            "capital": "Berlin",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 6,
+        "fields": {
+            "name": "Canada",
+            "flag": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Flag_of_Canada.svg",
+            "capital": "Ottawa",
+            "currency": "Canadian Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 7,
+        "fields": {
+            "name": "Russia",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg",
+            "capital": "Moscow",
+            "currency": "Russian Ruble"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 8,
+        "fields": {
+            "name": "Brazil",
+            "flag": "https://upload.wikimedia.org/wikipedia/en/0/05/Flag_of_Brazil.svg",
+            "capital": "Brasília",
+            "currency": "Brazilian Real"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 9,
+        "fields": {
+            "name": "China",
+            "flag": "https://flagcdn.com/cn.svg",
+            "capital": "Beijing",
+            "currency": "Chinese Yuan"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 10,
+        "fields": {
+            "name": "South Korea",
+            "flag": "https://flagcdn.com/kr.svg",
+            "capital": "Seoul",
+            "currency": "South Korean Won"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 11,
+        "fields": {
+            "name": "Italy",
+            "flag": "https://flagcdn.com/it.svg",
+            "capital": "Rome",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 12,
+        "fields": {
+            "name": "Switzerland",
+            "flag": "https://flagcdn.com/ch.svg",
+            "capital": "Bern",
+            "currency": "Swiss Franc"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 13,
+        "fields": {
+            "name": "Singapore",
+            "flag": "https://flagcdn.com/sg.svg",
+            "capital": "Singapore",
+            "currency": "Singapore Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 14,
+        "fields": {
+            "name": "New Zealand",
+            "flag": "https://flagcdn.com/nz.svg",
+            "capital": "Wellington",
+            "currency": "New Zealand Dollar"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 15,
+        "fields": {
+            "name": "Spain",
+            "flag": "https://flagcdn.com/es.svg",
+            "capital": "Madrid",
+            "currency": "Euro"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 16,
+        "fields": {
+            "name": "Norway",
+            "flag": "https://flagcdn.com/no.svg",
+            "capital": "Oslo",
+            "currency": "Norwegian Krone"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 17,
+        "fields": {
+            "name": "Turkey",
+            "flag": "https://flagcdn.com/tr.svg",
+            "capital": "Ankara",
+            "currency": "Turkish Lira"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 18,
+        "fields": {
+            "name": "Malaysia",
+            "flag": "https://flagcdn.com/my.svg",
+            "capital": "Kuala Lumpur",
+            "currency": "Malaysian Ringgit"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 19,
+        "fields": {
+            "name": "Thailand",
+            "flag": "https://flagcdn.com/th.svg",
+            "capital": "Bangkok",
+            "currency": "Thai Baht"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 20,
+        "fields": {
+            "name": "Sweden",
+            "flag": "https://flagcdn.com/se.svg",
+            "capital": "Stockholm",
+            "currency": "Swedish Krona"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 21,
+        "fields": {
+            "name": "South Africa",
+            "flag": "https://flagcdn.com/za.svg",
+            "capital": "Pretoria",
+            "currency": "South African Rand"
+        }
+    },
+    {
+        "model": "mypage.country",
+        "pk": 22,
+        "fields": {
+            "name": "Argentina",
+            "flag": "https://flagcdn.com/ar.svg",
+            "capital": "Buenos Aires",
+            "currency": "Argentine Peso"
+        }
+    },
+
+    {
+        "model": "mypage.entrollment",
+        "pk": 11,
+        "fields": {
+            "course": 3,
+            "user": 3
+        }
+    }
+
+]
