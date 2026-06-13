@@ -1,5 +1,5 @@
 [    {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 3,
         "fields": {
             "course_name": "Indian Geography",
@@ -8,7 +8,7 @@
         }
     },
     {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 6,
         "fields": {
             "course_name": "USA Geography",
@@ -17,7 +17,7 @@
         }
     },
     {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 7,
         "fields": {
             "course_name": "China Geography",
@@ -26,7 +26,7 @@
         }
     },
     {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 8,
         "fields": {
             "course_name": "Russia Geography",
@@ -35,7 +35,7 @@
         }
     },
     {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 9,
         "fields": {
             "course_name": "Australia Geography",
@@ -44,7 +44,7 @@
         }
     },
     {
-        "model": "mypage.course",
+        "model": "courses.course",
         "pk": 10,
         "fields": {
             "course_name": "Japan Geography",
@@ -53,7 +53,7 @@
         }
     },
     {
-        "model": "mypage.section",
+        "model": "courses.section",
         "pk": 5,
         "fields": {
             "section_name": "Physical Geography",
@@ -61,7 +61,7 @@
         }
     },
     {
-        "model": "mypage.section",
+        "model": "courses.section",
         "pk": 6,
         "fields": {
             "section_name": "Human Geography",
@@ -69,7 +69,7 @@
         }
     },
     {
-        "model": "mypage.section",
+        "model": "courses.section",
         "pk": 7,
         "fields": {
             "section_name": "Environmental Geography",
@@ -77,7 +77,7 @@
         }
     },
     {
-        "model": "mypage.section",
+        "model": "courses.section",
         "pk": 8,
         "fields": {
             "section_name": "Economic Geography",
@@ -85,7 +85,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 21,
         "fields": {
             "unit_name": "The Earth and Universe",
@@ -96,7 +96,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 22,
         "fields": {
             "unit_name": "Geomorphology (Lithosphere)",
@@ -107,7 +107,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 23,
         "fields": {
             "unit_name": "Climatology (Atmosphere)",
@@ -118,7 +118,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 24,
         "fields": {
             "unit_name": "Introduction to Environmental Geography",
@@ -129,7 +129,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 25,
         "fields": {
             "unit_name": "Ecosystems and Biodiversity",
@@ -140,7 +140,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 26,
         "fields": {
             "unit_name": "Atmosphere and Climate Systems",
@@ -151,7 +151,7 @@
         }
     },
     {
-        "model": "mypage.unit",
+        "model": "courses.unit",
         "pk": 27,
         "fields": {
             "unit_name": "Introduction to Human Geography",
@@ -162,7 +162,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 13,
         "fields": {
             "unit": 21,
@@ -175,7 +175,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 14,
         "fields": {
             "unit": 21,
@@ -188,7 +188,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 15,
         "fields": {
             "unit": 21,
@@ -201,7 +201,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 16,
         "fields": {
             "unit": 21,
@@ -214,7 +214,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 17,
         "fields": {
             "unit": 21,
@@ -227,7 +227,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 18,
         "fields": {
             "unit": 22,
@@ -240,7 +240,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 19,
         "fields": {
             "unit": 22,
@@ -253,7 +253,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 20,
         "fields": {
             "unit": 22,
@@ -266,7 +266,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 21,
         "fields": {
             "unit": 22,
@@ -279,7 +279,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 22,
         "fields": {
             "unit": 22,
@@ -292,7 +292,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 23,
         "fields": {
             "unit": 24,
@@ -305,7 +305,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 24,
         "fields": {
             "unit": 24,
@@ -318,7 +318,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 25,
         "fields": {
             "unit": 24,
@@ -331,7 +331,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 26,
         "fields": {
             "unit": 24,
@@ -344,7 +344,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 27,
         "fields": {
             "unit": 24,
@@ -357,7 +357,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 28,
         "fields": {
             "unit": 25,
@@ -370,7 +370,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 29,
         "fields": {
             "unit": 25,
@@ -383,7 +383,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 30,
         "fields": {
             "unit": 25,
@@ -396,7 +396,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 31,
         "fields": {
             "unit": 25,
@@ -409,7 +409,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 32,
         "fields": {
             "unit": 25,
@@ -422,7 +422,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 33,
         "fields": {
             "unit": 26,
@@ -435,7 +435,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 34,
         "fields": {
             "unit": 26,
@@ -448,7 +448,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 35,
         "fields": {
             "unit": 26,
@@ -461,7 +461,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 36,
         "fields": {
             "unit": 26,
@@ -474,7 +474,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 37,
         "fields": {
             "unit": 26,
@@ -487,7 +487,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 38,
         "fields": {
             "unit": 27,
@@ -500,7 +500,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 39,
         "fields": {
             "unit": 27,
@@ -513,7 +513,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 40,
         "fields": {
             "unit": 27,
@@ -526,7 +526,7 @@
         }
     },
     {
-        "model": "mypage.question",
+        "model": "courses.question",
         "pk": 41,
         "fields": {
             "unit": 27,
