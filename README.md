@@ -17,16 +17,10 @@ python manage.py loaddata mysite > seeders.json
 
 ## to do
 
-decouple application code (appps) WIP
 branch learning
 search functions
-
 document for local setup
-
-profile dropdown
-
+profile page
 progress bar
-
 requirement.txt
-
-fixtures django
+update profile html page

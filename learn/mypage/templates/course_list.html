@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-Courses Page
+My Courses
 {% endblock %}
 
 {% block content %}
@@ -15,53 +15,44 @@ Courses Page
 </p>
 {% endfor %}
 
-<!-- ScrollSpy Container -->
-<div class="container mt-3" data-bs-spy="scroll" data-bs-target="#course-nav" data-bs-smooth-scroll="true" tabindex="0"
-    style="height: 100vh; overflow-y: auto; background-color: white;">
+<div class="container mt-4">
 
     {% if courses %}
-
-    <!-- Navigation for ScrollSpy -->
-
-
-    <!-- IMPORTANT: Add a row container -->
     <div class="row">
 
         {% for course in courses %}
+        <div class="col-md-4 mb-4">
 
-        <!-- 2 courses per row -->
-        <div id="course{{ course.id }}" class="col-md-4 mb-2">
+            <div class="card shadow h-100">
 
-            <!-- Collapse Button -->
-            <button type="button" class="btn btn-primary w-100" data-bs-toggle="collapse"
-                data-bs-target="#collapse{{ course.id }}" aria-expanded="false" aria-controls="collapse{{ course.id }}">
-                <h3 class="mb-0">{{ course.course_name }}</h3>
-            </button>
+                {% if course.image %}
+                <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.course_name }}"
+                    style="height:250px; object-fit:cover;">
+                {% endif %}
 
-            <!-- Collapsible Content -->
-            <div id="collapse{{ course.id }}" class="collapse mt-3 border p-3 rounded">
+                <div class="card-body text-center">
 
-                <!-- Course Image -->
-                <img src="{{ course.image.url }}" class="img-fluid rounded" alt="{{ course.course_name }}"
-                    style="width:100%; height:300px; object-fit:cover;">
+                    <h4 class="card-title">
+                        {{ course.course_name }}
+                    </h4>
 
-                <br><br>
+                    <a href="{% url 'courses:section' course.id %}" class="btn btn-primary mt-3">
+                        Go To My Learning
+                    </a>
 
-                <!-- Section Page Button -->
-                <a href="{% url 'courses:section' course.id %}" class="btn btn-primary">
-                    Go to Section Page
-                </a>
+                </div>  
 
             </div>
 
         </div>
-
         {% endfor %}
 
     </div>
 
     {% else %}
-    <p>Sorry, no records found.</p>
+    <div class="alert alert-info text-center">
+        You have not enrolled in any courses yet.
+    </div>
     {% endif %}
 
 </div>

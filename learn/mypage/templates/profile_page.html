@@ -1,112 +1,149 @@
 {% extends "base.html" %}
 
 {% block title %}
-Home Page
+Profile Page
 {% endblock %}
 
 {% block content %}
 
-<h1>Welcome to the Profile Page!</h1>
+<h1 class="text-center mb-4">Account Settings</h1>
 
-{% for message in messages %}
-<p class="color-white">
-    {{ message }}
-</p>
-{% endfor %}
+<div class="container mt-4">
 
-<p><i>This is your profile page</i></p>
+    <div class="row">
 
-<div class="center-container">
+        <!-- Sidebar -->
+        <div class="col-md-3 mb-4">
 
-    <div class="login-form">
+            <div class="card shadow-sm">
 
-        <div class="text-center">
+                <div class="card-body text-center">
 
-            <!-- Profile Image -->
-            <div class="position-relative d-inline-block">
+                    {% if user_data.profile_picture %}
+                    <img src="{{ user_data.profile_picture.url }}" class="rounded-circle mb-3" width="120" height="120"
+                        alt="Profile Picture">
+                    {% else %}
+                    <img src="https://via.placeholder.com/120" class="rounded-circle mb-3" width="120" height="120"
+                        alt="Default Picture">
+                    {% endif %}
 
-                {% if user_data.profile_picture %}
-                <img src="{{ user_data.profile_picture.url }}" class="rounded-circle profile-pic" width="150"
-                    height="150" alt="Profile Picture">
-                {% else %}
-                <img src="https://via.placeholder.com/150" class="rounded-circle profile-pic" width="150" height="150"
-                    alt="Default Picture">
-                {% endif %}
+                    <h5>{{ user_data.name }}</h5>
+                    <small class="text-muted">@{{ user_data.username }}</small>
+
+                </div>
+
+                <div class="list-group list-group-flush">
+
+                    <a href="{% url 'users:update_profile' %}" class="list-group-item list-group-item-action">
+                        Update Profile
+                    </a>
+
+                  
+
+
+                    <a href="{% url 'users:delete_profile' %}"
+                        class="list-group-item list-group-item-action text-danger">
+                        Delete Profile
+                    </a>
+
+                </div>
 
             </div>
 
-            <h3 class="mt-3 mb-1">{{ user_data.name }}</h3>
-
-            <!-- Upload / Update -->
-
-            <form method="POST" action="{% url 'users:update_picture' %}" enctype="multipart/form-data">
-
-                {% csrf_token %}
-
-                <input type="file" name="profile_picture" required>
-
-                <button type="submit" class="btn btn-primary mt-2">
-                    Upload / Update
-                </button>
-
-            </form>
-
-            <br>
-
-            <!-- Delete -->
-
-            <form method="POST" action="{% url 'users:delete_picture' %}">
-
-                {% csrf_token %}
-
-                <button type="submit" class="btn btn-danger">
-                    Delete Picture
-                </button>
-
-            </form>
-
         </div>
 
-        
+        <!-- Main Content -->
+        <div class="col-md-9">
 
-        <div>
-            <label>Name:</label>
-            <input type="text" value="{{ user_data.name }}" disabled>
-        </div>
+            {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+            {% endfor %}
 
-        <br>
+            <div class="card shadow-sm">
 
-        <div>
-            <label>Username:</label>
-            <input type="text" value="{{ user_data.username }}" disabled>
-        </div>
+                <div class="card-body">
 
-        <br>
+                    <h3 class="mb-4">Profile Information</h3>
 
-        <div>
-            <label>Email:</label>
-            <input type="email" value="{{ user_data.email }}" disabled>
-        </div>
+                    <!-- Update Picture Section -->
+                    <div id="update-picture">
 
-        <br>
+                        <h5>Update Picture</h5>
 
-        <div>
-            <label>Mobile No:</label>
-            <input type="text" value="{{ user_data.mobile_no }}" disabled>
-        </div>
+                        <form method="POST" action="{% url 'users:update_picture' %}" enctype="multipart/form-data">
 
-        <br>
+                            {% csrf_token %}
 
-        <div>
+                            <input type="file" name="profile_picture" class="form-control mb-3" required>
 
-            <a href="{% url 'users:update_profile' %}" class="a-tag-btn" style="color:green;">
-                Update Profile
-            </a>
-            <p>Joined : {{user_data.joined}}</p>
-            <p>Last Updated Profile : {{user_data.last_updated}}</p>
-            <a href="{% url 'users:delete_profile' %}" class="a-tag-btn" style="color:red;">
-                Delete Profile
-            </a>
+                            <button type="submit" class="btn btn-primary">
+                                Upload / Update Picture
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Delete Picture Section -->
+                    <div id="delete-picture">
+
+                        <h5>Delete Picture</h5>
+
+                        <form method="POST" action="{% url 'users:delete_picture' %}">
+
+                            {% csrf_token %}
+
+                            <button type="submit" class="btn btn-danger">
+                                Delete Picture
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <hr>
+
+                    <!-- Profile Details -->
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Name</strong></label>
+                        <input type="text" class="form-control" value="{{ user_data.name }}" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Username</strong></label>
+                        <input type="text" class="form-control" value="{{ user_data.username }}" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Email</strong></label>
+                        <input type="email" class="form-control" value="{{ user_data.email }}" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Mobile No</strong></label>
+                        <input type="text" class="form-control" value="{{ user_data.mobile_no }}" disabled>
+                    </div>
+
+                    <hr>
+
+                    <p>
+                        <strong>Joined:</strong>
+                        {{ user_data.joined }}
+                    </p>
+
+                    <p>
+                        <strong>Last Updated:</strong>
+                        {{ user_data.last_updated }}
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
