@@ -15,8 +15,8 @@ Section Page
             <!-- Course Image -->
             {% if course.image %}
             <div class="card shadow-sm mb-3">
-                <img src="{{ course.image.url }}" alt="{{ course.course_name }}"
-                    class="card-img-top" style="height:200px; object-fit:cover;">
+                <img src="{{ course.image.url }}" alt="{{ course.course_name }}" class="card-img-top"
+                    style="height:200px; object-fit:cover;">
                 <div class="card-body text-center">
                     {% if is_enrolled %}
                     <button class="btn btn-success w-100" disabled>
@@ -70,11 +70,13 @@ Section Page
                 <div class="card-body">
                     <h2>{{ course.course_name }}</h2>
 
+                    <p>Last Updated: {{ course.last_updated}}</p>
                     <h5>Course Description</h5>
+
                     <p>{{ course.description|linebreaks }}</p>
                 </div>
             </div>
-            
+
             <!-- Sections Content -->
             {% if sections %}
             {% for section in sections %}
@@ -86,7 +88,7 @@ Section Page
                             {{ section.section_name }}
                         </h2>
 
-                        
+
                         <div class="mt-4">
                             <a href="{% url 'courses:unit' section.id %}" class="btn btn-success">
                                 Go to Units

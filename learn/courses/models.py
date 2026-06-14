@@ -19,6 +19,7 @@ class Course(models.Model):
     )
     description = models.TextField(default="")
     created = models.DateTimeField(default=timezone.now)
+    last_updated = models.DateTimeField(default=timezone.now)
     available = models.BooleanField(default=True)
 
     def __str__(self):

@@ -12,8 +12,8 @@ class User(models.Model):
         upload_to='profile_pictures/',
         blank=True,
         null=True)
-    created = models.DateTimeField(default=timezone.now) 
-    
+    joined = models.DateTimeField(default=timezone.now) 
+    last_updated = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.username

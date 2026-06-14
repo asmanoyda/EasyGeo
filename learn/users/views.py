@@ -13,6 +13,8 @@ from functools import wraps
 
 from django.contrib import messages
 from mypage.models import Country
+from django.utils import timezone
+
 
 # Create your views here.
 
@@ -103,6 +105,9 @@ def update_picture(request):
         if request.method == "POST":
             if 'profile_picture' in request.FILES:
                 user.profile_picture = request.FILES['profile_picture']
+                
+                user.last_updated = timezone.now()
+
                 user.save()
 
     except User.DoesNotExist:
@@ -126,6 +131,8 @@ def delete_picture(request):
             if user.profile_picture:
                 user.profile_picture.delete()
                 user.profile_picture = None
+                user.last_updated = timezone.now()
+
                 user.save()
 
     except User.DoesNotExist:
@@ -183,11 +190,11 @@ def update_profile(request):
         return render(request, "update_profile.html", {"user": user, 'user_data': user})
 
     if request.method == "POST":
+        user.last_updated =timezone.now()
         user.username = request.POST.get("username")
-        user.name = request.POST.get("name")
-
         user.email = request.POST.get("email")
         user.mobile_no = request.POST.get("mobile_no")
+        user.name = request.POST.get("name")
         user.save()
         messages.success(request, "Profile updated successfully")
         return redirect("users:profile")

@@ -92,6 +92,7 @@ def section_list(request, course_id):
         'user_data': user,
         'course':course,
         "is_enrolled":flag
+        
     }
     return render(request, 'section_list.html', context)
 
