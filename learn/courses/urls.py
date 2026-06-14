@@ -4,11 +4,18 @@ app_name = 'courses'
 
 urlpatterns = [
 
-    path("all_courses/", views.all_courses, name="courses"),
-    path("my_courses/", views.course_list, name="my_courses"),
-    path("course/<int:course_id>", views.section_list, name='section'),
+    path("all_courses/", views.all_courses, name="all_courses"),
+    path("get_enrollments/", views.get_enrollments, name="get_enrollments"),
+    path("get_section/<int:course_id>", views.section_list, name='section'),
     path("unit/<int:section_id>", views.unit_list, name='unit'),
     path('quiz/<int:unit_id>/', views.unit_quiz, name='quiz_page'),
 
 
 ]
+
+
+# get-ENTROMENT_LIST //ALL
+# CREATE-ENTROMENT //
+# UDPATE-ENTROMENT //ID
+# DELETET- 
+# VIEW-ENTROMENT/ID ID

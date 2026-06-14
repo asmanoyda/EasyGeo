@@ -19,7 +19,7 @@
                 </li>
 
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:courses' %}">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:all_courses' %}">
                         All Courses
                     </a>
                 </li>
@@ -32,7 +32,7 @@
 
                 {% if user_data %}
                 <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:my_courses' %}">
+                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:get_enrollments' %}">
                         My Courses
                     </a>
                 </li>
@@ -73,13 +73,13 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
 
                         <li>
-                            <a class="dropdown-item" href="{% url 'users:profile' %}">
+                            <a class="dropdown-item" href="{% url 'users:profile_view' %}">
                                 <i class="bi bi-person"></i> Profile Page
                             </a>
                         </li>
 
                         <li>
-                            <a class="dropdown-item" href="{% url 'courses:my_courses' %}">
+                            <a class="dropdown-item" href="{% url 'courses:get_enrollments' %}">
                                 <i class="bi bi-book"></i> My Courses
                             </a>
                         </li>

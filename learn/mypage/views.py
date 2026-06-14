@@ -18,27 +18,19 @@ from functools import wraps
 
 
 def home(request):
-
+    user = None
     try:
         user = User.objects.get(id=request.session['user_id'])
-        return render(request, "home.html", {'user_data': user})
     except:
-        return render(request, "home.html", {})
-
-
+        pass
+    return render(request, "home.html", {'user_data': user})
+   
+@custom_login_required
 def country_details(request):
     user = None
-
     user_id = request.session.get('user_id')
-
-    if user_id:
-        try:
-            user = User.objects.get(id=user_id)
-        except User.DoesNotExist:
-            pass
-
+    user = User.objects.get(id=user_id)
     countries = Country.objects.all()
-
     return render(request, "country.html", {
         'user_data': user,
         'countries': countries
@@ -47,10 +39,8 @@ def country_details(request):
 
 @custom_login_required
 def create_entrollment(request, course_id):
-
     abc = Entrollment.objects.create(
         user_id=request.session.get("user_id"),
         course_id=course_id
     )
-
-    return redirect("courses:my_courses")
+    return redirect("courses:get_enrollments")

@@ -10,7 +10,6 @@ class Country(models.Model):
     flag = models.URLField()
     capital = models.CharField(max_length=100)
     currency = models.CharField(max_length=50)
-
     def __str__(self):
         return self.name
 
@@ -25,6 +24,5 @@ class Entrollment(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
-
     def __str__(self):
         return str(self.course) + " ==>  "+str(self.user)

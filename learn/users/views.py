@@ -1,22 +1,15 @@
 from django.shortcuts import render
 from django.shortcuts import render
 from users.models import User
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from django.urls import reverse
 from django.template import loader
 from django.shortcuts import redirect
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
-from django.contrib.auth.hashers import check_password
-import datetime
 from functools import wraps
 
 from django.contrib import messages
-from mypage.models import Country
 from django.utils import timezone
-
-
-# Create your views here.
 
 
 def custom_login_required(view_func):
@@ -57,7 +50,6 @@ def register(request):
 
     if request.method == "POST":
         name = request.POST['name']
-
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
@@ -95,66 +87,42 @@ def logout_page(request):
 def update_picture(request):
 
     user_id = request.session.get("user_id")
+    user = User.objects.get(id=user_id)
 
-    if not user_id:
-        return redirect("users:login")
+    if request.method == "POST":
+        if 'profile_picture' in request.FILES:
+            user.profile_picture = request.FILES['profile_picture']
+            user.last_updated = timezone.now()
+            user.save()
 
-    try:
-        user = User.objects.get(id=user_id)
-
-        if request.method == "POST":
-            if 'profile_picture' in request.FILES:
-                user.profile_picture = request.FILES['profile_picture']
-                
-                user.last_updated = timezone.now()
-
-                user.save()
-
-    except User.DoesNotExist:
-        return redirect("users:login")
-
-    return redirect("users:profile")
+    return redirect("users:profile_view")
 
 
 @custom_login_required
 def delete_picture(request):
 
     user_id = request.session.get("user_id")
+    user = User.objects.get(id=user_id)
 
-    if not user_id:
-        return redirect("users:login")
+    if request.method == "POST":
+        if user.profile_picture:
+            user.profile_picture.delete()
+            user.profile_picture = None
+            user.last_updated = timezone.now()
+            user.save()
 
-    try:
-        user = User.objects.get(id=user_id)
-
-        if request.method == "POST":
-            if user.profile_picture:
-                user.profile_picture.delete()
-                user.profile_picture = None
-                user.last_updated = timezone.now()
-
-                user.save()
-
-    except User.DoesNotExist:
-        return redirect("users:login")
-
-    return redirect("users:profile")
+    return redirect("users:profile_view")
 
 
 @custom_login_required
 def profile_page(request):
 
     user_id = request.session.get("user_id")
-
-    if not user_id:
-        return redirect("users:login")
-
-    user_data = User.objects.get(id=user_id)
-
+    user = User.objects.get(id=user_id)
     return render(
         request,
         "profile_page.html",
-        {"user_data": user_data}
+        {"user_data": user}
     )
 
 
@@ -162,13 +130,9 @@ def profile_page(request):
 def delete_profile(request):
     user_id = request.session.get("user_id")
     user = User.objects.get(id=user_id)
-
-    if not user_id:
-        return redirect('login')
     if request.method == "POST":
         user = User.objects.get(id=user_id)
         request.session.flush()
-
         user.delete()
         messages.success(
             request, "Your profile has been deleted successfully.")
@@ -180,24 +144,19 @@ def delete_profile(request):
 @custom_login_required
 def update_profile(request):
     user_id = request.session.get("user_id")
-
-    if not request.session.get('user_id'):
-        return redirect('users:login')
-
     user = User.objects.get(id=user_id)
 
     if request.method == "GET":
         return render(request, "update_profile.html", {"user": user, 'user_data': user})
 
     if request.method == "POST":
-        user.last_updated =timezone.now()
+        user.last_updated = timezone.now()
         user.username = request.POST.get("username")
         user.email = request.POST.get("email")
         user.mobile_no = request.POST.get("mobile_no")
         user.name = request.POST.get("name")
         user.save()
         messages.success(request, "Profile updated successfully")
-        return redirect("users:profile")
-    return render(request, "update_profile.html", {
-        "user": user
-    })
+        return redirect("users:profile_view")
+    
+    return render(request, "update_profile.html", {"user": user})
