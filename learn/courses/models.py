@@ -35,7 +35,10 @@ class Section(models.Model):
     )
 
     def __str__(self):
-        return self.section_name
+        return f"{self.section_name }==>>{ str(self.course)}" 
+    
+    def return_name(self):
+        return f"{self.section_name }" 
 
 
 class Unit(models.Model):
@@ -50,7 +53,7 @@ class Unit(models.Model):
     )
 
     def __str__(self):
-        return self.unit_name
+        return f"{self.unit_name} ==> {str(self.section.return_name())} "
 
 
 class Question(models.Model):
