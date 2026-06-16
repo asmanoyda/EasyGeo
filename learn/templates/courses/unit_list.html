@@ -69,7 +69,6 @@ Units Page
                             <p>{{ unit.description|linebreaks }}</p>
 
                             <!-- Quiz -->
-                            {% if unit.question_set.exists %}
                             <h5 class="mt-4">Quiz</h5>
 
                             <div class="card border-warning mb-4">
@@ -82,7 +81,7 @@ Units Page
                                     </a>
                                 </div>
                             </div>
-                            {% endif %}
+                            
 
                             <!-- Video -->
                             {% if unit.video %}
