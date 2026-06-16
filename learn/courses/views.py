@@ -25,7 +25,7 @@ def all_courses(request):
     else:
         courses = Course.objects.filter(available=True).order_by('course_name')
 
-    return render(request, "all_courses.html", {
+    return render(request, "courses/all_courses.html", {
         'courses': courses,
         'user_data': user
     })
@@ -41,7 +41,7 @@ def get_enrollments(request):
         'courses': courses,
         'user_data': user
     }
-    return render(request, 'course_list.html', context)
+    return render(request, 'courses/course_list.html', context)
 
 
 @custom_login_required
@@ -49,7 +49,7 @@ def unit_quiz(request, unit_id):
 
     unit = Unit.objects.get(id=unit_id)
     questions = Question.objects.filter(unit=unit)
-    return render(request, 'unit_quiz.html', {
+    return render(request, 'courses/unit_quiz.html', {
         'unit': unit,
         'questions': questions
     })
@@ -71,7 +71,7 @@ def section_list(request, course_id):
         'course': course,
         "is_enrolled": flag
     }
-    return render(request, 'section_list.html', context)
+    return render(request, 'courses/section_list.html', context)
 
 
 @custom_login_required
@@ -84,4 +84,4 @@ def unit_list(request, section_id):
         'user_data': user,
         'section_id': section_id
     }
-    return render(request, 'unit_list.html', context)
+    return render(request, 'courses/unit_list.html', context)

@@ -23,7 +23,7 @@ def home(request):
         user = User.objects.get(id=request.session['user_id'])
     except:
         pass
-    return render(request, "home.html", {'user_data': user})
+    return render(request, "mypage/home.html", {'user_data': user})
    
 @custom_login_required
 def country_details(request):

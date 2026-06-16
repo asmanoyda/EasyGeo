@@ -8,6 +8,7 @@ __pycache__/
 # C extensions
 *.so
 /learn/media/*
+learn/static/admin/
 # Distribution / packaging
 .Python
 build/
