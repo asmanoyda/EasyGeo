@@ -25,20 +25,27 @@ class Course(models.Model):
     def __str__(self):
         return self.course_name
 
+    def section_count(self):
+        return sum(1 for i in self.sections.all())
+
 
 class Section(models.Model):
     section_name = models.CharField(max_length=245)
     course = models.ForeignKey(
         Course,
         on_delete=models.CASCADE,
-        null=True
+        null=True,
+        related_name="sections"
     )
 
     def __str__(self):
-        return f"{self.section_name }==>>{ str(self.course)}" 
-    
+        return f"{self.section_name }==>>{ str(self.course)}"
+
     def return_name(self):
-        return f"{self.section_name }" 
+        return f"{self.section_name }"
+
+    def unit_count(self):
+        return sum(int(1) for _ in self.units.all())
 
 
 class Unit(models.Model):
@@ -49,15 +56,19 @@ class Unit(models.Model):
     section = models.ForeignKey(
         Section,
         on_delete=models.CASCADE,
-        null=True
+        null=True,
+        related_name="units"
     )
 
     def __str__(self):
         return f"{self.unit_name} ==> {str(self.section.return_name())} "
 
+    def questions_count(self):
+        return sum(int(1) for _ in self.questions.all())
 
 class Question(models.Model):
-    unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    unit = models.ForeignKey(
+        Unit, on_delete=models.CASCADE, related_name="questions")
     question_text = models.CharField(max_length=500)
     option1 = models.CharField(max_length=200)
     option2 = models.CharField(max_length=200)
