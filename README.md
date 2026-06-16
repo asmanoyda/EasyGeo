@@ -10,11 +10,11 @@ about page
 ```
 
 ```
-source ./venv/bin/activate    
+source ./myenv/bin/activate    
 ```
 ## installing requirements
 ```
-pip install -r requirements.txt --user
+pip install -r requirements.txt 
 pip list
 ```
 
@@ -26,7 +26,7 @@ python manage.py migrate
 ```
 
 python manage.py loaddata courses/seeders.json
-python manage.py loaddata mysite/seeders.json
+python manage.py loaddata mypage/seeders.json
 python manage.py loaddata users/seeders.json
 
 
