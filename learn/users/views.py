@@ -26,7 +26,7 @@ def custom_login_required(view_func):
 def login_page(request):
 
     if request.method == 'GET':
-        return render(request, 'Login.html')
+        return render(request, 'users/Login.html')
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
@@ -46,7 +46,7 @@ def login_page(request):
 
 def register(request):
     if request.method == "GET":
-        return render(request, "register.html")
+        return render(request, "users/register.html")
 
     if request.method == "POST":
         name = request.POST['name']
@@ -121,7 +121,7 @@ def profile_page(request):
     user = User.objects.get(id=user_id)
     return render(
         request,
-        "profile_page.html",
+        "users/profile_page.html",
         {"user_data": user}
     )
 
@@ -138,7 +138,7 @@ def delete_profile(request):
             request, "Your profile has been deleted successfully.")
         return redirect('users:login')
     else:
-        return render(request, "delete_profile.html", {'user_data': user})
+        return render(request, "users/delete_profile.html", {'user_data': user})
 
 
 @custom_login_required
@@ -159,4 +159,4 @@ def update_profile(request):
         messages.success(request, "Profile updated successfully")
         return redirect("users:profile_view")
     
-    return render(request, "update_profile.html", {"user": user})
+    return render(request, "users/update_profile.html", {"user": user})
