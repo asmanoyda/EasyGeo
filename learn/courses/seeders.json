@@ -1,10 +1,14 @@
-[    {
+[
+    {
         "model": "courses.course",
         "pk": 3,
         "fields": {
             "course_name": "Indian Geography",
             "image": "courses/indian-geography/INDIA.jpg",
-            "description": "India is the seventh-largest country globally, covering 3.28 million sq km. Located in South Asia, its mainland stretches from 8° 4' N to 37° 6' N latitude and 68° 7' E to 97° 25' E longitude. It features immense diversity, from the great Himalayan range to vast coastal plains.\r\nKey Geographic Regions:\r\nThe Northern Mountains: The Himalayan ranges span over 2,400 km in the north, acting as a natural barrier and containing India's highest peak, Kangchenjunga (8,586 meters).\r\nThe Northern Plains: Formed by major river systems like the Ganges (Ganga), Yamuna, and Brahmaputra, this highly fertile region stretches south of the Himalayas and supports a dense population.T\r\nhe Peninsular Plateau: A vast, ancient plateau in central and southern India, rich in minerals, flanked by the Western Ghats and Eastern Ghats mountain ranges.\r\nThe Great Indian Desert (Thar): Located in the northwestern part of the country, primarily within the state of Rajasthan.\r\nCoastal Plains: Flanks the western and eastern edges of the peninsula, stretching along the Arabian Sea and the Bay of Bengal.\r\nThe Islands: India administers two major archipelagoes: the Lakshadweep in the Arabian Sea and the Andaman and Nicobar Islands in the Bay of Bengal."
+            "description": "India is the seventh-largest country globally, covering 3.28 million sq km. Located in South Asia, its mainland stretches from 8° 4' N to 37° 6' N latitude and 68° 7' E to 97° 25' E longitude. It features immense diversity, from the great Himalayan range to vast coastal plains.\r\nKey Geographic Regions:\r\nThe Northern Mountains: The Himalayan ranges span over 2,400 km in the north, acting as a natural barrier and containing India's highest peak, Kangchenjunga (8,586 meters).\r\nThe Northern Plains: Formed by major river systems like the Ganges (Ganga), Yamuna, and Brahmaputra, this highly fertile region stretches south of the Himalayas and supports a dense population.T\r\nhe Peninsular Plateau: A vast, ancient plateau in central and southern India, rich in minerals, flanked by the Western Ghats and Eastern Ghats mountain ranges.\r\nThe Great Indian Desert (Thar): Located in the northwestern part of the country, primarily within the state of Rajasthan.\r\nCoastal Plains: Flanks the western and eastern edges of the peninsula, stretching along the Arabian Sea and the Bay of Bengal.\r\nThe Islands: India administers two major archipelagoes: the Lakshadweep in the Arabian Sea and the Andaman and Nicobar Islands in the Bay of Bengal.",
+            "created": "2026-06-17T07:18:19.526Z",
+            "last_updated": "2026-06-17T07:18:19.526Z",
+            "available": true
         }
     },
     {
@@ -13,7 +17,10 @@
         "fields": {
             "course_name": "USA Geography",
             "image": "courses/usa-geography/usa.jpg",
-            "description": "The United States spans across North America, covering diverse landscapes including plains, mountains, and deserts. It is the third-largest country globally by landmass and features 50 states, five major territories, and the federal capital district (Washington, D.C.).\r\nMajor Geographic Regions:\r\nThe East: Features the Atlantic Coastal Plain and the ancient, eroded Appalachian Mountains.\r\nThe Midwest: Dominated by the fertile Interior Plains and the Great Lakes.The South: Contains the Gulf Coastal Plain, the Mississippi River, and humid subtropical forests.\r\nThe West & Southwest: Defined by the towering Rocky Mountains, the Mojave and Sonoran deserts, and the coastal Pacific mountain ranges.\r\n\r\nExtreme Points:\r\nHighest Peak: Denali (Mount McKinley) in Alaska, at 20,320 feet (6,198 m).\r\nLowest Point: Badwater Basin in Death Valley, California, at -282 feet (-86 m)"
+            "description": "The United States spans across North America, covering diverse landscapes including plains, mountains, and deserts. It is the third-largest country globally by landmass and features 50 states, five major territories, and the federal capital district (Washington, D.C.).\r\nMajor Geographic Regions:\r\nThe East: Features the Atlantic Coastal Plain and the ancient, eroded Appalachian Mountains.\r\nThe Midwest: Dominated by the fertile Interior Plains and the Great Lakes.The South: Contains the Gulf Coastal Plain, the Mississippi River, and humid subtropical forests.\r\nThe West & Southwest: Defined by the towering Rocky Mountains, the Mojave and Sonoran deserts, and the coastal Pacific mountain ranges.\r\n\r\nExtreme Points:\r\nHighest Peak: Denali (Mount McKinley) in Alaska, at 20,320 feet (6,198 m).\r\nLowest Point: Badwater Basin in Death Valley, California, at -282 feet (-86 m)",
+            "created": "2026-06-17T07:18:19.528Z",
+            "last_updated": "2026-06-17T07:18:19.528Z",
+            "available": true
         }
     },
     {
@@ -22,7 +29,10 @@
         "fields": {
             "course_name": "China Geography",
             "image": "courses/china-geography/China.webp",
-            "description": "China is the third-largest country in the world by total area, spanning approximately 9.6 million square kilometers. Its terrain is defined by a west-to-east downward staircase, dominated by high mountains and plateaus in the west—including the Tibetan Plateau—and shifting into fertile, densely populated plains and river basins in the east.\r\nKey Geographic Regions:\r\nThe Tibetan Plateau: Often called the \"Roof of the World,\" this high-altitude region in the southwest is the source of Asia's major rivers.\r\nThe Arid West and North: Dominated by vast, inhospitable deserts like the Taklamakan (the world's largest shifting sand desert) in the Tarim Basin, and the rocky, sweeping plains of the Gobi Desert along the Mongolian border.\r\nThe North China Plain: The historical cradle of Chinese civilization. It is a massive, highly cultivated agricultural expanse fed by the loess-rich Yellow River.\r\nSouthern China: A region characterized by rugged, rolling hills, terraced mountains, and subtropical river valleys, with dense biodiversity in provinces like Yunnan."
+            "description": "China is the third-largest country in the world by total area, spanning approximately 9.6 million square kilometers. Its terrain is defined by a west-to-east downward staircase, dominated by high mountains and plateaus in the west—including the Tibetan Plateau—and shifting into fertile, densely populated plains and river basins in the east.\r\nKey Geographic Regions:\r\nThe Tibetan Plateau: Often called the \"Roof of the World,\" this high-altitude region in the southwest is the source of Asia's major rivers.\r\nThe Arid West and North: Dominated by vast, inhospitable deserts like the Taklamakan (the world's largest shifting sand desert) in the Tarim Basin, and the rocky, sweeping plains of the Gobi Desert along the Mongolian border.\r\nThe North China Plain: The historical cradle of Chinese civilization. It is a massive, highly cultivated agricultural expanse fed by the loess-rich Yellow River.\r\nSouthern China: A region characterized by rugged, rolling hills, terraced mountains, and subtropical river valleys, with dense biodiversity in provinces like Yunnan.",
+            "created": "2026-06-17T07:18:19.529Z",
+            "last_updated": "2026-06-17T07:18:19.529Z",
+            "available": true
         }
     },
     {
@@ -31,7 +41,10 @@
         "fields": {
             "course_name": "Russia Geography",
             "image": "courses/russia-geography/russia.jpeg",
-            "description": "Russia is the largest country in the world by land area, spanning 17.13 million square kilometers across Eastern Europe and Northern Asia. Accounting for roughly one-eighth of Earth's inhabited land, the transcontinental nation stretches across 11 time zones, shares land borders with 14 countries, and contains almost every major geographical biome.\r\nCore Geographic Zones:\r\nRussia's massive expanse is shaped by three defining biomes and major geological divisions, split roughly by the Yenisey River:\r\nEuropean Russia: West of the Ural Mountains, this is the historic heartland. It features the flat and highly fertile East European Plain, housing roughly 77% of the country's population.\r\nSiberia & The Far East: East of the Urals, Siberia is dominated by three main areas: the West Siberian Plain (vast swamps and flood plains), the Central Siberian Plateau, and the mountainous Pacific coast.\r\nMajor Biomes: The north consists of treeless tundra with frozen permafrost. South of this lies the taiga, the world's largest contiguous forest, which gives way to the flat, grassy steppes near the southern borders."
+            "description": "Russia is the largest country in the world by land area, spanning 17.13 million square kilometers across Eastern Europe and Northern Asia. Accounting for roughly one-eighth of Earth's inhabited land, the transcontinental nation stretches across 11 time zones, shares land borders with 14 countries, and contains almost every major geographical biome.\r\nCore Geographic Zones:\r\nRussia's massive expanse is shaped by three defining biomes and major geological divisions, split roughly by the Yenisey River:\r\nEuropean Russia: West of the Ural Mountains, this is the historic heartland. It features the flat and highly fertile East European Plain, housing roughly 77% of the country's population.\r\nSiberia & The Far East: East of the Urals, Siberia is dominated by three main areas: the West Siberian Plain (vast swamps and flood plains), the Central Siberian Plateau, and the mountainous Pacific coast.\r\nMajor Biomes: The north consists of treeless tundra with frozen permafrost. South of this lies the taiga, the world's largest contiguous forest, which gives way to the flat, grassy steppes near the southern borders.",
+            "created": "2026-06-17T07:18:19.529Z",
+            "last_updated": "2026-06-17T07:18:19.529Z",
+            "available": true
         }
     },
     {
@@ -40,7 +53,10 @@
         "fields": {
             "course_name": "Australia Geography",
             "image": "courses/australia-geography/australia.jpg",
-            "description": "Australia is the world's smallest continent and sixth-largest country by area, covering 7.7 million square kilometers entirely within the Southern Hemisphere. Positioned between the Indian and Pacific Oceans, it is an ancient, dry, and flat landmass characterized by a vast, sparsely populated interior and densely populated coastal regions.\r\n📍 Key Facts at a Glance\r\nLocation: Bordered by the Coral Sea and Tasman Sea to the east, the Indian Ocean to the west, and the Southern Ocean to the south.\r\nCapital City: Canberra (located in the Australian Capital Territory between Sydney and Melbourne).\r\nHighest Point: Mount Kosciuszko (2,228 meters) in the Great Dividing Range.\r\nLongest River System: Murray-Darling River (2,530 km)"
+            "description": "Australia is the world's smallest continent and sixth-largest country by area, covering 7.7 million square kilometers entirely within the Southern Hemisphere. Positioned between the Indian and Pacific Oceans, it is an ancient, dry, and flat landmass characterized by a vast, sparsely populated interior and densely populated coastal regions.\r\n📍 Key Facts at a Glance\r\nLocation: Bordered by the Coral Sea and Tasman Sea to the east, the Indian Ocean to the west, and the Southern Ocean to the south.\r\nCapital City: Canberra (located in the Australian Capital Territory between Sydney and Melbourne).\r\nHighest Point: Mount Kosciuszko (2,228 meters) in the Great Dividing Range.\r\nLongest River System: Murray-Darling River (2,530 km)",
+            "created": "2026-06-17T07:18:19.530Z",
+            "last_updated": "2026-06-17T07:18:19.530Z",
+            "available": true
         }
     },
     {
@@ -49,7 +65,22 @@
         "fields": {
             "course_name": "Japan Geography",
             "image": "courses/japan-geography/japan.jpg",
-            "description": "Japan is a highly mountainous, geologically active archipelago off the east coast of Asia. It comprises over 14,000 islands, with four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—making up the vast majority of the landmass. Because ~73% of the country is rugged terrain, the vast majority of the population lives in highly dense urban coastal plains.\r\nKey Geographic Features:\r\nThe Four Main Islands:\r\nHonshu:\r\nThe largest, most populous island, and the cultural/economic heart of Japan, home to Tokyo, Osaka, and Kyoto.\r\nHokkaido: \r\nThe northernmost island, known for cooler climates, heavy winter snow, and vast natural landscapes.\r\nKyushu & Shikoku: \r\nThe southern and smaller main islands, featuring warmer climates and mountainous interiors.\r\nTopography: \r\nThe country is dominated by the Japanese Alps and steep, forested highlands. Consequently, over 70% of Japan's population is densely concentrated on just 5% of its total land.\r\nThe \"Ring of Fire\": J\r\napan sits at the volatile convergence of four tectonic plates (Pacific, Philippine, Eurasian, and North American). This positioning subjects the country to frequent earthquakes and tsunamis, while also creating the volcanic activity responsible for Japan's abundant natural hot springs (onsen)"
+            "description": "Japan is a highly mountainous, geologically active archipelago off the east coast of Asia. It comprises over 14,000 islands, with four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—making up the vast majority of the landmass. Because ~73% of the country is rugged terrain, the vast majority of the population lives in highly dense urban coastal plains.\r\nKey Geographic Features:\r\nThe Four Main Islands:\r\nHonshu:\r\nThe largest, most populous island, and the cultural/economic heart of Japan, home to Tokyo, Osaka, and Kyoto.\r\nHokkaido: \r\nThe northernmost island, known for cooler climates, heavy winter snow, and vast natural landscapes.\r\nKyushu & Shikoku: \r\nThe southern and smaller main islands, featuring warmer climates and mountainous interiors.\r\nTopography: \r\nThe country is dominated by the Japanese Alps and steep, forested highlands. Consequently, over 70% of Japan's population is densely concentrated on just 5% of its total land.\r\nThe \"Ring of Fire\": J\r\napan sits at the volatile convergence of four tectonic plates (Pacific, Philippine, Eurasian, and North American). This positioning subjects the country to frequent earthquakes and tsunamis, while also creating the volcanic activity responsible for Japan's abundant natural hot springs (onsen)",
+            "created": "2026-06-17T07:18:19.530Z",
+            "last_updated": "2026-06-17T07:18:19.530Z",
+            "available": true
+        }
+    },
+    {
+        "model": "courses.course",
+        "pk": 111,
+        "fields": {
+            "course_name": "uk Geography",
+            "image": "courses/usa-geography/usa.jpg",
+            "description": "---",
+            "created": "2026-06-17T07:18:19.529Z",
+            "last_updated": "2026-06-17T07:18:19.529Z",
+            "available": true
         }
     },
     {
