@@ -26,18 +26,24 @@ class Entrollment(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
+    def get_progress(self):
+        enrollment = sum (1 for i in self.section_entrollment.filter() if i.get_progress()==100)
+        count = self.course.section_count()
+        progress = (enrollment/count)*100
+        return progress 
+
     def __str__(self):
         return str(self.course) + " ==>  "+str(self.user)
     class Meta:
         unique_together = [('user', 'course')]
 
 
-
 class SectionEntrollment(models.Model):
     entromment = models.ForeignKey(
         Entrollment,
         on_delete=models.CASCADE,
-        null=True
+        null=True,
+        related_name="section_entrollment"
     )
     section = models.ForeignKey(
         Section,
@@ -45,14 +51,18 @@ class SectionEntrollment(models.Model):
         null=True
     )
     def get_progress(self):
-        return sum(item for item in self.unit_entrollment.filter(completed=True))
+        
+        enrollment = sum (1 for i in self.unit_entrollment.filter(completed=True))
+        count = self.section.unit_count()
+        progress = (enrollment/count)*100
+        return progress 
+
 
     def __str__(self):
         return str(self.section) + " ==>  "+str(self.entromment)
     class Meta:
         unique_together = [('section', 'entromment')]
-
-
+    
 
 class UnitEntrollment(models.Model):
     entromment = models.ForeignKey(

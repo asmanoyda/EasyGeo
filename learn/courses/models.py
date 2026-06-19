@@ -45,7 +45,7 @@ class Section(models.Model):
         return f"{self.section_name }"
 
     def unit_count(self):
-        return sum(int(1) for _ in self.units.all())
+        return sum(1 for _ in self.units.all())
 
 
 class Unit(models.Model):
@@ -64,7 +64,7 @@ class Unit(models.Model):
         return f"{self.unit_name} ==> {str(self.section.return_name())} "
 
     def questions_count(self):
-        return sum(int(1) for _ in self.questions.all())
+        return sum(1 for _ in self.questions.all())
 
 class Question(models.Model):
     unit = models.ForeignKey(
