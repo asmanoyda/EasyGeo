@@ -42,9 +42,10 @@ Section Page
                     <!-- Progress Bar -->
                     <div class="progress mb-3" style="height:25px;">
                         <div class="progress-bar progress-bar-striped progress-bar-animated"
-                            style="width: {{ progress|default:0 }}%;">
-                            {{ progress|default:0 }}%
+                            style="width: {{ enrollment.get_progress}}%;">
+                            {{ enrollment.get_progress }} % completed
                         </div>
+
                     </div>
 
                     <!-- Section List -->
@@ -90,7 +91,7 @@ Section Page
 
 
                         <div class="mt-4">
-                            <a href="{% url 'courses:unit' section.id %}" class="btn btn-success">
+                            <a href="{% url 'courses:unit' section.id course.id %}" class="btn btn-success">
                                 Go to Units
                             </a>
                         </div>

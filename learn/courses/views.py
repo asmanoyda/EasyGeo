@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib import messages
 from courses.models import Course, Section, Unit, Question
-from mypage.models import User, Entrollment
+from mypage.models import User, Entrollment , SectionEntrollment
 from mypage.views import custom_login_required
 from django.shortcuts import redirect
 from functools import wraps
@@ -36,12 +36,11 @@ def get_enrollments(request):
 
     user = User.objects.get(id = request.session['user_id'])
     enrollments = Entrollment.objects.filter(user=user)
-    courses = [enrollment.course for enrollment in enrollments]
     context = {
-        'courses': courses,
+        'enrollments': enrollments,
         'user_data': user
     }
-    return render(request, 'courses/course_list.html', context)
+    return render(request, 'courses/enrollment_list.html', context)
 
 
 @custom_login_required
@@ -61,7 +60,8 @@ def section_list(request, course_id):
     user = User.objects.get(id=request.session['user_id'])
     sections = Section.objects.filter(course_id=course_id)
     course = Course.objects.get(id=course_id)
-    is_enrolled = Entrollment.objects.filter(course_id=course_id, user=user)
+    is_enrolled = Entrollment.objects.get(course_id=course_id, user=user)
+
     flag = False
     if is_enrolled:
         flag = True
@@ -69,19 +69,28 @@ def section_list(request, course_id):
         'sections': sections,
         'user_data': user,
         'course': course,
-        "is_enrolled": flag
+        "is_enrolled": flag,
+        "enrollment":is_enrolled
     }
     return render(request, 'courses/section_list.html', context)
 
 
 @custom_login_required
-def unit_list(request, section_id):
+def unit_list(request, section_id,course_id):
 
     user = User.objects.get(id=request.session['user_id'])
     units = Unit.objects.filter(section_id=section_id)
+    section =Section.objects.get(id = section_id)    
+    enrollment = Entrollment.objects.get(course_id=course_id,user=user)
+    section_entrollment = SectionEntrollment.objects.get(entromment=enrollment,section=section)
+
+    
     context = {
         'units': units,
         'user_data': user,
-        'section_id': section_id
+        'section_id': section_id,
+        'enrollment' : section_entrollment,
+
+        'section' : section
     }
     return render(request, 'courses/unit_list.html', context)
