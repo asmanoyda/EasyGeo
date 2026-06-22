@@ -1,40 +1,85 @@
-<h1>{{ unit.unit_name }} Quiz</h1>
+{% extends "mypage/base.html" %}
+{% load static %}
 
-<form method="post">
-    {% csrf_token %}
+{% block title %}
+{{ unit.unit_name }} Quiz
+{% endblock %}
 
-    {% for question in questions %}
-    <div class="container quiz-container">
-        <div class="quiz-header">
-            <p id="question">{{ forloop.counter }}. {{ question.question_text }}</p>
-            <div id="options" class="list-group"></div>
-            <div>
-                <input type="radio" name="question_{{ question.id }}" value="{{ question.option1 }}">
-                {{ question.option1 }}
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- Quiz Header -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">{{ unit.unit_name }}</h1>
+        <p class="text-muted fs-5">
+            Test your knowledge and improve your understanding.
+        </p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {% for question in questions %}
+        <div class="card shadow-sm border-0 rounded-4 mb-4">
+
+            <!-- Question Header -->
+            <div class="card-header bg-primary text-white py-3 rounded-top-4">
+                <h6 class="mb-0">
+                    Question {{ forloop.counter }}
+                </h6>
             </div>
 
-            <div>
-                <input type="radio" name="question_{{ question.id }}" value="{{ question.option2 }}">
-                {{ question.option2 }}
-            </div>
+            <!-- Question Body -->
+            <div class="card-body p-4">
 
-            <div>
-                <input type="radio" name="question_{{ question.id }}" value="{{ question.option3 }}">
-                {{ question.option3 }}
-            </div>
+                <h5 class="fw-semibold mb-4">
+                    {{ question.question_text }}
+                </h5>
+                <div class="d-grid gap-3">
 
-            <div>
-                <input type="radio" name="question_{{ question.id }}" value="{{ question.option4 }}">
-                {{ question.option4 }}
+                    <label class="option-card">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option1 }}"
+                            data-correct="{% if question.correct_answer == question.option1 %}true{% else %}false{% endif %}">
+                        <span>{{ question.option1 }}</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option2 }}"
+                            data-correct="{% if question.correct_answer == question.option2 %}true{% else %}false{% endif %}">
+                        <span>{{ question.option2 }}</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option3 }}"
+                            data-correct="{% if question.correct_answer == question.option3 %}true{% else %}false{% endif %}">
+                        <span>{{ question.option3 }}</span>
+                    </label>
+
+                    <label class="option-card">
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option4 }}"
+                            data-correct="{% if question.correct_answer == question.option4 %}true{% else %}false{% endif %}">
+                        <span>{{ question.option4 }}</span>
+                    </label>
+
+                </div>
+
             </div>
         </div>
-    </div>
-    {% endfor %}
-    <button id="next-button" class="btn btn-primary mt-3">Next Question</button>
+        {% endfor %}
+        {% if score is not None %}
+        <div class="alert alert-success mt-4">
+            <h4>Your Score: {{ score }} / {{ questions|length }}</h4>
+        </div>
+        {% endif %}
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary btn-lg px-5 shadow">
+                Submit Quiz
+            </button>
+        </div>
 
-    <div id="result" class="result">
-        <p>Your score is: <span id="score">0</span>/3</p>
-        <button id="retry-button" class="btn btn-secondary">Retry Quiz</button>
-    </div>
+    </form>
 
-</form>
+</div>
+
+{% endblock %}

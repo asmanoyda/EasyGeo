@@ -1,106 +1,102 @@
 <header>
-    <nav class="navbar navbar-expand-sm shadow-sm" style="background-color: #1E3A8A;">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+
 
             <!-- Navbar Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                🌍 EasyGeo
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
             <!-- Navbar Content -->
             <!-- Center Menu -->
-            <ul class="navbar-nav me-auto align-items-center">
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'mypage:home' %}">
-                        Home
-                    </a>
-                </li>
+                <ul class="navbar-nav mx-auto">
 
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:all_courses' %}">
-                        All Courses
-                    </a>
-                </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'mypage:home' %}">Home</a>
+                    </li>
 
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'mypage:country' %}">
-                        Country Details
-                    </a>
-                </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'courses:all_courses' %}">Courses</a>
+                    </li>
 
-                {% if user_data %}
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'courses:get_enrollments' %}">
-                        My Courses
-                    </a>
-                </li>
-                {% else %}
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'users:login' %}">
-                        Login
-                    </a>
-                </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'mypage:country' %}">Country Details</a>
+                    </li>
+                    <form method="GET" class="d-flex mx-3" style="width:250px;">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control form-control-sm" placeholder="Search...">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                    {% if user_data %}
 
-                <li class="nav-item mx-2">
-                    <a class="nav-link fw-semibold text-white" href="{% url 'users:registration' %}">
-                        Register
-                    </a>
-                </li>
-                {% endif %}
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="{% url 'courses:get_enrollments' %}">My Learning</a>
+                    </li>
 
-            </ul>
-            <form method="GET" class="d-flex mx-3" style="width:250px;">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control form-control-sm" placeholder="Search...">
-                    <button class="btn btn-light" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </form>
-            <!-- Right Side Profile -->
-            <!-- Right Side Profile -->
-            {% if user_data %}
-            <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto">
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white fw-semibold" href="#" id="profileDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ user_data.name }} <i class="bi bi-person"></i>
-                    </a>
-
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-
-                        <li>
-                            <a class="dropdown-item" href="{% url 'users:profile_view' %}">
-                                <i class="bi bi-person"></i> Profile Page
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle btn btn-warning btn-lg rounded-pill" href="#" id="profileDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ user_data.name }} <i class="bi bi-person"></i>
                             </a>
-                        </li>
 
-                        <li>
-                            <a class="dropdown-item" href="{% url 'courses:get_enrollments' %}">
-                                <i class="bi bi-book"></i> My Courses
-                            </a>
-                        </li>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'users:profile_view' %}">
+                                        <i class="bi bi-person"></i> Profile Page
+                                    </a>
+                                </li>
 
-                        <li>
-                            <a class="dropdown-item text-danger" href="{% url 'users:logout' %}">
-                                <i class="bi bi-box-arrow-right"></i> Logout
-                            </a>
-                        </li>
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'courses:get_enrollments' %}">
+                                        <i class="bi bi-book"></i> My Courses
+                                    </a>
+                                </li>
 
-                    </ul>
-                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
-            </ul>
-            {% endif %}
+                                <li>
+                                    <a class="dropdown-item text-danger" href="{% url 'users:logout' %}">
+                                        <i class="bi bi-box-arrow-right"></i> Logout
+                                    </a>
+                                </li>
 
-        </div>
+
+
+
+                                {% else %}
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link " href="{% url 'users:login' %}">
+                                        Login
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link " href="{% url 'users:registration' %}">
+                                        Register
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                            </ul>
+
+
+            </div>
         </div>
     </nav>
 </header>

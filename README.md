@@ -75,3 +75,5 @@ progress bar
 
 
 update profile html page
+#d6f0f5
+#deece3

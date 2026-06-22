@@ -31,7 +31,7 @@ def country_details(request):
     user_id = request.session.get('user_id')
     user = User.objects.get(id=user_id)
     countries = Country.objects.all()
-    return render(request, "country.html", {
+    return render(request, "mypage/country.html", {
         'user_data': user,
         'countries': countries
     })

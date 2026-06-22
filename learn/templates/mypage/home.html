@@ -1,22 +1,205 @@
 {% extends "mypage/base.html" %}
+{% load static %}
 
 {% block title %}
-Home Page
+EasyGeo
 {% endblock %}
 
 {% block content %}
 
-<h1>Welcome to the Home Page!</h1>
- 
- 
-    {% for message in messages %}
-    <p class="color-white">
+<!-- Hero Section -->
+<section class="hero-section py-5">
+    <div class="container">
 
-        {{ message }}
+        <!-- Navbar -->
 
-    </p>
-    
 
-    {% endfor %}
-<p>This unique text will appear inside the base layout.</p>
+        <!-- Hero Content -->
+        <div class="text-center mt-5">
+
+            <h1 class="display-1 fw-bold">
+                Explore the World
+                <br>
+                with EasyGeo!
+            </h1>
+
+            <p class="lead text-muted mt-3">
+                Learn Geography through Interactive Maps, Videos and Quizzes.
+            </p>
+
+        </div>
+
+        <!-- Hero Image -->
+        <div class="text-center mt-4">
+            <img src="{% static 'world_map.png' %}" class="img-fluid" alt="World Map">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Features -->
+<section class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center fw-bold display-5 mb-5">
+            Features
+        </h2>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg h-100 text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-globe2 display-3 text-primary"></i>
+                    </div>
+
+                    <h3 class="fw-bold">
+                        Interactive Maps
+                    </h3>
+
+                    <p class="text-muted">
+                        Explore countries, continents, rivers,
+                        mountains, and landmarks through
+                        interactive geography maps.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg h-100 text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-patch-question-fill display-3 text-warning"></i>
+                    </div>
+
+                    <h3 class="fw-bold">
+                        Live Quizzes
+                    </h3>
+
+                    <p class="text-muted">
+                        Test your understanding with
+                        engaging quizzes and instant
+                        score tracking.
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow-lg h-100 text-center p-4">
+
+                    <div class="mb-3">
+                        <i class="bi bi-book-fill display-3 text-success"></i>
+                    </div>
+
+                    <h3 class="fw-bold">
+                        Personalized Learning
+                    </h3>
+
+                    <p class="text-muted">
+                        Learn at your own pace with
+                        organized courses, sections,
+                        units, videos and notes.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA Section -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-md-3 text-center">
+                <img src="{% static 'images/student-left.png' %}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-md-6 text-center">
+
+                <p class="fs-5 text-muted">
+                    Get ready to start your geography journey
+                    and explore the world like never before.
+                </p>
+
+                <a href="{% url 'courses:all_courses' %}" class="btn btn-warning btn-lg rounded-pill px-5 py-3 mt-3">
+                    Get Started
+                </a>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+                <img src="{% static 'images/student-right.png' %}" class="img-fluid" alt="">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 
+<style>
+
+body{
+    background:#dfeae3;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Hero */
+.hero-section{
+    min-height:100vh;
+}
+
+.hero-section h1{
+    color:#222;
+    line-height:1.1;
+}
+
+/* Cards */
+.card{
+    border-radius:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* Button */
+.btn-warning{
+    background:#f7943d;
+    border:none;
+    color:white;
+    font-weight:600;
+}
+
+.btn-warning:hover{
+    background:#ea7f1b;
+    color:white;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .hero-section h1{
+        font-size:3rem;
+    }
+
+}
+
+</style> -->
+
 {% endblock %}

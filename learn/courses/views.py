@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib import messages
 from courses.models import Course, Section, Unit, Question
-from mypage.models import User, Entrollment , SectionEntrollment
+from mypage.models import User, Entrollment, SectionEntrollment
 from mypage.views import custom_login_required
 from django.shortcuts import redirect
 from functools import wraps
@@ -34,7 +34,7 @@ def all_courses(request):
 @custom_login_required
 def get_enrollments(request):
 
-    user = User.objects.get(id = request.session['user_id'])
+    user = User.objects.get(id=request.session['user_id'])
     enrollments = Entrollment.objects.filter(user=user)
     context = {
         'enrollments': enrollments,
@@ -48,9 +48,20 @@ def unit_quiz(request, unit_id):
 
     unit = Unit.objects.get(id=unit_id)
     questions = Question.objects.filter(unit=unit)
-    return render(request, 'courses/unit_quiz.html', {
-        'unit': unit,
-        'questions': questions
+    score = None
+    if request.method == "POST":
+        score = 0
+
+        for question in questions:
+            user_answer = request.POST.get(f"question_{question.id}")
+
+            if user_answer == question.correct_answer:
+                score += 1
+
+    return render(request, "courses/unit_quiz.html", {
+        "unit": unit,
+        "questions": questions,
+        "score": score,
     })
 
 
@@ -70,27 +81,31 @@ def section_list(request, course_id):
         'user_data': user,
         'course': course,
         "is_enrolled": flag,
-        "enrollment":is_enrolled
+        "enrollment": is_enrolled
     }
     return render(request, 'courses/section_list.html', context)
 
 
 @custom_login_required
-def unit_list(request, section_id,course_id):
+def unit_list(request, section_id, course_id):
 
     user = User.objects.get(id=request.session['user_id'])
     units = Unit.objects.filter(section_id=section_id)
-    section =Section.objects.get(id = section_id)    
-    enrollment = Entrollment.objects.get(course_id=course_id,user=user)
-    section_entrollment = SectionEntrollment.objects.get(entromment=enrollment,section=section)
+    section = Section.objects.get(id=section_id)
+    enrollment = Entrollment.objects.get(course_id=course_id, user=user)
 
-    
+    try:
+        section_entrollment = SectionEntrollment.objects.get(
+            entromment=enrollment, section=section)
+    except Exception:
+        section_entrollment = None
+
     context = {
         'units': units,
         'user_data': user,
         'section_id': section_id,
-        'enrollment' : section_entrollment,
+        'enrollment': section_entrollment,
 
-        'section' : section
+        'section': section
     }
     return render(request, 'courses/unit_list.html', context)
