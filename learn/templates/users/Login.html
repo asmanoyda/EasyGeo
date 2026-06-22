@@ -1,48 +1,59 @@
 {% extends "mypage/base.html" %}
-
 {% block title %}
-Home Page
+Login
 {% endblock %}
 
 {% block content %}
 
-<h1>Welcome to the Login Page!</h1>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
 
+    <div class="card shadow-lg border-0 p-4" style="max-width: 450px; width: 100%; border-radius: 15px;">
 
-{% for message in messages %}
-<p class="color-white">
-
-    {{ message }}
-
-</p>
-
-
-{% endfor %}
-<div class="center-container">
-    <form action="login" method="POST" class="login-form">
-        {% csrf_token %}
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <br>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Welcome Back</h2>
+            <p class="text-muted">Login to your EasyGeo account</p>
         </div>
 
-        <br>
-        <button type="submit">Login</button><br>
-        <br>
+        {% for message in messages %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+        {% endfor %}
 
+        <form action="login" method="POST">
+            {% csrf_token %}
 
+            <div class="mb-3">
+                <label for="username" class="form-label fw-semibold">
+                    Username
+                </label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username"
+                    required>
+            </div>
 
-        Don't have an account? <a href="{% url 'users:registration' %}">Register </a>
+            <div class="mb-3">
+                <label for="password" class="form-label fw-semibold">
+                    Password
+                </label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                    required>
+            </div>
 
-    </form>
-</div>
+            <button type="submit" class="btn btn-primary w-100">
+                Login
+            </button>
 
-</form>
+            <div class="text-center mt-3">
+                Don't have an account?
+                <a href="{% url 'users:registration' %}" class="text-decoration-none">
+                    Register
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
 </div>
 
 {% endblock %}

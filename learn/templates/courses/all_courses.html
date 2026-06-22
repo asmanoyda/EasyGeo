@@ -7,41 +7,49 @@ All Courses
 
 {% block content %}
 
-<h1 class="text-center mb-4">All Courses</h1>
+<div class="container py-4">
 
-{% for message in messages %}
-<p class="text-white bg-success p-2">
-    {{ message }}
-</p>
-{% endfor %}
+    <!-- Header -->
+    <div class="courses-header text-center mb-5">
+        <h1 class="fw-bold">🌍 Explore Geography Courses</h1>
+        <p class="lead">
+            Learn about countries, cultures, landscapes, and the world around you.
+        </p>
+    </div>
 
-
-<div class="container mt-4">
+    {% for message in messages %}
+    <div class="alert alert-success text-center">
+        {{ message }}
+    </div>
+    {% endfor %}
 
     {% if courses %}
     <div class="row">
 
         {% for course in courses %}
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
 
-            <div class="card shadow h-100">
+            <div class="card course-card shadow-sm h-100">
+
+
 
                 {% if course.image %}
-                <img src="{{ course.image.url }}"
-                     class="card-img-top"
-                     alt="{{ course.course_name }}"
-                     style="height:250px; object-fit:cover;">
+                <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.course_name }}"
+                    style="height:250px; object-fit:cover;">
                 {% endif %}
 
-                <div class="card-body text-center">
+                <div class="card-body text-center course-body">
 
-                    <h4 class="card-title">
+                    <h4 class="card-title course-title">
                         {{ course.course_name }}
                     </h4>
 
-                    <a href="{% url 'courses:section' course.id %}"
-                       class="btn btn-primary mt-3">
-                        Go to Details Page
+                    <p class="course-text">
+                        Start exploring and expand your geographical knowledge.
+                    </p>
+
+                    <a href="{% url 'courses:section' course.id %}" class="btn course-btn">
+                        View Course →
                     </a>
 
                 </div>
@@ -54,9 +62,18 @@ All Courses
     </div>
 
     {% else %}
-    <p>Sorry, no records found.</p>
+
+    <div class="text-center py-5">
+        <h3>No Courses Available</h3>
+        <p class="text-muted">
+            Sorry, no courses have been added yet.
+        </p>
+    </div>
+
     {% endif %}
 
 </div>
+
+
 
 {% endblock %}

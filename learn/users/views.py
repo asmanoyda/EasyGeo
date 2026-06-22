@@ -147,7 +147,7 @@ def update_profile(request):
     user = User.objects.get(id=user_id)
 
     if request.method == "GET":
-        return render(request, "update_profile.html", {"user": user, 'user_data': user})
+        return render(request, "users/update_profile.html", {"user": user, 'user_data': user})
 
     if request.method == "POST":
         user.last_updated = timezone.now()

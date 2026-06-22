@@ -1,0 +1,24 @@
+.course-body {
+    background-color: #deece3;
+    color: #5d9d7e;
+}
+
+.course-title {
+    color: #5d9d7e;
+    font-weight: bold;
+}
+
+.course-btn {
+    background-color: #03a3bd;
+    color: white;
+    border: none;
+}
+
+.course-btn:hover {
+    background-color: #4c8769;
+    color: white;
+}
+
+.course-text {
+    color: #6c757d;
+}

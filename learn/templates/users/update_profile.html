@@ -1,57 +1,58 @@
 {% extends "mypage/base.html" %}
 
 {% block title %}
-Home Page
+Update Profile
 {% endblock %}
 
 {% block content %}
 
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
 
+    <div class="card shadow-lg border-0 p-4" style="max-width: 600px; width: 100%;">
 
-{% for message in messages %}
-<p class="color-white">
+        <h2 class="text-center mb-4">My Account</h2>
 
-    {{ message }}
+        {% for message in messages %}
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+        {% endfor %}
 
-</p>
-
-
-{% endfor %}
-<div class="page-bg">
-    <div class="center-container">
-        <form method="POST" action="update_profile" class="login-form">
+        <form method="POST" action="{% url 'users:update_profile' %}">
             {% csrf_token %}
 
-            <h2>My Account</h2>
+            <h5 class="mb-3 text-primary">User Information</h5>
 
-            <p><u>USER INFORMATION</u></p>
-            <div>
-                <label>Name:</label>
-                <input type="name" name="name" value="{{ user.name }}" required><br><br>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" value="{{ user.name }}" required>
             </div>
 
-            <div>
-                <label>Username:</label>
-                <input type="username" name="username" value="{{ user.username }}" required><br><br>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" class="form-control" name="username" value="{{ user.username }}" required>
             </div>
 
-            <div>
-                <label>Email:</label>
-                <input type="email" name="email" value="{{ user.email }}" required><br><br>
+            <div class="mb-4">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" value="{{ user.email }}" required>
             </div>
 
-            <br>
+            <h5 class="mb-3 text-primary">Contact Information</h5>
 
-            <p><u>CONTACT INFORMATION</u></p>
-
-            <div>
-                <label>Mobile Number:</label>
-                <input type="text" name="mobile_no" value="{{ user.mobile_no }}" required><br><br>
+            <div class="mb-4">
+                <label class="form-label">Mobile Number</label>
+                <input type="text" class="form-control" name="mobile_no" value="{{ user.mobile_no }}" required>
             </div>
-            <br>
-            <button type="submit">Update Profile</button>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Update Profile
+            </button>
+
         </form>
+
     </div>
+
 </div>
 
 {% endblock %}
