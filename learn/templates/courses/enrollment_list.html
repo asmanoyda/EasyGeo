@@ -6,71 +6,86 @@ My Learning
 {% endblock %}
 
 {% block content %}
-<br>
 
-<h1 class="text-center mb-4">📚 My Learning</h1>
+<div class="container-fluid course-body py-5">
 
-{% for message in messages %}
-<p class="text-white bg-success p-2">
-    {{ message }}
-</p>
-{% endfor %}
+    <h1 class="text-center mb-4 course-title">
+        📚 My Learning
+    </h1>
 
-<div class="container mt-4">
+    {% for message in messages %}
+    <p class="text-white bg-success p-2 rounded">
+        {{ message }}
+    </p>
+    {% endfor %}
 
-    {% if enrollments %}
-    <div class="row">
-        {% for enrollment in enrollments %}
-        <div class="col-md-4 mb-4">
+    <div class="container mt-4">
 
-            <div class="card shadow h-100">
-                {% if enrollment.course.image %}
-                <img src="{{ enrollment.course.image.url }}" class="card-img-top"
-                    alt="{{ enrollment.course.course_name }}" style="height:250px; object-fit:cover;">
-                {% endif %}
+        {% if enrollments %}
+        <div class="row">
 
-                <div class="card-body text-center course-body">
+            {% for enrollment in enrollments %}
+            <div class="col-md-4 mb-4">
 
-                    <h4 class="card-title course-title">
-                        {{ enrollment.course.course_name }}
-                    </h4>
+                <div class="card shadow border-0 h-100">
 
-                    <p class="course-text">
-                        Continue learning and complete your course.
-                    </p>
+                    {% if enrollment.course.image %}
+                    <img src="{{ enrollment.course.image.url }}" class="card-img-top"
+                        alt="{{ enrollment.course.course_name }}" style="height:250px; object-fit:cover;">
+                    {% endif %}
 
-                    <div class="progress mb-3">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                            role="progressbar" style="width: {{ enrollment.get_progress }}%">
-                            {{ enrollment.get_progress }}%
+                    <div class="card-body text-center">
+
+                        <h4 class="card-title course-title">
+                            {{ enrollment.course.course_name }}
+                        </h4>
+
+                        <p class="course-text">
+                            Continue learning and complete your course.
+                        </p>
+
+                        <div class="progress mb-3">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success
+                {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
+                                style="width: {{ enrollment.get_progress }}%;">
+                                {{ enrollment.get_progress }}%
+                            </div>
                         </div>
-                    </div>
 
-                    <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
-                        Continue Learning →
-                    </a>
+                        <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
+                            Continue Learning →
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
+            {% endfor %}
 
         </div>
-        {% endfor %}
+
+        {% else %}
+
+        <div class="text-center py-5">
+
+            <h3 class="course-title">
+                No Courses Yet 📖
+            </h3>
+
+            <p class="course-text">
+                You haven't enrolled in any courses.
+            </p>
+
+            <a href="{% url 'courses:all_courses' %}" class="btn course-btn">
+                Explore Courses
+            </a>
+
+        </div>
+
+        {% endif %}
 
     </div>
-
-    {% else %}
-    <div class="text-center py-5">
-        <h3>No Courses Yet 📖</h3>
-        <p class="text-muted">
-            You haven't enrolled in any courses.
-        </p>
-
-        <a href="{% url 'courses:all_courses' %}" class="btn btn-primary btn-lg">
-            Explore Courses
-        </a>
-    </div>
-    {% endif %}
 
 </div>
 

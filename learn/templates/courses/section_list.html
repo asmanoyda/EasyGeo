@@ -20,7 +20,7 @@ my learning
                 <div class="card-body text-center">
                     {% if is_enrolled %}
                     <button class="btn btn-success w-100" disabled>
-                        countiue
+                        Enrolled
                     </button>
                     {% else %}
                     <a href="{% url 'mypage:create_entrollment' course.id %}" class="btn btn-primary w-100">
@@ -33,7 +33,7 @@ my learning
 
             <!-- Sections Card -->
             <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">
+                <div class="card-header course-btn">
                     Sections
                 </div>
 
@@ -41,9 +41,11 @@ my learning
 
                     <!-- Progress Bar -->
                     <div class="progress mb-3" style="height:25px;">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated"
-                            style="width: {{ enrollment.get_progress}}%;">
-                            {{ enrollment.get_progress }} % completed
+
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success
+                {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
+                            style="width: {{ enrollment.get_progress }}%;">
+                            {{ enrollment.get_progress }}%
                         </div>
 
                     </div>

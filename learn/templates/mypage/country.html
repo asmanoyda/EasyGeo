@@ -20,7 +20,7 @@ Country Page
 </p>
 {% endfor %}
 
-<div class="container mt-3" style="height:100vh; overflow-y:auto; background-color:white;">
+<div class="container mt-3" style="height:100vh; overflow-y:auto;">
 
     {% if countries %}
 
@@ -32,7 +32,7 @@ Country Page
         <div class="col-md-4 mb-4">
 
             <!-- Collapse Button -->
-            <button type="button" class="btn btn-primary w-100" data-bs-toggle="collapse"
+            <button type="button" class="btn btn-primary w-100 course-btn" data-bs-toggle="collapse"
                 data-bs-target="#collapse{{ country.id }}" aria-expanded="false">
 
                 <h4 class="mb-0">

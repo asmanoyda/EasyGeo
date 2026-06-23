@@ -15,7 +15,7 @@ Profile Page
         <!-- Sidebar -->
         <div class="col-md-3 mb-4">
 
-            <div class="card shadow-sm">
+            <div class="card login-card shadow-lg border-0 p-4">
 
                 <div class="card-body text-center">
 
@@ -38,13 +38,18 @@ Profile Page
                         Update Profile
                     </a>
 
-                  
+
 
 
                     <a href="{% url 'users:delete_profile' %}"
                         class="list-group-item list-group-item-action text-danger">
                         Delete Profile
                     </a>
+                    <br>
+                        <p>
+                            <strong>  Joined:</strong>
+                            {{ user_data.joined }}
+                        </p>
 
                 </div>
 
@@ -61,7 +66,7 @@ Profile Page
             </div>
             {% endfor %}
 
-            <div class="card shadow-sm">
+            <div class="card login-card shadow-lg border-0 p-4">
 
                 <div class="card-body">
 
@@ -78,9 +83,10 @@ Profile Page
 
                             <input type="file" name="profile_picture" class="form-control mb-3" required>
 
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="course-btn">
                                 Upload / Update Picture
                             </button>
+
 
                         </form>
 
@@ -131,10 +137,7 @@ Profile Page
 
                     <hr>
 
-                    <p>
-                        <strong>Joined:</strong>
-                        {{ user_data.joined }}
-                    </p>
+
 
                     <p>
                         <strong>Last Updated:</strong>

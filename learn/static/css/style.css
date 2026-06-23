@@ -1,5 +1,46 @@
+/* Page Background */
+body {
+    background-color: #d6f0f5;
+}
+.features-section {
+    /* my theme section color */
+    background-color:#deece3;
+}
+.feature-card {
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card h3 {
+    color: #5d9d7e;
+}
+.orange-btn-bg-color {
+    background-color: #f68336;
+    color: white;
+    
+}
+.footer-btn{
+    color: #f68336
+} 
+.orange-btn-bg-color:hover {
+background-color: #e26f22;
+ 
+}
+
+.hero-image {
+    max-width: 100%;
+}
+
+.bottom-image {
+    max-width: 100%;
+    margin-top: 30px;
+}
+
 .course-body {
-    background-color: #deece3;
     color: #5d9d7e;
 }
 
@@ -8,17 +49,28 @@
     font-weight: bold;
 }
 
-.course-btn {
-    background-color: #03a3bd;
-    color: white;
-    border: none;
-}
-
-.course-btn:hover {
-    background-color: #4c8769;
-    color: white;
-}
-
 .course-text {
     color: #6c757d;
+}
+.login-card {
+    background-color: #d6f0f5;
+    border-radius: 15px;
+}
+
+.h2{
+    color: #03a3bd;
+}
+
+.course-btn {
+background-color: #03a3bd;
+    color: white;
+    border-radius: 15px;
+    padding: 12px;
+    text-align: left;
+}
+.course-btn:hover {
+    background-color: #4c8769;
+}
+.progress-zero {
+    min-width: 45px;
 }

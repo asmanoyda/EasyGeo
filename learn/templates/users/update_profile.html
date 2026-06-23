@@ -8,9 +8,9 @@ Update Profile
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 85vh;">
 
-    <div class="card shadow-lg border-0 p-4" style="max-width: 600px; width: 100%;">
+    <div class="card login-card shadow-lg border-0 p-4"  style="max-width: 600px; width: 100%;">
 
-        <h2 class="text-center mb-4">My Account</h2>
+        <h2 class="text-center mb-4 h2 ">My Account</h2>
 
         {% for message in messages %}
         <div class="alert alert-info">
@@ -18,34 +18,34 @@ Update Profile
         </div>
         {% endfor %}
 
-        <form method="POST" action="{% url 'users:update_profile' %}">
+        <form method="POST" action="{% url 'users:update_profile' %}" class=" p-4 rounded">
             {% csrf_token %}
 
             <h5 class="mb-3 text-primary">User Information</h5>
 
             <div class="mb-3">
-                <label class="form-label">Name</label>
+                <label class="form-label">Name:</label>
                 <input type="text" class="form-control" name="name" value="{{ user.name }}" required>
             </div>
 
             <div class="mb-3">
-                <label class="form-label">Username</label>
+                <label class="form-label">Username:</label>
                 <input type="text" class="form-control" name="username" value="{{ user.username }}" required>
             </div>
 
             <div class="mb-4">
-                <label class="form-label">Email</label>
+                <label class="form-label">Email:</label>
                 <input type="email" class="form-control" name="email" value="{{ user.email }}" required>
             </div>
 
             <h5 class="mb-3 text-primary">Contact Information</h5>
 
             <div class="mb-4">
-                <label class="form-label">Mobile Number</label>
+                <label class="form-label">Mobile Number:</label>
                 <input type="text" class="form-control" name="mobile_no" value="{{ user.mobile_no }}" required>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100">
+            <button type="submit" class="btn btn-primary w-100 course-btn">
                 Update Profile
             </button>
 
