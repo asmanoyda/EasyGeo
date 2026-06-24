@@ -42,7 +42,7 @@ background-color: #e26f22;
 
 .course-body {
     color: #5d9d7e;
-}
+} 
 
 .course-title {
     color: #5d9d7e;
@@ -57,10 +57,6 @@ background-color: #e26f22;
     border-radius: 15px;
 }
 
-.h2{
-    color: #03a3bd;
-}
-
 .course-btn {
 background-color: #03a3bd;
     color: white;
@@ -69,8 +65,12 @@ background-color: #03a3bd;
     text-align: left;
 }
 .course-btn:hover {
-    background-color: #4c8769;
+    background-color: #5d9d7e;
 }
 .progress-zero {
     min-width: 45px;
+}
+.h2-color{
+ color: #03a3bd;
+
 }

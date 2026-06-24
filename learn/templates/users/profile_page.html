@@ -34,7 +34,7 @@ Profile Page
 
                 <div class="list-group list-group-flush">
 
-                    <a href="{% url 'users:update_profile' %}" class="list-group-item list-group-item-action">
+                    <a href="{% url 'users:update_profile' %}" class="list-group-item list-group-item-action ">
                         Update Profile
                     </a>
 
@@ -46,10 +46,16 @@ Profile Page
                         Delete Profile
                     </a>
                     <br>
-                        <p>
-                            <strong>  Joined:</strong>
-                            {{ user_data.joined }}
-                        </p>
+                    <p>
+                        <strong> Joined:</strong>
+                        {{ user_data.joined }}
+                    </p>
+
+                    <p>
+                        <strong>Last Updated:</strong>
+                        {{ user_data.last_updated }}
+                    </p>
+
 
                 </div>
 
@@ -70,7 +76,7 @@ Profile Page
 
                 <div class="card-body">
 
-                    <h3 class="mb-4">Profile Information</h3>
+                    <h3 class="mb-4 h2-color">Profile Information</h3>
 
                     <!-- Update Picture Section -->
                     <div id="update-picture">
@@ -138,11 +144,6 @@ Profile Page
                     <hr>
 
 
-
-                    <p>
-                        <strong>Last Updated:</strong>
-                        {{ user_data.last_updated }}
-                    </p>
 
                 </div>
 

@@ -20,7 +20,7 @@ my learning
                 <div class="card-body text-center">
                     {% if is_enrolled %}
                     <button class="btn btn-success w-100" disabled>
-                        Enrolled
+                        Countinue...
                     </button>
                     {% else %}
                     <a href="{% url 'mypage:create_entrollment' course.id %}" class="btn btn-primary w-100">
@@ -33,8 +33,8 @@ my learning
 
             <!-- Sections Card -->
             <div class="card shadow-sm">
-                <div class="card-header course-btn">
-                    Sections
+                <div class="card-header ">
+                    Course content (Sections)
                 </div>
 
                 <div class="card-body">
@@ -56,8 +56,34 @@ my learning
                         <button class="list-group-item list-group-item-action" data-bs-toggle="collapse"
                             data-bs-target="#section{{ section.id }}"
                             aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+
                             {{ forloop.counter }}. {{ section.section_name }}
+
                         </button>
+
+                        <!-- Units -->
+                        <div id="section{{ section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
+
+                            {% for unit in section.units.all %}
+
+                            <div
+                                class="list-group-item list-group-item-light ps-4">
+
+                                📖 {{ unit.unit_name }}
+
+                        </div>
+
+                            {% empty %}
+                            <div class="list-group-item text-muted ps-4">
+                                No units available
+                            </div>
+
+
+
+
+                            {% endfor %}
+
+                        </div>
                         {% endfor %}
                     </div>
 
@@ -80,33 +106,7 @@ my learning
                 </div>
             </div>
 
-            <!-- Sections Content -->
-            {% if sections %}
-            {% for section in sections %}
-            <div id="section{{ section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
 
-                        <h2 class="card-title mb-3">
-                            {{ section.section_name }}
-                        </h2>
-
-
-                        <div class="mt-4">
-                            <a href="{% url 'courses:unit' section.id course.id %}" class="btn btn-success">
-                                Go to Units
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% else %}
-            <div class="alert alert-warning">
-                Sorry, no records found.
-            </div>
-            {% endif %}
 
         </div>
 

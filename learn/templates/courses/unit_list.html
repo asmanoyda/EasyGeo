@@ -20,7 +20,7 @@ Units Page
                 <div class="card-body">
 
                     <!-- Progress Bar -->
-                
+
                     <div class="progress mb-3" style="height: 25px;">
 
 
@@ -64,6 +64,11 @@ Units Page
                         <!-- Description -->
                         <h5>Description</h5>
                         <p>{{ unit.description|linebreaks }}</p>
+                        {% if unit.video %}
+                        <div class="ratio ratio-16x9">
+                            <iframe src="{{ unit.video }}" allowfullscreen></iframe>
+                        </div>
+                        {% endif %}
 
                         <!-- Quiz -->
                         <h5 class="mt-4">Quiz</h5>
