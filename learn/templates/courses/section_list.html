@@ -19,9 +19,10 @@ my learning
                     style="height:200px; object-fit:cover;">
                 <div class="card-body text-center">
                     {% if is_enrolled %}
-                    <button class="btn btn-success w-100" disabled>
-                        Countinue...
-                    </button>
+                    <a href="{% url 'courses:unit' sections.0.id course.id 0 %}" class="btn btn-success w-100">
+                                Go to my learning
+                            </a>
+
                     {% else %}
                     <a href="{% url 'mypage:create_entrollment' course.id %}" class="btn btn-primary w-100">
                         Enroll Now

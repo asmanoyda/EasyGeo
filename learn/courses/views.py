@@ -71,8 +71,10 @@ def section_list(request, course_id):
     user = User.objects.get(id=request.session['user_id'])
     sections = Section.objects.filter(course_id=course_id)
     course = Course.objects.get(id=course_id)
-    is_enrolled = Entrollment.objects.get(course_id=course_id, user=user)
-
+    try:
+        is_enrolled = Entrollment.objects.get(course_id=course_id, user=user)
+    except Exception as e:
+        is_enrolled = False
     flag = False
     if is_enrolled:
         flag = True
@@ -87,25 +89,37 @@ def section_list(request, course_id):
 
 
 @custom_login_required
-def unit_list(request, section_id, course_id):
+def unit_list(request, section_id, course_id, unit_id):
 
     user = User.objects.get(id=request.session['user_id'])
     units = Unit.objects.filter(section_id=section_id)
-    section = Section.objects.get(id=section_id)
+    if unit_id == 0:
+            current_unit = units[0]
+    else:
+
+        current_unit = Unit.objects.get(id=unit_id)
+
+
+
+    
+    sections = Section.objects.filter(
+        course_id=course_id
+    ).prefetch_related('units')
     enrollment = Entrollment.objects.get(course_id=course_id, user=user)
 
     try:
-        section_entrollment = SectionEntrollment.objects.get(
-            entromment=enrollment, section=section)
+        section_entrollment = SectionEntrollment.objects.filter(
+            entromment=enrollment)
     except Exception:
         section_entrollment = None
 
     context = {
-        'units': units,
-        'user_data': user,
-        'section_id': section_id,
-        'enrollment': section_entrollment,
-
-        'section': section
-    }
+    'units': units,
+    'user_data': user,
+    'course_id': course_id,   # <-- add this
+    'sections': sections,
+    'enrollment_list': section_entrollment,
+    'current_unit' : current_unit
+    
+}
     return render(request, 'courses/unit_list.html', context)

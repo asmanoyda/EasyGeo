@@ -53,10 +53,19 @@ class SectionEntrollment(models.Model):
     def get_progress(self):
         
         enrollment = sum (1 for i in self.unit_entrollment.filter(completed=True))
+        if enrollment==0:
+            return 0.0
         count = self.section.unit_count()
+
         progress = (enrollment/count)*100
         return progress 
-
+    
+    def is_completed(self):
+        if self.get_progress()==100:
+            return True
+        else:
+            return False
+    
 
     def __str__(self):
         return str(self.section) + " ==>  "+str(self.entromment)

@@ -5,100 +5,147 @@ Units Page
 {% endblock %}
 
 {% block content %}
-<h3>{{section.section_name}}</h3>
+
 <div class="container-fluid mt-4">
     <div class="row">
 
         <!-- Sidebar -->
         <div class="col-md-3 mb-3">
-            <div class="card shadow-sm">
-                <div class="card-header course-btn">
-                    Section Progress
 
+            
+
+            <!-- Sections Card -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    Course Content
                 </div>
 
-                <div class="card-body">
+                <div class="card-body p-0">
 
-                    <!-- Progress Bar -->
+                    <div class="list-group list-group-flush">
 
-                    <div class="progress mb-3" style="height: 25px;">
+                        {% for enrollment in enrollment_list %}
 
-
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success
-                {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
-                            style="width: {{ enrollment.get_progress }}%;">
-                            {{ enrollment.get_progress }}%
-                        </div>
-                    </div>
-
-
-                    <!-- Unit Navigation -->
-                    <div class="list-group">
-                        {% for unit in units %}
+                        <!-- Section Button -->
                         <button class="list-group-item list-group-item-action" data-bs-toggle="collapse"
-                            data-bs-target="#unit{{ unit.id }}" aria-expanded="false">
-                            {{ forloop.counter }}. {{ unit.unit_name }}
+                            data-bs-target="#section{{ enrollment.section.id }}">
+                            {{ enrollment.section.section_name }}
                         </button>
+
+                        <!-- Units Under Section -->
+                        <div id="section{{ enrollment.section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
+
+                            {% for unit_entrol in enrollment.unit_entrollment.all %}
+                            <a href="{% url 'courses:unit' enrollment.section.id course_id unit_entrol.unit.id %}"
+                                class="list-group-item list-group-item-light ps-4">
+                                {% if unit_entrol.completed %}
+                                
+                                    <i class="bi bi-check-square-fill"></i>
+                                {% else %}
+                                        <i class="bi bi-check-square"></i>
+                                {% endif %}
+                                
+                                {{ unit_entrol.unit.unit_name }}
+                            </a>
+
+                            {% empty %}
+                            <div class="list-group-item text-muted ps-4">
+                                No units available
+                            </div>
+                            {% endfor %}
+
+                        </div>
+
                         {% endfor %}
+
                     </div>
 
                 </div>
             </div>
+
         </div>
 
         <!-- Content Area -->
         <div class="col-md-9">
 
             {% if units %}
-            {% for unit in units %}
-            <div id="unit{{ unit.id }}" class="collapse {% if forloop.first %}show{% endif %}">
 
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
+            <div id="unitContent">
 
-                        <!-- Unit Title -->
-                        <h2 class="card-title mb-3">
-                            {{ unit.unit_name }}
-                        </h2>
+                {% for unit in units %}
 
-                        <!-- Description -->
-                        <h5>Description</h5>
-                        <p>{{ unit.description|linebreaks }}</p>
-                        {% if unit.video %}
-                        <div class="ratio ratio-16x9">
-                            <iframe src="{{ unit.video }}" allowfullscreen></iframe>
-                        </div>
-                        {% endif %}
+                <div id="unit{{ unit.id }}" class="collapse {% if forloop.first %}show{% endif %}"
+                    data-bs-parent="#unitContent">
 
-                        <!-- Quiz -->
-                        <h5 class="mt-4">Quiz</h5>
+                    <div class="card shadow-sm mb-4">
 
-                        <div class="card border-warning mb-4">
-                            <div class="card-body">
-                                <p>Test your knowledge for this unit.</p>
+                        <div class="card-body">
 
-                                <a href="{% url 'courses:quiz_page' unit.id %}" class="btn btn-warning">
-                                    Start Quiz
-                                </a>
+                            <!-- Unit Title -->
+                            <h2 class="card-title mb-3">
+                                {{ current_unit.unit_name }}
+                            </h2>
+
+                            <hr>
+
+                            <!-- Description -->
+                            <h5>Description</h5>
+
+                            {% if current_unit.description %}
+                            <p>{{ current_unit.description|linebreaks }}</p>
+                            {% else %}
+                            <p class="text-muted">
+                                No description available.
+                            </p>
+                            {% endif %}
+
+                            <!-- Quiz Section -->
+                            <h5 class="mt-4">Quiz</h5>
+
+                            <div class="card border-warning mb-4">
+                                <div class="card-body">
+
+                                    <p>
+                                        Test your knowledge for this unit.
+                                    </p>
+
+                                    <a href="{% url 'courses:quiz_page' unit.id %}" class="btn btn-warning">
+                                        Start Quiz
+                                    </a>
+
+                                </div>
                             </div>
-                        </div>
 
+                            <!-- Video -->
+                            {% if current_unit.video %}
 
-                        <!-- Video -->
-                        {% if unit.video %}
-                        <h5>Video</h5>
-                        <div class="ratio ratio-16x9">
-                            <iframe src="{{ unit.video }}" title="{{ unit.unit_name }} Video" allowfullscreen>
-                            </iframe>
+                            <h5>Video Lesson</h5>
+
+                            <div class="ratio ratio-16x9">
+
+                                <iframe src="{{ current_unit.video }}" title="{{ current_unit.unit_name }}" allowfullscreen>
+                                </iframe>
+
+                            </div>
+
+                            {% endif %}
+
                         </div>
-                        {% endif %}
 
                     </div>
+
                 </div>
+
+                {% endfor %}
+
             </div>
-            {% endfor %}
+
             {% else %}
-            <p>Sorry, no records found.</p>
+
+            <div class="alert alert-info">
+                Sorry, no units found.
+            </div>
+
             {% endif %}
 
         </div>

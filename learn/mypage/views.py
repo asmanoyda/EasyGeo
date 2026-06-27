@@ -9,12 +9,13 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.hashers import check_password
 import datetime
 from django.contrib import messages
-from mypage.models import User, Entrollment
+from mypage.models import User, Entrollment, SectionEntrollment,UnitEntrollment
 from users.views import custom_login_required
-
+from courses.models import Course,Section, Unit
 # utils/decorators.py
 from django.shortcuts import redirect
 from functools import wraps
+
 
 
 def home(request):
@@ -43,4 +44,15 @@ def create_entrollment(request, course_id):
         user_id=request.session.get("user_id"),
         course_id=course_id
     )
+    sections = Section.objects.filter(course_id=course_id)
+    for section in sections:
+        section_enroll = SectionEntrollment.objects.create(section=section, entromment=abc)
+        units =Unit.objects.filter(section_id=section.id)
+
+        for unit in units:
+
+            UnitEntrollment.objects.create(unit=unit,entromment=section_enroll,completed= False)
+
     return redirect("courses:get_enrollments")
+
+
