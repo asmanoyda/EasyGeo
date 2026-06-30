@@ -45,12 +45,15 @@ def create_entrollment(request, course_id):
         course_id=course_id
     )
     sections = Section.objects.filter(course_id=course_id)
+
+
+
+
+    
     for section in sections:
         section_enroll = SectionEntrollment.objects.create(section=section, entromment=abc)
         units =Unit.objects.filter(section_id=section.id)
-
         for unit in units:
-
             UnitEntrollment.objects.create(unit=unit,entromment=section_enroll,completed= False)
 
     return redirect("courses:get_enrollments")

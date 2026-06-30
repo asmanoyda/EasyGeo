@@ -12,7 +12,7 @@ Units Page
         <!-- Sidebar -->
         <div class="col-md-3 mb-3">
 
-            
+
 
             <!-- Sections Card -->
             <div class="card shadow-sm">
@@ -33,18 +33,19 @@ Units Page
                         </button>
 
                         <!-- Units Under Section -->
-                        <div id="section{{ enrollment.section.id }}" class="collapse {% if forloop.first %}show{% endif %}">
+                        <div id="section{{ enrollment.section.id }}"
+                            class="collapse {% if forloop.first %}show{% endif %}">
 
                             {% for unit_entrol in enrollment.unit_entrollment.all %}
                             <a href="{% url 'courses:unit' enrollment.section.id course_id unit_entrol.unit.id %}"
                                 class="list-group-item list-group-item-light ps-4">
                                 {% if unit_entrol.completed %}
-                                
-                                    <i class="bi bi-check-square-fill"></i>
+
+                                <i class="bi bi-check-square-fill"></i>
                                 {% else %}
-                                        <i class="bi bi-check-square"></i>
+                                <i class="bi bi-check-square"></i>
                                 {% endif %}
-                                
+
                                 {{ unit_entrol.unit.unit_name }}
                             </a>
 
@@ -121,14 +122,35 @@ Units Page
 
                             <h5>Video Lesson</h5>
 
-                            <div class="ratio ratio-16x9">
+                            <div class="ratio ratio-16x9 mb-4">
 
-                                <iframe src="{{ current_unit.video }}" title="{{ current_unit.unit_name }}" allowfullscreen>
+                                <iframe src="{{ current_unit.video }}" title="{{ current_unit.unit_name }}"
+                                    allowfullscreen>
                                 </iframe>
+
 
                             </div>
 
                             {% endif %}
+                            <div class="d-flex justify-content-between mt-4 mb-3">
+
+                                {% if previous_unit %}
+                                <a href="{% url 'courses:unit' previous_unit.section.id course_id previous_unit.id %}"
+                                    class="btn btn-outline-primary">
+                                    ← Previous
+                                </a>
+                                {% else %}
+                                <span></span>
+                                {% endif %}
+
+                                {% if next_unit %}
+                                <a href="{% url 'courses:unit' next_unit.section.id course_id next_unit.id %}"
+                                    class="btn btn-primary">
+                                    Next →
+                                </a>
+                                {% endif %}
+
+                            </div>
 
                         </div>
 

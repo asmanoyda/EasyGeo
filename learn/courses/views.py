@@ -93,15 +93,13 @@ def unit_list(request, section_id, course_id, unit_id):
 
     user = User.objects.get(id=request.session['user_id'])
     units = Unit.objects.filter(section_id=section_id)
+
     if unit_id == 0:
-            current_unit = units[0]
+        current_unit = units[0]
     else:
 
         current_unit = Unit.objects.get(id=unit_id)
 
-
-
-    
     sections = Section.objects.filter(
         course_id=course_id
     ).prefetch_related('units')
@@ -113,13 +111,36 @@ def unit_list(request, section_id, course_id, unit_id):
     except Exception:
         section_entrollment = None
 
+    all_units = list(
+        Unit.objects.filter(
+            section__course_id=course_id
+        ).select_related('section')
+        .order_by('section_id', 'id')
+    )
+    # unit_list = list(units)
+    current_index = all_units.index(current_unit)
+
+    previous_unit = (
+        all_units[current_index - 1]
+        if current_index > 0
+        else None
+    )
+
+    next_unit = (
+        all_units[current_index + 1]
+        if current_index < len(all_units) - 1
+        else None
+    )
     context = {
-    'units': units,
-    'user_data': user,
-    'course_id': course_id,   # <-- add this
-    'sections': sections,
-    'enrollment_list': section_entrollment,
-    'current_unit' : current_unit
-    
-}
+        'units': units,
+        'user_data': user,
+        'course_id': course_id,   # <-- add this
+        'sections': sections,
+        'enrollment_list': section_entrollment,
+        'current_unit': current_unit,
+        'previous_unit': previous_unit,
+        'next_unit': next_unit,
+        'section_id': section_id,
+
+    }
     return render(request, 'courses/unit_list.html', context)

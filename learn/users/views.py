@@ -20,7 +20,11 @@ def custom_login_required(view_func):
             return view_func(request, *args, **kwargs)
 
         return redirect('users:login')
+    
+    
+    
     return wrapper
+
 
 
 def login_page(request):
@@ -76,8 +80,9 @@ def register(request):
 
 
 @custom_login_required
-def logout_page(request):
 
+
+def logout_page(request):
     request.session.flush()
     messages.success(request, "your account logged out succesfully")
     return redirect("users:login")
