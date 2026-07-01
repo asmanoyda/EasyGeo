@@ -3,6 +3,8 @@ from django.utils.text import slugify
 from courses.models import Course
 from users.models import User
 from courses.models import Section,Unit
+from django.utils import timezone
+
 
 
 
@@ -26,6 +28,8 @@ class Entrollment(models.Model):
         on_delete=models.CASCADE,
         null=True
     )
+    entrollment_date = models.DateTimeField(default=timezone.now)
+
     def get_progress(self):
         enrollment = sum (1 for i in self.section_entrollment.filter() if i.get_progress()==100)
         count = self.course.section_count()

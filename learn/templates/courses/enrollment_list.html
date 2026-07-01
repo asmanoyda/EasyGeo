@@ -50,7 +50,12 @@ My Learning
                                 style="width: {{ enrollment.get_progress }}%;">
                                 {{ enrollment.get_progress }}%
                             </div>
+                         
                         </div>
+                         <p>
+                                <strong> Entrollment_date:</strong>
+                                {{ enrollment.entrollment_date }}
+                            </p>
 
                         <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
                             Continue Learning →
