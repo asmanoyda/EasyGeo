@@ -59,3 +59,26 @@ def create_entrollment(request, course_id):
     return redirect("courses:get_enrollments")
 
 
+
+def contact(request):
+    user = None
+    try:
+        user = User.objects.get(id=request.session['user_id'])
+    except:
+            pass
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        phone = request.POST.get("phone")
+        message = request.POST.get("message")
+
+     
+        print("Name:", name)
+        print("Email:", email)
+        print("Phone:", phone)
+        print("Message:", message)
+
+        messages.success(request, "Your message has been sent successfully!")
+    else:
+
+        return render(request, "mypage/contact_us.html",{'user_data': user})
