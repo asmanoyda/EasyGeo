@@ -21,52 +21,57 @@
     <form method="post">
         {% csrf_token %}
 
+
         {% for question in questions %}
-        <div class="card shadow-sm border-0 rounded-4 mb-4">
 
-            <!-- Question Header -->
-            <div class="card-header bg-primary text-white py-3 rounded-top-4">
-                <h6 class="mb-0">
-                    Question {{ forloop.counter }}
-                </h6>
-            </div>
+        <div class="card shadow rounded-4 border-0 mb-4
+{% cycle 'quiz-blue' 'quiz-green' 'quiz-yellow' 'quiz-purple' 'quiz-pink' %}">
 
-            <!-- Question Body -->
             <div class="card-body p-4">
 
-                <h5 class="fw-semibold mb-4">
+                <!-- Question Number -->
+                <div class="d-flex align-items-center mb-4">
+
+                    <h5 class="mb-0 fw-bold">
+                        Question {{ forloop.counter }}
+                    </h5>
+
+                </div>
+
+                <!-- Question -->
+                <h4 class="fw-semibold mb-4">
                     {{ question.question_text }}
-                </h5>
+                </h4>
+
+                <!-- Options -->
                 <div class="d-grid gap-3">
 
                     <label class="option-card">
-                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option1 }}"
-                            data-correct="{% if question.correct_answer == question.option1 %}true{% else %}false{% endif %}">
-                        <span>{{ question.option1 }}</span>
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option1 }}">
+                        <span><strong class="me-2 text-primary">A.</strong>{{ question.option1 }}</span>
                     </label>
 
                     <label class="option-card">
-                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option2 }}"
-                            data-correct="{% if question.correct_answer == question.option2 %}true{% else %}false{% endif %}">
-                        <span>{{ question.option2 }}</span>
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option2 }}">
+                        <span><strong class="me-2 text-success">B.</strong>{{ question.option2 }}</span>
                     </label>
 
                     <label class="option-card">
-                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option3 }}"
-                            data-correct="{% if question.correct_answer == question.option3 %}true{% else %}false{% endif %}">
-                        <span>{{ question.option3 }}</span>
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option3 }}">
+                        <span><strong class="me-2 text-warning">C.</strong>{{ question.option3 }}</span>
                     </label>
 
                     <label class="option-card">
-                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option4 }}"
-                            data-correct="{% if question.correct_answer == question.option4 %}true{% else %}false{% endif %}">
-                        <span>{{ question.option4 }}</span>
+                        <input type="radio" name="question_{{ question.id }}" value="{{ question.option4 }}">
+                        <span><strong class="me-2 text-danger">D.</strong>{{ question.option4 }}</span>
                     </label>
 
                 </div>
 
             </div>
+
         </div>
+
         {% endfor %}
         <div class="text-center mt-5">
             <button type="submit" class="btn btn-primary btn-lg px-5 shadow">

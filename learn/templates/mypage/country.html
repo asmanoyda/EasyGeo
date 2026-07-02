@@ -2,25 +2,27 @@
 {% load static %}
 
 {% block title %}
-Country Page
+Country Flash Cards
 {% endblock %}
 
 {% block content %}
+
 <br>
 
-<div class="country-header text-center mb-5">
-    <h1 class="text-center mb-4">🌍 Country Explorer</h1>
-    <p class="lead">
-        Discover countries, capitals, currencies, and flags from around the world.
-    </p>
-</div>
-{% for message in messages %}
-<p class="text-white bg-success p-2">
-    {{ message }}
-</p>
-{% endfor %}
+<div class="container py-5">
 
-<div class="container mt-3" style="height:100vh; overflow-y:auto;">
+    <div class="country-header text-center mb-5">
+        <h1>🌍 Country Flash Cards</h1>
+        <p class="lead">
+            Test your geography knowledge! Hover over a flash card to reveal the answer.
+        </p>
+    </div>
+
+    {% for message in messages %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
 
     {% if countries %}
 
@@ -28,44 +30,43 @@ Country Page
 
         {% for country in countries %}
 
-        <!-- 3 cards per row -->
-        <div class="col-md-4 mb-4">
+        <div class="col-lg-4 col-md-6 mb-4">
 
-            <!-- Collapse Button -->
-            <button type="button" class="btn btn-primary w-100 course-btn" data-bs-toggle="collapse"
-                data-bs-target="#collapse{{ country.id }}" aria-expanded="false">
+            <div class="flash-card">
 
-                <h4 class="mb-0">
-                    {{ country.name }}
-                </h4>
+                <div class="flash-card-inner">
 
-            </button>
+                    <!-- Front -->
+                    <div class="flash-card-front">
 
-            <!-- Country Details -->
-            <div id="collapse{{ country.id }}" class="collapse mt-3 border p-3 rounded shadow">
+                        <img src="{{ country.flag }}" class="flag-img" alt="{{ country.name }}">
 
-                <!-- Flag -->
-                <img src="{{ country.flag }}" class="img-fluid rounded" alt="{{ country.name }}"
-                    style="width:100%; height:250px; object-fit:cover;">
+                        <h3>{{ country.name }}</h3>
 
-                <br><br>
-                <div class="card-body">
+                        <p class="question">
+                            ❓ What is the capital of this country?
+                        </p>
 
-                    <h4 class="card-title text-center">
-                        {{ country.name }}
-                    </h4>
+                        <small class="text-primary">
+                            Hover to reveal
+                        </small>
 
-                    <hr>
+                    </div>
 
-                    <p>
-                        🏛️ <strong>Capital:</strong>
-                        {{ country.capital }}
-                    </p>
+                    <!-- Back -->
+                    <div class="flash-card-back">
 
-                    <p>
-                        💰 <strong>Currency:</strong>
-                        {{ country.currency }}
-                    </p>
+                        <h3>{{ country.name }}</h3>
+
+                        <hr class="w-100">
+
+                        <p><strong>🏛️ Capital</strong></p>
+                        <h4>{{ country.capital }}</h4>
+
+                        <p class="mt-3"><strong>💰 Currency</strong></p>
+                        <h5>{{ country.currency }}</h5>
+
+                    </div>
 
                 </div>
 
@@ -79,7 +80,9 @@ Country Page
 
     {% else %}
 
-    <p>No country records found.</p>
+    <div class="alert alert-warning text-center">
+        No countries found.
+    </div>
 
     {% endif %}
 

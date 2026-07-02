@@ -9,5 +9,6 @@ urlpatterns = [
      path("contact/", views.contact, name="contact_us"),
     path('create-entrollment/<int:course_id>/',
          views.create_entrollment, name='create_entrollment'),
+    path('did-you-know/', views.did_you_know, name='did_you_know'),
 
 ]

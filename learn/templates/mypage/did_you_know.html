@@ -1,0 +1,64 @@
+{% extends "mypage/base.html" %}
+{% load static %}
+
+{% block title %}
+Did You Know?
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5 ">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <!-- Header -->
+                <div class="card-header text-white text-center py-3"
+                     style="background: linear-gradient(90deg, #0d6efd, #6610f2);">
+
+                    <h2 class="mb-0">
+                        💡 Did You Know?
+                    </h2>
+
+                    <p class="mb-0 mt-2">
+                        Learn a new geography fact every time!
+                    </p>
+
+                </div>
+
+                <!-- Body -->
+                <div class="card-body text-center p-5">
+
+                    <div class="display-1 mb-4">
+                        🌍
+                    </div>
+
+                    <blockquote class="blockquote">
+
+                        <p class="fs-4 fw-semibold text-dark">
+                            {{ fact }}
+                        </p>
+
+                    </blockquote>
+
+                    <hr class="my-4">
+
+                    <a href="{% url 'mypage:did_you_know' %}"
+                       class="btn btn-primary btn-lg px-4 rounded-pill ">
+
+                        🔄 Show Another Fact
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

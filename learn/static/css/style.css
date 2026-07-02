@@ -74,3 +74,63 @@ background-color: #03a3bd;
  color: #03a3bd;
 
 }
+.flash-card {
+    perspective: 1000px;
+    width: 100%;
+    height: 420px;
+}
+
+.flash-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flash-card:hover .flash-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flash-card-front,
+.flash-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flash-card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg,#e7823e,#f68336);
+    color: white;
+}
+
+.flag-img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid black;
+    margin-bottom:20px;
+}
+
+.question{
+    text-align:center;
+}
+
