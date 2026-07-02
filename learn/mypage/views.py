@@ -54,7 +54,9 @@ def create_entrollment(request, course_id):
         for unit in units:
             UnitEntrollment.objects.create(
                 unit=unit, entromment=section_enroll, completed=False)
-
+            
+    
+    messages.success(request, "Enrollment created successfully.")
     return redirect("courses:get_enrollments")
 
 

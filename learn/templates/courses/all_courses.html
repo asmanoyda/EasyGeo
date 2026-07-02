@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-All Courses
+All Courses | EasyGeo
 {% endblock %}
 
 {% block content %}
@@ -17,11 +17,7 @@ All Courses
         </p>
     </div>
 
-    {% for message in messages %}
-    <div class="alert alert-success text-center">
-        {{ message }}
-    </div>
-    {% endfor %}
+
 
     {% if courses %}
     <div class="row">

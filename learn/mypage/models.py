@@ -31,8 +31,11 @@ class Entrollment(models.Model):
     entrollment_date = models.DateTimeField(default=timezone.now)
 
     def get_progress(self):
+
         enrollment = sum (1 for i in self.section_entrollment.filter() if i.get_progress()==100)
         count = self.course.section_count()
+        if enrollment ==0:
+            return 0
         progress = (enrollment/count)*100
         return progress 
 

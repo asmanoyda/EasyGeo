@@ -1,6 +1,6 @@
 {% extends "mypage/base.html" %}
 {% block title %}
-Login
+Login | EasyGeo
 {% endblock %}
 
 {% block content %}
@@ -14,11 +14,7 @@ Login
             <p class="text-muted">Login to your EasyGeo account</p>
         </div>
 
-        {% for message in messages %}
-        <div class="alert alert-warning">
-            {{ message }}
-        </div>
-        {% endfor %}
+       
 
         <form action="login" method="POST"  class="p-4 rounded">
             {% csrf_token %}

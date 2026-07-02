@@ -134,7 +134,7 @@ def unit_list(request, section_id, course_id, unit_id):
     context = {
         'units': units,
         'user_data': user,
-        'course_id': course_id,   # <-- add this
+        'course_id': course_id,  
         'sections': sections,
         'enrollment_list': section_entrollment,
         'current_unit': current_unit,

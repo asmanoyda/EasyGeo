@@ -16,5 +16,5 @@ class SectionEntrollmentAdmin(admin.ModelAdmin):
 @admin.register(Entrollment)
 class CourseEntrollmentAdmin(admin.ModelAdmin):
     
-    list_display = ('get_progress','course','user')
+    list_display = ('get_progress','entrollment_date','course','user')
 

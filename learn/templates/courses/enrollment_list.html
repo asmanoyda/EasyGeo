@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-My Learning
+My Learning | EasyGeo
 {% endblock %}
 
 {% block content %}
@@ -13,11 +13,6 @@ My Learning
         📚 My Learning
     </h1>
 
-    {% for message in messages %}
-    <p class="text-white bg-success p-2 rounded">
-        {{ message }}
-    </p>
-    {% endfor %}
 
     <div class="container mt-4">
 
@@ -46,51 +41,52 @@ My Learning
 
                         <div class="progress mb-3">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success
-                {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
+        {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
                                 style="width: {{ enrollment.get_progress }}%;">
                                 {{ enrollment.get_progress }}%
                             </div>
-                         
                         </div>
-                         <p>
-                                <strong> Entrollment_date:</strong>
-                                {{ enrollment.entrollment_date }}
-                            </p>
-
-                        <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
-                            Continue Learning →
-                        </a>
 
                     </div>
+                    <p>
+                        <strong> Entrollment_date:</strong>
+                        {{ enrollment.entrollment_date }}
+                    </p>
+
+                    <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
+                        Continue Learning →
+                    </a>
 
                 </div>
 
             </div>
-            {% endfor %}
 
         </div>
-
-        {% else %}
-
-        <div class="text-center py-5">
-
-            <h3 class="course-title">
-                No Courses Yet 📖
-            </h3>
-
-            <p class="course-text">
-                You haven't enrolled in any courses.
-            </p>
-
-            <a href="{% url 'courses:all_courses' %}" class="btn course-btn">
-                Explore Courses
-            </a>
-
-        </div>
-
-        {% endif %}
+        {% endfor %}
 
     </div>
+
+    {% else %}
+
+    <div class="text-center py-5">
+
+        <h3 class="course-title">
+            No Courses Yet 📖
+        </h3>
+
+        <p class="course-text">
+            You haven't enrolled in any courses.
+        </p>
+
+        <a href="{% url 'courses:all_courses' %}" class="btn course-btn">
+            Explore Courses
+        </a>
+
+    </div>
+
+    {% endif %}
+
+</div>
 
 </div>
 

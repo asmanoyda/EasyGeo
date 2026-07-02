@@ -1,7 +1,7 @@
 {% extends "mypage/base.html" %}
 
 {% block title %}
-Registration
+Registration | EasyGeo
 {% endblock %}
 
 {% block content %}
@@ -13,11 +13,7 @@ Registration
 
         <h2 class="text-center mb-4 h2-color">Create Account</h2>
 
-        {% for message in messages %}
-        <div class="alert alert-warning">
-            {{ message }}
-        </div>
-        {% endfor %}
+      
 
         <form action="registration" method="POST" class="p-4 rounded">
             {% csrf_token %}
