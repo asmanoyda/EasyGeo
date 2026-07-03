@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mypage.models import Entrollment, Country, UnitEntrollment, SectionEntrollment
+from mypage.models import Entrollment, Country, UnitEntrollment, SectionEntrollment, DidYouKnowFact
 
 admin.site.register(Country)
 
@@ -17,4 +17,8 @@ class SectionEntrollmentAdmin(admin.ModelAdmin):
 class CourseEntrollmentAdmin(admin.ModelAdmin):
     
     list_display = ('get_progress','entrollment_date','course','user')
+
+@admin.register(DidYouKnowFact)
+class DidYouKnowFactAdmin(admin.ModelAdmin):
+    list_display = ("id", "created_at")    
 

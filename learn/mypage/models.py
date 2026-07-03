@@ -99,3 +99,10 @@ class UnitEntrollment(models.Model):
     
     class Meta:
         unique_together = [('unit', 'entromment')]
+
+class DidYouKnowFact(models.Model):
+    fact = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.fact

@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.hashers import check_password
 import datetime
 from django.contrib import messages
-from mypage.models import User, Entrollment, SectionEntrollment, UnitEntrollment
+from mypage.models import User, Entrollment, SectionEntrollment, UnitEntrollment, DidYouKnowFact
 from users.views import custom_login_required
 from courses.models import Course, Section, Unit
 # utils/decorators.py
@@ -82,39 +82,14 @@ def contact(request):
 
         return render(request, "mypage/contact_us.html", {'user_data': user})
 
-
-did_you_know_facts = [
-    "💡 Russia spans 11 time zones.",
-    "💡 Canada has more lakes than any other country.",
-    "💡 Australia is wider than the Moon.",
-    "💡 India is home to the wettest inhabited place on Earth, Mawsynram.",
-    "💡 The Sahara Desert is larger than the entire United States (excluding Alaska).",
-    "💡 Antarctica is the world's largest desert.",
-    "💡 Japan consists of over 14,000 islands.",
-    "💡 Brazil is the largest country in South America.",
-    "💡 Nepal has eight of the world's ten highest mountains.",
-    "💡 Vatican City is the smallest country in the world.",
-    "💡 Indonesia has more than 17,000 islands.",
-    "💡 Mongolia is the least densely populated country in the world.",
-    "💡 Lake Baikal in Russia is the world's deepest freshwater lake.",
-    "💡 Greenland is the world's largest island that is not a continent.",
-    "💡 The Nile River flows through 11 countries.",
-    "💡 Turkey is located on two continents: Europe and Asia.",
-    "💡 France has the most time zones of any country.",
-    "💡 Chile is over 4,300 km long but only about 175 km wide on average.",
-    "💡 Iceland has no mosquitoes.",
-    "💡 Bolivia has two capital cities: Sucre and La Paz."
-]
-
-
 def did_you_know(request):
     user = None
     try:
-        user = User.objects.get(id=request.session['user_id'])
-    except:
+        user = User.objects.get(id=request.session["user_id"])
+    except User.DoesNotExist:
         pass
 
-    fact = random.choice(did_you_know_facts)
+    fact = DidYouKnowFact.objects.order_by("?").first()
 
     return render(request, "mypage/did_you_know.html", {
         "fact": fact,
