@@ -60,6 +60,7 @@ python manage.py startapp appname
 
 # to do
 python manage.py dumpdata courses > seeders.json
+python manage.py dumpdata mypage > seeders.json
 
 branch learning
 
