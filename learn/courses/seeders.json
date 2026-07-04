@@ -75,7 +75,7 @@
         "model": "courses.course",
         "pk": 111,
         "fields": {
-            "course_name": "uk Geography",
+            "course_name": "UK Geography",
             "image": "courses/usa-geography/usa.jpg",
             "description": "---",
             "created": "2026-06-17T07:18:19.529Z",
@@ -567,6 +567,1016 @@
             "option3": "Employment opportunities",
             "option4": "All of the above",
             "correct_answer": "All of the above"
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 9,
+        "fields": {
+            "section_name": "Physical Landscapes",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 10,
+        "fields": {
+            "section_name": "Human and Economic Systems",
+            "course": 6
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 11,
+        "fields": {
+            "section_name": "Physical Regions",
+            "course": 7
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 12,
+        "fields": {
+            "section_name": "Population and Development",
+            "course": 7
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 13,
+        "fields": {
+            "section_name": "Natural Regions",
+            "course": 8
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 14,
+        "fields": {
+            "section_name": "Resources and Settlement",
+            "course": 8
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 15,
+        "fields": {
+            "section_name": "Physical Environment",
+            "course": 9
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 16,
+        "fields": {
+            "section_name": "People and Economy",
+            "course": 9
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 17,
+        "fields": {
+            "section_name": "Landforms and Hazards",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 18,
+        "fields": {
+            "section_name": "Population and Urban Geography",
+            "course": 10
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 19,
+        "fields": {
+            "section_name": "Physical Geography",
+            "course": 111
+        }
+    },
+    {
+        "model": "courses.section",
+        "pk": 20,
+        "fields": {
+            "section_name": "Human and Economic Geography",
+            "course": 111
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 28,
+        "fields": {
+            "unit_name": "Major Landforms of the United States",
+            "quiz": null,
+            "video": null,
+            "description": "Overview of mountains, plains, coastal regions, and major river basins in the United States.",
+            "section": 9
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 29,
+        "fields": {
+            "unit_name": "US Climate Zones",
+            "quiz": null,
+            "video": null,
+            "description": "Study of humid, arid, continental, and polar climate zones across the United States.",
+            "section": 9
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 30,
+        "fields": {
+            "unit_name": "Population Distribution in the USA",
+            "quiz": null,
+            "video": null,
+            "description": "Patterns of population concentration and migration in urban and rural America.",
+            "section": 10
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 31,
+        "fields": {
+            "unit_name": "Economic Regions of the USA",
+            "quiz": null,
+            "video": null,
+            "description": "Regional economic activities including agriculture, manufacturing, energy, and services.",
+            "section": 10
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 32,
+        "fields": {
+            "unit_name": "China's Western Highlands and Plateaus",
+            "quiz": null,
+            "video": null,
+            "description": "Physical geography of the Tibetan Plateau and surrounding mountain systems.",
+            "section": 11
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 33,
+        "fields": {
+            "unit_name": "Eastern Plains and River Basins of China",
+            "quiz": null,
+            "video": null,
+            "description": "Fertile plains and major river systems including the Yellow and Yangtze rivers.",
+            "section": 11
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 34,
+        "fields": {
+            "unit_name": "Population Density Patterns in China",
+            "quiz": null,
+            "video": null,
+            "description": "Why eastern China is densely populated while western regions are sparsely populated.",
+            "section": 12
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 35,
+        "fields": {
+            "unit_name": "Industrial and Urban Development in China",
+            "quiz": null,
+            "video": null,
+            "description": "Growth of coastal cities, industry hubs, and transport corridors in modern China.",
+            "section": 12
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 36,
+        "fields": {
+            "unit_name": "European Russia and the Ural Boundary",
+            "quiz": null,
+            "video": null,
+            "description": "The west Russian plain, Ural Mountains, and the transition to Siberia.",
+            "section": 13
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 37,
+        "fields": {
+            "unit_name": "Siberian Taiga and Tundra",
+            "quiz": null,
+            "video": null,
+            "description": "Climate, vegetation, and permafrost environments across Siberia.",
+            "section": 13
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 38,
+        "fields": {
+            "unit_name": "Energy Resources of Russia",
+            "quiz": null,
+            "video": null,
+            "description": "Distribution of oil, natural gas, coal, and hydroelectric resources in Russia.",
+            "section": 14
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 39,
+        "fields": {
+            "unit_name": "Settlement Patterns in Russia",
+            "quiz": null,
+            "video": null,
+            "description": "Population concentration in European Russia and sparse settlement in the Far East.",
+            "section": 14
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 40,
+        "fields": {
+            "unit_name": "Australian Interior and Desert Landscapes",
+            "quiz": null,
+            "video": null,
+            "description": "Arid interior landforms including deserts, plateaus, and low mountain ranges.",
+            "section": 15
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 41,
+        "fields": {
+            "unit_name": "Coastal Regions and the Great Dividing Range",
+            "quiz": null,
+            "video": null,
+            "description": "Physical contrast between coastal plains and eastern highlands.",
+            "section": 15
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 42,
+        "fields": {
+            "unit_name": "Population Distribution in Australia",
+            "quiz": null,
+            "video": null,
+            "description": "Why most Australians live near the coast and major urban centers.",
+            "section": 16
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 43,
+        "fields": {
+            "unit_name": "Primary and Service Sectors in Australia",
+            "quiz": null,
+            "video": null,
+            "description": "Economic activities from mining and agriculture to tourism and finance.",
+            "section": 16
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 44,
+        "fields": {
+            "unit_name": "Mountainous Terrain of Japan",
+            "quiz": null,
+            "video": null,
+            "description": "Major mountain systems, limited plains, and implications for land use.",
+            "section": 17
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 45,
+        "fields": {
+            "unit_name": "Earthquakes, Volcanoes, and Tsunamis in Japan",
+            "quiz": null,
+            "video": null,
+            "description": "Tectonic setting of Japan and major natural hazards.",
+            "section": 17
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 46,
+        "fields": {
+            "unit_name": "High Population Density in Japanese Cities",
+            "quiz": null,
+            "video": null,
+            "description": "Urban concentration in Tokyo, Osaka, and other metropolitan corridors.",
+            "section": 18
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 47,
+        "fields": {
+            "unit_name": "Transport and Urban Planning in Japan",
+            "quiz": null,
+            "video": null,
+            "description": "Rail networks, compact city design, and efficient land management.",
+            "section": 18
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 48,
+        "fields": {
+            "unit_name": "Relief and River Systems of the UK",
+            "quiz": null,
+            "video": null,
+            "description": "Highlands and lowlands, major rivers, and physical divisions of the UK.",
+            "section": 19
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 49,
+        "fields": {
+            "unit_name": "Climate of the UK",
+            "quiz": null,
+            "video": null,
+            "description": "Maritime climate controls, rainfall distribution, and seasonal patterns.",
+            "section": 19
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 50,
+        "fields": {
+            "unit_name": "Population and Urbanization in the UK",
+            "quiz": null,
+            "video": null,
+            "description": "Settlement trends, metropolitan regions, and internal migration patterns.",
+            "section": 20
+        }
+    },
+    {
+        "model": "courses.unit",
+        "pk": 51,
+        "fields": {
+            "unit_name": "Economic Geography of the UK",
+            "quiz": null,
+            "video": null,
+            "description": "Regional economies, services, manufacturing, and global trade links.",
+            "section": 20
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 42,
+        "fields": {
+            "unit": 23,
+            "question_text": "Which atmospheric layer contains most weather events?",
+            "option1": "Stratosphere",
+            "option2": "Troposphere",
+            "option3": "Mesosphere",
+            "option4": "Thermosphere",
+            "correct_answer": "Troposphere"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 43,
+        "fields": {
+            "unit": 23,
+            "question_text": "Which global wind belt is found near the equator?",
+            "option1": "Westerlies",
+            "option2": "Polar easterlies",
+            "option3": "Trade winds",
+            "option4": "Jet streams",
+            "correct_answer": "Trade winds"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 44,
+        "fields": {
+            "unit": 28,
+            "question_text": "Which mountain range runs along the western USA?",
+            "option1": "Appalachians",
+            "option2": "Rocky Mountains",
+            "option3": "Ural Mountains",
+            "option4": "Andes",
+            "correct_answer": "Rocky Mountains"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 45,
+        "fields": {
+            "unit": 28,
+            "question_text": "Which major river drains much of central USA?",
+            "option1": "Colorado River",
+            "option2": "Mississippi River",
+            "option3": "Columbia River",
+            "option4": "Hudson River",
+            "correct_answer": "Mississippi River"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 46,
+        "fields": {
+            "unit": 29,
+            "question_text": "Which climate dominates the southeastern USA?",
+            "option1": "Humid subtropical",
+            "option2": "Tundra",
+            "option3": "Mediterranean",
+            "option4": "Highland",
+            "correct_answer": "Humid subtropical"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 47,
+        "fields": {
+            "unit": 29,
+            "question_text": "Which US state has a large polar climate zone?",
+            "option1": "Texas",
+            "option2": "Florida",
+            "option3": "Alaska",
+            "option4": "California",
+            "correct_answer": "Alaska"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 48,
+        "fields": {
+            "unit": 30,
+            "question_text": "Where does most of the US population live?",
+            "option1": "Remote deserts",
+            "option2": "Urban and suburban regions",
+            "option3": "High mountain plateaus",
+            "option4": "National parks",
+            "correct_answer": "Urban and suburban regions"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 49,
+        "fields": {
+            "unit": 30,
+            "question_text": "Which process increased urban growth in the 20th century USA?",
+            "option1": "Deindustrialization only",
+            "option2": "Suburbanization",
+            "option3": "Rural isolation",
+            "option4": "Desertification",
+            "correct_answer": "Suburbanization"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 50,
+        "fields": {
+            "unit": 31,
+            "question_text": "Which sector dominates the US economy today?",
+            "option1": "Primary sector",
+            "option2": "Manufacturing only",
+            "option3": "Service sector",
+            "option4": "Subsistence farming",
+            "correct_answer": "Service sector"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 51,
+        "fields": {
+            "unit": 31,
+            "question_text": "Which region is strongly associated with technology industries?",
+            "option1": "Great Plains",
+            "option2": "Silicon Valley",
+            "option3": "Appalachia",
+            "option4": "Alaska interior",
+            "correct_answer": "Silicon Valley"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 52,
+        "fields": {
+            "unit": 32,
+            "question_text": "What is the Tibetan Plateau often called?",
+            "option1": "The Green Belt",
+            "option2": "The Roof of the World",
+            "option3": "The Great Steppe",
+            "option4": "The Red Basin",
+            "correct_answer": "The Roof of the World"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 53,
+        "fields": {
+            "unit": 32,
+            "question_text": "China's highest terrain is mostly in which direction?",
+            "option1": "East",
+            "option2": "North",
+            "option3": "South",
+            "option4": "West",
+            "correct_answer": "West"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 54,
+        "fields": {
+            "unit": 33,
+            "question_text": "Which river is known as the cradle of Chinese civilization?",
+            "option1": "Mekong",
+            "option2": "Yellow River",
+            "option3": "Amur",
+            "option4": "Pearl River",
+            "correct_answer": "Yellow River"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 55,
+        "fields": {
+            "unit": 33,
+            "question_text": "Why are eastern plains heavily cultivated in China?",
+            "option1": "Fertile soils and rivers",
+            "option2": "Lack of rain",
+            "option3": "Low population",
+            "option4": "Permanent snow cover",
+            "correct_answer": "Fertile soils and rivers"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 56,
+        "fields": {
+            "unit": 34,
+            "question_text": "Which side of China has higher population density?",
+            "option1": "Western",
+            "option2": "Eastern",
+            "option3": "Northern",
+            "option4": "Uniform across country",
+            "correct_answer": "Eastern"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 57,
+        "fields": {
+            "unit": 34,
+            "question_text": "A major reason for sparse western settlement in China is:",
+            "option1": "Dense forests",
+            "option2": "High altitude and arid climate",
+            "option3": "Too many ports",
+            "option4": "Low transport costs",
+            "correct_answer": "High altitude and arid climate"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 58,
+        "fields": {
+            "unit": 35,
+            "question_text": "Which zone led China's export-driven industrial growth?",
+            "option1": "Coastal region",
+            "option2": "Far western plateau",
+            "option3": "Inner desert basin",
+            "option4": "Polar region",
+            "correct_answer": "Coastal region"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 59,
+        "fields": {
+            "unit": 35,
+            "question_text": "Urban development in China is closely linked to:",
+            "option1": "Modern transport networks",
+            "option2": "Declining migration",
+            "option3": "Reduced manufacturing",
+            "option4": "Permanent drought",
+            "correct_answer": "Modern transport networks"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 60,
+        "fields": {
+            "unit": 36,
+            "question_text": "The Ural Mountains are commonly used to divide:",
+            "option1": "Northern and southern Russia",
+            "option2": "European and Asian Russia",
+            "option3": "Taiga and tundra",
+            "option4": "Urban and rural zones",
+            "correct_answer": "European and Asian Russia"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 61,
+        "fields": {
+            "unit": 36,
+            "question_text": "Most of Russia's population lives in:",
+            "option1": "Siberian tundra",
+            "option2": "European Russia",
+            "option3": "Arctic islands",
+            "option4": "Far eastern mountains",
+            "correct_answer": "European Russia"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 62,
+        "fields": {
+            "unit": 37,
+            "question_text": "Which biome dominates much of Siberia?",
+            "option1": "Savanna",
+            "option2": "Taiga",
+            "option3": "Mediterranean scrub",
+            "option4": "Monsoon forest",
+            "correct_answer": "Taiga"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 63,
+        "fields": {
+            "unit": 37,
+            "question_text": "Permafrost is best described as:",
+            "option1": "Seasonal rainfall",
+            "option2": "Permanently frozen ground",
+            "option3": "A warm ocean current",
+            "option4": "Volcanic ash soil",
+            "correct_answer": "Permanently frozen ground"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 64,
+        "fields": {
+            "unit": 38,
+            "question_text": "Russia is a leading global producer of:",
+            "option1": "Natural gas",
+            "option2": "Coffee",
+            "option3": "Palm oil",
+            "option4": "Bauxite only",
+            "correct_answer": "Natural gas"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 65,
+        "fields": {
+            "unit": 38,
+            "question_text": "Many major Russian energy reserves are located in:",
+            "option1": "Siberia",
+            "option2": "Crimea only",
+            "option3": "Baltic islands only",
+            "option4": "Caucasus coast only",
+            "correct_answer": "Siberia"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 66,
+        "fields": {
+            "unit": 39,
+            "question_text": "Why is eastern Russia less densely populated?",
+            "option1": "Mild climate",
+            "option2": "Fertile plains everywhere",
+            "option3": "Harsh climate and distance",
+            "option4": "Too many ports",
+            "correct_answer": "Harsh climate and distance"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 67,
+        "fields": {
+            "unit": 39,
+            "question_text": "Which area has the highest urban concentration in Russia?",
+            "option1": "European west",
+            "option2": "Arctic tundra",
+            "option3": "Far eastern coast only",
+            "option4": "Ural interior only",
+            "correct_answer": "European west"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 68,
+        "fields": {
+            "unit": 40,
+            "question_text": "What is the name of Australia's vast interior?",
+            "option1": "Outback",
+            "option2": "Savanna belt",
+            "option3": "Monsoon zone",
+            "option4": "Coral ridge",
+            "correct_answer": "Outback"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 69,
+        "fields": {
+            "unit": 40,
+            "question_text": "Which condition is common in central Australia?",
+            "option1": "High humidity year-round",
+            "option2": "Arid and semi-arid climate",
+            "option3": "Permanent snow",
+            "option4": "Dense rainforest",
+            "correct_answer": "Arid and semi-arid climate"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 70,
+        "fields": {
+            "unit": 41,
+            "question_text": "The Great Dividing Range is located in which part of Australia?",
+            "option1": "West",
+            "option2": "North",
+            "option3": "East",
+            "option4": "Central desert",
+            "correct_answer": "East"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 71,
+        "fields": {
+            "unit": 41,
+            "question_text": "Most major Australian cities are found:",
+            "option1": "In the interior",
+            "option2": "Along the coasts",
+            "option3": "In high mountain valleys",
+            "option4": "Only in the north",
+            "correct_answer": "Along the coasts"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 72,
+        "fields": {
+            "unit": 42,
+            "question_text": "Australia's population is densest in:",
+            "option1": "Desert interior",
+            "option2": "Coastal metropolitan areas",
+            "option3": "Remote mountain regions",
+            "option4": "Arid northwest",
+            "correct_answer": "Coastal metropolitan areas"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 73,
+        "fields": {
+            "unit": 42,
+            "question_text": "Which factor most limits settlement in the Australian interior?",
+            "option1": "Frequent glaciers",
+            "option2": "Limited water availability",
+            "option3": "Too much rainfall",
+            "option4": "Dense mangrove swamps",
+            "correct_answer": "Limited water availability"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 74,
+        "fields": {
+            "unit": 43,
+            "question_text": "Which Australian sector includes mining and agriculture?",
+            "option1": "Primary sector",
+            "option2": "Quaternary sector",
+            "option3": "Public sector only",
+            "option4": "Informal sector only",
+            "correct_answer": "Primary sector"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 75,
+        "fields": {
+            "unit": 43,
+            "question_text": "A major service industry in Australia is:",
+            "option1": "Tourism",
+            "option2": "Subsistence farming",
+            "option3": "Whaling",
+            "option4": "Peat extraction",
+            "correct_answer": "Tourism"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 76,
+        "fields": {
+            "unit": 44,
+            "question_text": "Approximately what share of Japan is mountainous?",
+            "option1": "About 20%",
+            "option2": "About 40%",
+            "option3": "About 70%",
+            "option4": "About 95%",
+            "correct_answer": "About 70%"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 77,
+        "fields": {
+            "unit": 44,
+            "question_text": "Limited flat land in Japan leads to:",
+            "option1": "Low urban density",
+            "option2": "Concentrated settlement on plains",
+            "option3": "No agriculture",
+            "option4": "No transport networks",
+            "correct_answer": "Concentrated settlement on plains"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 78,
+        "fields": {
+            "unit": 45,
+            "question_text": "Japan lies on which major tectonic zone?",
+            "option1": "Mid-Atlantic Ridge",
+            "option2": "Ring of Fire",
+            "option3": "Great Escarpment",
+            "option4": "East African Rift only",
+            "correct_answer": "Ring of Fire"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 79,
+        "fields": {
+            "unit": 45,
+            "question_text": "Which hazard can be triggered by undersea earthquakes near Japan?",
+            "option1": "Dust storms",
+            "option2": "Tsunamis",
+            "option3": "Heatwaves only",
+            "option4": "Avalanches only",
+            "correct_answer": "Tsunamis"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 80,
+        "fields": {
+            "unit": 46,
+            "question_text": "Japan's largest metropolitan area is:",
+            "option1": "Nagoya",
+            "option2": "Sapporo",
+            "option3": "Tokyo",
+            "option4": "Fukuoka",
+            "correct_answer": "Tokyo"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 81,
+        "fields": {
+            "unit": 46,
+            "question_text": "High population density in Japan is most common in:",
+            "option1": "Mountain interiors",
+            "option2": "Coastal urban plains",
+            "option3": "Volcanic summits",
+            "option4": "Northern forests",
+            "correct_answer": "Coastal urban plains"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 82,
+        "fields": {
+            "unit": 47,
+            "question_text": "Which transport mode is central to Japan's intercity mobility?",
+            "option1": "Canal barges",
+            "option2": "High-speed rail",
+            "option3": "Camel transport",
+            "option4": "Airships",
+            "correct_answer": "High-speed rail"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 83,
+        "fields": {
+            "unit": 47,
+            "question_text": "Compact urban planning helps Japan to:",
+            "option1": "Waste land resources",
+            "option2": "Use limited land efficiently",
+            "option3": "Eliminate public transit",
+            "option4": "Avoid all hazards",
+            "correct_answer": "Use limited land efficiently"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 84,
+        "fields": {
+            "unit": 48,
+            "question_text": "Which part of the UK is generally more mountainous?",
+            "option1": "Southeast England",
+            "option2": "Scotland and Wales",
+            "option3": "East Anglia",
+            "option4": "Thames basin only",
+            "correct_answer": "Scotland and Wales"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 85,
+        "fields": {
+            "unit": 48,
+            "question_text": "Which is a major river in the UK?",
+            "option1": "Thames",
+            "option2": "Volga",
+            "option3": "Nile",
+            "option4": "Yangtze",
+            "correct_answer": "Thames"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 86,
+        "fields": {
+            "unit": 49,
+            "question_text": "The UK's climate is best described as:",
+            "option1": "Tropical monsoon",
+            "option2": "Continental desert",
+            "option3": "Temperate maritime",
+            "option4": "Polar tundra",
+            "correct_answer": "Temperate maritime"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 87,
+        "fields": {
+            "unit": 49,
+            "question_text": "A key climate influence on the UK is:",
+            "option1": "Distance from any sea",
+            "option2": "Atlantic Ocean and westerlies",
+            "option3": "Equatorial latitude",
+            "option4": "Himalayan barrier",
+            "correct_answer": "Atlantic Ocean and westerlies"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 88,
+        "fields": {
+            "unit": 50,
+            "question_text": "Urbanization in the UK is characterized by:",
+            "option1": "Mostly rural population",
+            "option2": "High concentration in cities",
+            "option3": "No migration",
+            "option4": "Only coastal villages",
+            "correct_answer": "High concentration in cities"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 89,
+        "fields": {
+            "unit": 50,
+            "question_text": "Which city is the UK's primary global city?",
+            "option1": "Manchester",
+            "option2": "Birmingham",
+            "option3": "London",
+            "option4": "Glasgow",
+            "correct_answer": "London"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 90,
+        "fields": {
+            "unit": 51,
+            "question_text": "Which sector is especially important in the UK's economy?",
+            "option1": "Service sector",
+            "option2": "Subsistence farming",
+            "option3": "Logging only",
+            "option4": "Whaling",
+            "correct_answer": "Service sector"
+        }
+    },
+    {
+        "model": "courses.question",
+        "pk": 91,
+        "fields": {
+            "unit": 51,
+            "question_text": "A traditional industrial region in the UK includes:",
+            "option1": "Midlands and North",
+            "option2": "Sahara edge",
+            "option3": "Amazon basin",
+            "option4": "Arctic islands",
+            "correct_answer": "Midlands and North"
         }
     }
 ]
