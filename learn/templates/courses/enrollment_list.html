@@ -41,53 +41,51 @@ My Learning | EasyGeo
 
                         <div class="progress mb-3">
                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-success
-        {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
+                        {% if enrollment.get_progress == 0 %}progress-zero{% endif %}" role="progressbar"
                                 style="width: {{ enrollment.get_progress }}%;">
                                 {{ enrollment.get_progress }}%
                             </div>
                         </div>
 
-                    </div>
-                    <p>
-                        <strong> Entrollment_date:</strong>
-                        {{ enrollment.entrollment_date }}
-                    </p>
+                        <p>
+                            <strong>Enrollment Date:</strong>
+                            {{ enrollment.entrollment_date }}
+                        </p>
 
-                    <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
-                        Continue Learning →
-                    </a>
+                        <a href="{% url 'courses:section' enrollment.course.id %}" class="btn course-btn">
+                            Continue Learning →
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
+            {% endfor %}
 
         </div>
-        {% endfor %}
+
+        {% else %}
+
+        <div class="text-center py-5">
+
+            <h3 class="course-title">
+                No Courses Yet 📖
+            </h3>
+
+            <p class="course-text">
+                You haven't enrolled in any courses.
+            </p>
+
+            <a href="{% url 'courses:all_courses' %}" class="btn course-btn">
+                Explore Courses
+            </a>
+
+        </div>
+
+        {% endif %}
 
     </div>
-
-    {% else %}
-
-    <div class="text-center py-5">
-
-        <h3 class="course-title">
-            No Courses Yet 📖
-        </h3>
-
-        <p class="course-text">
-            You haven't enrolled in any courses.
-        </p>
-
-        <a href="{% url 'courses:all_courses' %}" class="btn course-btn">
-            Explore Courses
-        </a>
-
-    </div>
-
-    {% endif %}
-
-</div>
-
 </div>
 
 {% endblock %}
