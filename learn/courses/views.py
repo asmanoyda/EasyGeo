@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.contrib import messages
 from courses.models import Course, Section, Unit, Question
+from users.models import User
 from mypage.models import User, Entrollment, SectionEntrollment
 from mypage.views import custom_login_required
 from django.shortcuts import redirect
@@ -45,7 +46,8 @@ def get_enrollments(request):
 
 @custom_login_required
 def unit_quiz(request, unit_id):
-
+   
+    user = User.objects.get(id=request.session['user_id'])
     unit = Unit.objects.get(id=unit_id)
     questions = Question.objects.filter(unit=unit)
     score = None
@@ -59,6 +61,7 @@ def unit_quiz(request, unit_id):
                 score += 1
 
     return render(request, "courses/unit_quiz.html", {
+        'user_data': user,
         "unit": unit,
         "questions": questions,
         "score": score,
