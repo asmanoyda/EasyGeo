@@ -118,20 +118,18 @@ Units Page | EasyGeo
                             </div>
 
                             <!-- Video -->
-                            {% if current_unit.video %}
 
                             <h5>Video Lesson</h5>
 
                             <div class="ratio ratio-16x9 mb-4">
 
-                                <iframe src="{{ current_unit.video }}" title="{{ current_unit.unit_name }}"
-                                    allowfullscreen>
+                                <iframe   src="{{ current_unit.video }}"  title="{{ current_unit.unit_name }}"     referrerpolicy="strict-origin-when-cross-origin" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
                                 </iframe>
 
 
                             </div>
 
-                            {% endif %}
                             <div class="d-flex justify-content-between mt-4 mb-3">
 
                                 {% if previous_unit %}

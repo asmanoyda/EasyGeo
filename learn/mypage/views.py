@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.template import loader
 from django.shortcuts import redirect
 from django.contrib import messages
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.contrib.auth.hashers import check_password
 import datetime
 from django.contrib import messages
@@ -27,11 +26,16 @@ def home(request):
     return render(request, "mypage/home.html", {'user_data': user})
 
 
-@custom_login_required
+
 def country_details(request):
     user = None
     user_id = request.session.get('user_id')
-    user = User.objects.get(id=user_id)
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        pass
+    
+    
     countries = Country.objects.all()
     return render(request, "mypage/country.html", {
         'user_data': user,
@@ -84,9 +88,13 @@ def contact(request):
 
 def did_you_know(request):
     user = None
+    
     try:
         user = User.objects.get(id=request.session["user_id"])
+        a= 0/100
     except User.DoesNotExist:
+        pass
+    except Exception:
         pass
 
     fact = DidYouKnowFact.objects.order_by("?").first()
