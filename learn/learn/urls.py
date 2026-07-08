@@ -19,6 +19,10 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header = "EasyGeo Admin"
+admin.site.site_title = "EasyGeo Management"
+admin.site.index_title = "Welcome to the Control Panel"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mypage.urls')),
